@@ -1,0 +1,45 @@
+/* Import font declarations */
+@import './styles/fonts.css';
+
+/* Import Tailwind CSS base, components, and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom base styles can be added here */
+@layer base {
+  html {
+    font-family: var(--font-family-sans);
+  }
+  
+  body {
+    @apply bg-white text-gray-900 min-h-screen;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-brand-navy;
+  }
+  
+  a {
+    @apply text-primary hover:text-primary/80 transition-colors;
+  }
+}
+
+/* Custom component styles can be added here */
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded font-medium transition-colors;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary/90;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-white hover:bg-secondary/90;
+  }
+  
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}

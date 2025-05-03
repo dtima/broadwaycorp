@@ -1,0 +1,651 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "about": "À Propos",
+    "corporation": "Corporation",
+    "enterprise": "Entreprise",
+    "farmhouse": "Ferme",
+    "news": "Actualités",
+    "contact": "Contact",
+    "aboutSubmenu": {
+      "ceoMessage": "Message du Fondateur/PDG",
+      "leadership": "Équipe de Direction"
+    },
+    "corporationSubmenu": {
+      "ceoMessage": "Message du Fondateur/PDG",
+      "leadership": "Équipe de Direction"
+    },
+    "partners": "Partenaires"
+  },
+  "language": {
+    "en": "Anglais",
+    "fr": "Français",
+    "toggle": "EN"
+  },
+  "about": {
+    "pageTitle": "À Propos",
+    "metaDescription": "Découvrez Broadway Corporation, notre mission et notre engagement pour le développement durable par l'innovation.",
+    "title": "À Propos de Broadway Corporation",
+    "subtitle": "Construire un avenir durable grâce à l'innovation et à la collaboration.",
+    "ceoMessagePreview": "Un message de bienvenue de notre Fondateur et PDG, Ngu Teboh Gustave, présentant notre vision et notre mission.",
+    "leadershipPreview": "Rencontrez l'équipe talentueuse de professionnels qui guide les initiatives de Broadway Corporation.",
+    "aboutBroadwayTitle": "Notre Histoire",
+    "aboutBroadwayText1": "Broadway Corporation a été fondée avec une vision claire : créer des solutions de développement durable qui comblent le fossé entre la science innovante et la mise en œuvre pratique.",
+    "aboutBroadwayText2": "Opérant depuis notre centre stratégique aux États-Unis tout en maintenant une forte présence opérationnelle au Cameroun, nous rassemblons diverses expertises à travers nos deux divisions principales : Broadway Enterprise et Broadway Farmhouse.",
+    "aboutBroadwayText3": "Notre approche unifiée nous permet de relever des défis complexes dans l'éducation, l'agriculture et le développement communautaire avec des solutions globales et durables.",
+    "missionValuesTitle": "Notre Mission & Nos Valeurs",
+    "missionTitle": "Mission",
+    "missionText": "Favoriser le développement durable grâce à l'application innovante de la science, de l'éducation et de l'agriculture, créant un impact positif durable dans les communautés.",
+    "valuesTitle": "Valeurs Fondamentales",
+    "value1": "Innovation : Adopter des solutions créatives pour relever des défis complexes",
+    "value2": "Durabilité : Garantir que notre travail crée un impact positif durable",
+    "value3": "Éducation : Autonomiser les communautés par le savoir et les compétences",
+    "value4": "Collaboration : Réunir diverses perspectives pour des objectifs communs"
+  },
+  "ceoMessage": {
+    "metaDescription": "Lisez le message de bienvenue de Ngu Teboh Gustave, Fondateur et PDG de Broadway Corporation.",
+    "heroTagline": "Un message sur notre mission, notre vision et notre engagement pour le développement durable.",
+    "quote": "Nous croyons que le développement durable n'est pas seulement un objectif; c'est notre responsabilité. Nous construisons un avenir résilient et axé sur le savoir pour l'Afrique et au-delà."
+  },
+  "leadership": {
+    "metaDescription": "Rencontrez l'équipe de direction derrière la vision de Broadway Corporation du développement durable par l'innovation.",
+    "heroTagline": "Les professionnels talentueux qui guident notre mission et notre vision.",
+    "title": "Rencontrez Notre Équipe de Direction",
+    "team": {
+      "chairman": {
+        "name": "Achidi Mbony Jeremiah",
+        "title": "Président",
+        "bio": "M. Achidi Mbony Jeremiah occupe le poste de Président de Broadway Corporation, fournissant une orientation stratégique à notre organisation et assurant l'alignement avec notre mission de développement durable."
+      },
+      "viceChair": {
+        "name": "Fon Claudette",
+        "title": "Vice-Présidente",
+        "bio": "Mme Fon Claudette apporte des perspectives précieuses en tant que Vice-Présidente, soutenant les initiatives de gouvernance et aidant à façonner l'orientation stratégique de Broadway Corporation."
+      },
+      "ceo": {
+        "name": "Teboh Gustave Ngu",
+        "title": "PDG/Directeur Général",
+        "bio": "M. Teboh Gustave Ngu dirige Broadway Corporation en tant que PDG et Directeur Général, supervisant toutes les opérations et conduisant notre vision de développement durable par l'innovation."
+      },
+      "projectManager": {
+        "name": "Nancy Makeoh Mafor",
+        "title": "Chef de Projet",
+        "bio": "Mlle Nancy Makeoh Mafor coordonne et supervise nos différents projets, assurant une mise en œuvre efficace et l'alignement avec nos objectifs de développement durable."
+      },
+      "financeAdviser": {
+        "name": "Leinyuy Saber Emelienne",
+        "title": "Conseillère Financière",
+        "bio": "Mme Leinyuy Saber Emelienne fournit des conseils financiers experts pour assurer que Broadway Corporation maintient une durabilité financière tout en poursuivant sa mission et sa vision."
+      }
+    },
+    "introduction": "Notre équipe de direction expérimentée réunit des expertises de divers horizons pour guider la mission de Broadway Corporation de développement durable par l'innovation, l'éducation et l'agriculture au Cameroun et au-delà.",
+    "values": {
+      "title": "Nos Valeurs de Leadership",
+      "integrity": {
+        "title": "Intégrité",
+        "description": "Nous dirigeons avec honnêteté, transparence et prise de décision éthique dans toutes nos entreprises."
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "Nous adoptons une pensée créative et des solutions audacieuses pour relever des défis complexes."
+      },
+      "collaboration": {
+        "title": "Collaboration",
+        "description": "Nous croyons au pouvoir des perspectives diverses et de l'action collective pour créer un changement significatif."
+      }
+    },
+    "cta": {
+      "title": "Rejoignez Notre Mission",
+      "description": "Contactez-nous pour en savoir plus sur les opportunités de partenariat.",
+      "button": "Contactez-Nous"
+    }
+  },
+  "corporation": {
+    "pageTitle": "Corporation",
+    "metaDescription": "Découvrez la structure de Broadway Corporation, son modèle opérationnel et nos divisions qui favorisent le développement durable.",
+    "title": "Broadway Corporation",
+    "heroTagline": "Vision unie. Force diverse. Une mission ciblée.",
+    "overviewTitle": "Aperçu de l'Entreprise",
+    "overviewText1": "Broadway Corporation est une société holding dynamique fondée sur le principe de créer un développement durable grâce à des approches innovantes en science, éducation, agriculture et développement communautaire.",
+    "overviewText2": "Notre siège stratégique aux États-Unis travaille en étroite coordination avec nos équipes opérationnelles au Cameroun, créant une synergie puissante qui nous permet de combiner vision globale et expertise locale.",
+    "structureTitle": "Structure de l'Entreprise",
+    "structureDescription": "Broadway Corporation opère à travers deux divisions principales, chacune avec des domaines d'intérêt spécifiques qui se complètent pour remplir notre mission de développement durable.",
+    "headquartersTitle": "Siège Stratégique",
+    "headquartersLocation": "États-Unis",
+    "headquartersFunction": "Planification stratégique, allocation des ressources et partenariats mondiaux",
+    "operationsTitle": "Centre Opérationnel",
+    "operationsLocation": "Cameroun",
+    "operationsFunction": "Mise en œuvre, engagement communautaire et opérations directes",
+    "modelTitle": "Notre Modèle Opérationnel",
+    "modelStep1Title": "Développement de la Vision Stratégique",
+    "modelStep1Text": "Notre équipe de direction basée aux États-Unis définit les objectifs stratégiques et sécurise les ressources nécessaires pour soutenir notre mission de développement durable.",
+    "modelStep2Title": "Mise en Œuvre Locale",
+    "modelStep2Text": "Nos équipes basées au Cameroun adaptent les stratégies globales aux contextes locaux, assurant une mise en œuvre culturellement appropriée et efficace.",
+    "modelStep3Title": "Boucle de Rétroaction Continue",
+    "modelStep3Text": "La communication en temps réel entre le siège et les équipes opérationnelles garantit une prise de décision agile et une amélioration constante.",
+    "divisionsTitle": "Nos Divisions",
+    "enterpriseDescription": "Broadway Enterprise se concentre sur les équipements scientifiques, la recherche, l'éducation et le développement communautaire, fournissant des solutions innovantes pour faire progresser la science et l'éducation.",
+    "farmhouseDescription": "Broadway Farmhouse est dédiée aux pratiques agricoles modernes, à l'élevage, à l'aquaculture et à l'agriculture durable, promouvant la sécurité alimentaire et la croissance économique.",
+    "keyFocusAreas": "Domaines d'Intérêt Clés",
+    "enterpriseFocus1": "Équipements scientifiques et fournitures médicales",
+    "enterpriseFocus2": "Programmes d'éducation et de soutien académique",
+    "enterpriseFocus3": "Conception et construction de laboratoires",
+    "farmhouseFocus1": "Pratiques agricoles durables",
+    "farmhouseFocus2": "Élevage et soins aux animaux",
+    "farmhouseFocus3": "Aquaculture et pisciculture",
+    "futureTitle": "Initiatives de Croissance Future",
+    "futureDescription": "Broadway Corporation explore continuellement de nouvelles opportunités pour étendre notre impact. Nos prochaines initiatives comprennent des projets innovants dans l'agro-tourisme, les expériences culinaires de la ferme à la table et la bio-recherche de pointe.",
+    "learnMoreTitle": "Notre Vision en Action",
+    "learnMoreDescription": "Découvrez comment notre équipe de direction guide notre croissance et notre développement.",
+    "readCEOMessage": "Lire le Message du PDG",
+    "services": "Services"
+  },
+  "enterprise": {
+    "pageTitle": "Broadway Enterprise",
+    "metaDescription": "Broadway Enterprise se concentre sur l'équipement scientifique, l'éducation et le développement communautaire pour faire progresser la science et créer un impact durable au Cameroun.",
+    "heroTitle": "Broadway Enterprise",
+    "heroSubtitle": "Faire progresser la science, l'éducation et le développement communautaire au Cameroun",
+    "contactButton": "Contactez-Nous",
+    "introTitle": "Qui Sommes-Nous",
+    "introText1": "Broadway Enterprise est la division scientifique et éducative de Broadway Corporation, dédiée à fournir des solutions innovantes qui font progresser la recherche scientifique, l'éducation et le développement communautaire au Cameroun.",
+    "introText2": "Nous équipons les écoles et les laboratoires avec les outils nécessaires, développons des programmes éducatifs et mettons en œuvre des initiatives communautaires qui créent un impact positif durable.",
+    "missionTitle": "Notre Mission",
+    "missionStatement": "Améliorer les capacités scientifiques et les opportunités éducatives au Cameroun grâce à des solutions innovantes et des approches durables.",
+    "ourApproach": "Notre Approche",
+    "approach1": "Axée sur la qualité: Fournir uniquement des équipements scientifiques et des ressources éducatives de la plus haute qualité",
+    "approach2": "Centrée sur la communauté: Développer des solutions adaptées aux besoins et au contexte locaux",
+    "approach3": "Orientée vers la durabilité: Créer un impact durable grâce au transfert de connaissances et au renforcement des capacités",
+    "servicesTitle": "Nos Services",
+    "servicesSubtitle": "Nous fournissons des solutions complètes dans quatre domaines clés pour soutenir l'avancement scientifique et le développement éducatif au Cameroun.",
+    "services": {
+      "scientific": {
+        "title": "Équipement Scientifique",
+        "description": "Nous fournissons des instruments scientifiques et des fournitures médicales de haute qualité aux écoles, universités, institutions de recherche et établissements de santé.",
+        "item1": "Équipement de laboratoire pour institutions éducatives",
+        "item2": "Instruments de recherche spécialisés",
+        "item3": "Fournitures médicales et de santé"
+      },
+      "education": {
+        "title": "Éducation & Tutorat",
+        "description": "Nous offrons des programmes de soutien éducatif et des services de tutorat axés sur les matières STEM pour améliorer les résultats d'apprentissage.",
+        "item1": "Programmes STEM parascolaires",
+        "item2": "Ateliers de formation pour enseignants",
+        "item3": "Développement de matériel éducatif"
+      },
+      "laboratory": {
+        "title": "Construction de Laboratoires",
+        "description": "Nous concevons et construisons des espaces de laboratoire modernes et fonctionnels adaptés aux besoins éducatifs et de recherche spécifiques.",
+        "item1": "Consultation en conception de laboratoires",
+        "item2": "Services de construction et de rénovation",
+        "item3": "Mise en œuvre de protocoles de sécurité"
+      },
+      "community": {
+        "title": "Développement Communautaire",
+        "description": "Nous mettons en œuvre des initiatives qui renforcent les communautés par le partage des connaissances et le renforcement des capacités.",
+        "item1": "Programmes de formation professionnelle",
+        "item2": "Ateliers d'éducation communautaire",
+        "item3": "Campagnes de sensibilisation environnementale"
+      }
+    },
+    "impactTitle": "Notre Impact",
+    "impact": {
+      "stat1Label": "Écoles Équipées",
+      "stat1Description": "Institutions éducatives soutenues avec des équipements scientifiques",
+      "stat2Label": "Étudiants Touchés",
+      "stat2Description": "Jeunes esprits engagés à travers nos programmes éducatifs",
+      "stat3Label": "Laboratoires Construits",
+      "stat3Description": "Espaces de laboratoire modernes construits ou rénovés",
+      "stat4Label": "Communautés Servies",
+      "stat4Description": "Communautés locales positivement impactées par nos initiatives"
+    },
+    "caseStudiesTitle": "Notre Travail en Action",
+    "results": "Résultats",
+    "caseStudies": {
+      "case1": {
+        "location": "Yaoundé",
+        "title": "Laboratoire Scientifique Complet pour École Secondaire",
+        "description": "Nous avons équipé une école secondaire publique à Yaoundé d'un laboratoire scientifique complet, comprenant des équipements de chimie, biologie et physique, et avons formé les enseignants sur l'enseignement efficace en laboratoire.",
+        "results": "Amélioration de l'éducation scientifique pratique pour plus de 1 200 élèves par an, avec une augmentation de 40% des résultats aux examens scientifiques après la première année."
+      },
+      "case2": {
+        "location": "Douala",
+        "title": "Centre d'Éducation STEM Communautaire",
+        "description": "Nous avons établi un centre d'éducation communautaire à Douala axé sur la fourniture de programmes STEM parascolaires pour les élèves défavorisés, équipé d'ordinateurs, d'équipements de laboratoire de base et de matériel éducatif.",
+        "results": "Plus de 500 élèves engagés la première année, avec 85% des participants déclarant un intérêt accru pour poursuivre des carrières en STEM."
+      }
+    },
+    "sdgTitle": "Notre Contribution aux Objectifs de Développement Durable",
+    "sdgDescription": "Le travail de Broadway Enterprise s'aligne directement avec plusieurs Objectifs de Développement Durable des Nations Unies, concentrant nos efforts sur la création de changements significatifs et durables.",
+    "sdgs": {
+      "sdg4": {
+        "title": "ODD 4: Éducation de Qualité",
+        "description": "Assurer une éducation de qualité inclusive et équitable et promouvoir des opportunités d'apprentissage tout au long de la vie pour tous."
+      },
+      "sdg3": {
+        "title": "ODD 3: Bonne Santé et Bien-être",
+        "description": "Assurer une vie saine et promouvoir le bien-être pour tous à tout âge grâce à l'amélioration des capacités scientifiques."
+      },
+      "sdg6": {
+        "title": "ODD 6: Eau Propre et Assainissement",
+        "description": "Soutenir la recherche scientifique et l'éducation liées aux tests de qualité de l'eau et aux améliorations d'assainissement."
+      }
+    },
+    "ctaTitle": "Partenariat avec Broadway Enterprise",
+    "ctaDescription": "Rejoignez-nous dans notre mission pour faire progresser la science, l'éducation et le développement durable au Cameroun.",
+    "ctaButton": "Contactez-Nous Dès Aujourd'hui"
+  },
+  "farmhouse": {
+    "pageTitle": "Broadway Farmhouse",
+    "metaDescription": "Broadway Farmhouse se concentre sur l'agriculture durable, l'élevage, l'aquaculture et les pratiques agricoles innovantes pour la sécurité alimentaire et la croissance économique au Cameroun.",
+    "heroTitle": "Broadway Farmhouse",
+    "heroSubtitle": "Promouvoir l'agriculture durable et la sécurité alimentaire au Cameroun",
+    "contactButton": "Contactez-Nous",
+    "introTitle": "Qui Sommes-Nous",
+    "introText1": "Broadway Farmhouse est la division agricole de Broadway Corporation, dédiée à la mise en œuvre de pratiques agricoles modernes et durables qui améliorent la sécurité alimentaire et la croissance économique à travers le Cameroun.",
+    "introText2": "Nous développons des solutions agricoles innovantes, élevons du bétail de qualité, gérons des opérations d'aquaculture durables et formons les agriculteurs locaux pour améliorer leur productivité et leur durabilité.",
+    "missionTitle": "Notre Mission",
+    "missionStatement": "Améliorer la sécurité alimentaire et la durabilité agricole au Cameroun grâce à des pratiques agricoles innovantes et au transfert de connaissances.",
+    "ourApproach": "Notre Approche",
+    "approach1": "Axée sur l'innovation: Mettre en œuvre des techniques agricoles modernes adaptées aux conditions locales",
+    "approach2": "Centrée sur la durabilité: Garantir que nos pratiques sont respectueuses de l'environnement et économiquement viables",
+    "approach3": "Autonomisation communautaire: Partager les connaissances et renforcer les capacités des agriculteurs locaux",
+    "servicesTitle": "Nos Services",
+    "servicesSubtitle": "Nous fournissons des solutions agricoles complètes dans quatre domaines clés pour soutenir la production alimentaire durable et la croissance économique au Cameroun.",
+    "services": {
+      "agriculture": {
+        "title": "Agriculture Durable",
+        "description": "Nous mettons en œuvre des pratiques agricoles modernes et durables pour améliorer les rendements des cultures tout en préservant les ressources naturelles.",
+        "item1": "Stratégies de rotation et de diversification des cultures",
+        "item2": "Techniques d'agriculture biologique",
+        "item3": "Conservation et amélioration des sols"
+      },
+      "livestock": {
+        "title": "Élevage de Bétail",
+        "description": "Nous élevons du bétail de haute qualité, en nous concentrant sur l'adaptabilité aux conditions locales et à la demande du marché.",
+        "item1": "Élevage de bovins, caprins et volailles",
+        "item2": "Soins vétérinaires et gestion de la santé",
+        "item3": "Optimisation de l'alimentation et programmes nutritionnels"
+      },
+      "aquaculture": {
+        "title": "Opérations d'Aquaculture",
+        "description": "Nous gérons des opérations piscicoles durables pour diversifier les sources de protéines et créer des opportunités économiques.",
+        "item1": "Systèmes de pisciculture en eau douce",
+        "item2": "Gestion de la qualité de l'eau",
+        "item3": "Développement d'aliments durables"
+      },
+      "training": {
+        "title": "Formation Agricole",
+        "description": "Nous offrons des formations et un transfert de connaissances aux agriculteurs locaux pour améliorer leurs compétences et leur productivité.",
+        "item1": "Ateliers sur les techniques agricoles modernes",
+        "item2": "Formation à la gestion du bétail",
+        "item3": "Développement d'entreprises agricoles"
+      }
+    },
+    "impactTitle": "Notre Impact",
+    "impact": {
+      "stat1Label": "Hectares Cultivés",
+      "stat1Description": "Terres sous gestion agricole durable",
+      "stat2Label": "Espèces d'Élevage",
+      "stat2Description": "Différentes espèces animales élevées pour les conditions locales",
+      "stat3Label": "Agriculteurs Formés",
+      "stat3Description": "Agriculteurs locaux équipés de compétences agricoles modernes",
+      "stat4Label": "Communautés Servies",
+      "stat4Description": "Communautés locales avec une sécurité alimentaire améliorée"
+    },
+    "caseStudiesTitle": "Notre Travail en Action",
+    "results": "Résultats",
+    "caseStudies": {
+      "case1": {
+        "location": "Bamenda",
+        "title": "Système Agricole Intégré pour Petits Exploitants",
+        "description": "Nous avons développé et mis en œuvre un système agricole intégré qui combine la production végétale, l'élevage et la pisciculture pour les petits exploitants de la région de Bamenda, incluant une formation sur les pratiques durables.",
+        "results": "Augmentation de la productivité agricole de 60% pour les agriculteurs participants, avec une augmentation de 45% du revenu des ménages et une amélioration de la sécurité alimentaire pour plus de 100 familles."
+      },
+      "case2": {
+        "location": "Limbe",
+        "title": "Projet de Développement de l'Aquaculture Côtière",
+        "description": "Nous avons établi une opération d'aquaculture côtière durable à Limbe axée sur la production de tilapia et de poisson-chat, avec une composante de formation pour les pêcheurs locaux en transition vers l'aquaculture.",
+        "results": "Création de 30 emplois à temps plein et production de plus de 15 tonnes de poisson par an, tout en formant 50 pêcheurs locaux aux pratiques d'aquaculture durables."
+      }
+    },
+    "sdgTitle": "Notre Contribution aux Objectifs de Développement Durable",
+    "sdgDescription": "Le travail de Broadway Farmhouse s'aligne directement avec plusieurs Objectifs de Développement Durable des Nations Unies, concentrant nos efforts sur la création de changements significatifs et durables à travers l'agriculture.",
+    "sdgs": {
+      "sdg2": {
+        "title": "ODD 2: Faim Zéro",
+        "description": "Travailler pour atteindre la sécurité alimentaire, améliorer la nutrition et promouvoir l'agriculture durable à travers le Cameroun."
+      },
+      "sdg14": {
+        "title": "ODD 14: Vie Aquatique",
+        "description": "Mettre en œuvre des pratiques d'aquaculture durables qui préservent les écosystèmes aquatiques tout en fournissant nourriture et moyens de subsistance."
+      },
+      "sdg6": {
+        "title": "ODD 6: Eau Propre et Assainissement",
+        "description": "Développer des pratiques agricoles qui conservent et protègent les ressources en eau tout en améliorant l'accès à l'eau propre."
+      }
+    },
+    "futureProjectsTitle": "Projets Futurs",
+    "ctaTitle": "Partenariat avec Broadway Farmhouse",
+    "ctaDescription": "Rejoignez-nous dans notre mission pour faire progresser l'agriculture durable et la sécurité alimentaire au Cameroun.",
+    "ctaButton": "Contactez-Nous Dès Aujourd'hui"
+  },
+  "news": {
+    "pageTitle": "Actualités & Mises à Jour",
+    "metaDescription": "Restez informé des dernières actualités, projets et initiatives de Broadway Corporation dans le développement durable au Cameroun.",
+    "heroTitle": "Actualités & Mises à Jour",
+    "heroSubtitle": "Restez informé de nos derniers projets, initiatives et réalisations",
+    "subscribeButton": "S'abonner aux Mises à Jour",
+    "latestUpdates": "Dernières Actualités",
+    "readMore": "Lire la suite",
+    "stayUpdated": "Restez Informé",
+    "newsletterText": "Abonnez-vous à notre newsletter pour recevoir les dernières nouvelles et mises à jour directement dans votre boîte de réception.",
+    "emailPlaceholder": "Votre adresse email",
+    "filters": {
+      "all": "Toutes les Actualités",
+      "archive": "Archives"
+    },
+    "categories": {
+      "enterprise": "Entreprise",
+      "farmhouse": "Ferme",
+      "community": "Communauté",
+      "partnership": "Partenariat"
+    },
+    "articles": {
+      "article1": {
+        "title": "Nouveau Matériel de Laboratoire Livré aux Écoles de Yaoundé",
+        "summary": "Broadway Enterprise a livré et installé avec succès de nouveaux équipements de laboratoire dans trois écoles secondaires de Yaoundé, améliorant les capacités d'éducation STEM."
+      },
+      "article2": {
+        "title": "Lancement d'une Initiative d'Agriculture Durable à Bamenda",
+        "summary": "Broadway Farmhouse a lancé une nouvelle initiative d'agriculture durable à Bamenda, offrant formation et ressources à plus de 100 agriculteurs locaux."
+      },
+      "article3": {
+        "title": "La Série d'Ateliers Communautaires Autonomise les Entrepreneurs Locaux",
+        "summary": "Notre récente série d'ateliers dans quatre communautés a doté les entrepreneurs locaux de compétences commerciales, de littératie numérique et d'accès à des réseaux."
+      },
+      "article4": {
+        "title": "Nouveau Partenariat avec une Organisation de Développement International",
+        "summary": "Broadway Corporation annonce un partenariat stratégique avec une organisation de développement international de premier plan pour étendre son impact à travers le Cameroun."
+      },
+      "article5": {
+        "title": "Le Programme de Formation des Enseignants Termine sa Première Phase",
+        "summary": "Le programme de formation des enseignants de Broadway Enterprise a terminé avec succès sa première phase, avec 50 enseignants désormais équipés de méthodologies d'enseignement STEM améliorées."
+      },
+      "article6": {
+        "title": "Le Projet d'Aquaculture s'Étend à une Nouvelle Région",
+        "summary": "Le projet d'aquaculture réussi de Broadway Farmhouse s'étend à une nouvelle région, créant des opportunités d'emploi et améliorant la sécurité alimentaire."
+      }
+    }
+  },
+  "common": {
+    "backToPortal": "Retour au Portail",
+    "learnMore": "En Savoir Plus",
+    "readMore": "Lire Plus",
+    "contactUs": "Contactez-Nous",
+    "exploreMore": "Explorer Plus"
+  },
+  "landing": {
+    "title": "Broadway Corporation",
+    "subtitle": "Développement Durable Par l'Innovation",
+    "description": "Bienvenue sur le portail de Broadway Corporation. Explorez nos trois divisions spécialisées, chacune axée sur un aspect spécifique du développement durable.",
+    "selectDivision": "Sélectionnez une Division",
+    "corporationCard": {
+      "title": "Corporation",
+      "description": "Notre siège social supervisant la planification stratégique et les partenariats mondiaux.",
+      "buttonText": "Visiter le Site Corporatif"
+    },
+    "enterpriseCard": {
+      "title": "Enterprise",
+      "description": "Axée sur les équipements scientifiques, la recherche, l'éducation et le développement communautaire.",
+      "buttonText": "Visiter le Site Enterprise"
+    },
+    "farmhouseCard": {
+      "title": "Ferme",
+      "description": "Dédiée aux pratiques agricoles modernes, à l'élevage et à l'agriculture durable.",
+      "buttonText": "Visiter le Site Ferme"
+    },
+    "overview": "Broadway Corporation opère à travers trois divisions spécialisées pour offrir des solutions complètes de développement durable.",
+    "corporateHeadquarters": "Siège Social",
+    "corporateLocation": "Boston, États-Unis",
+    "operationalHub": "Centre Opérationnel",
+    "operationalLocation": "Yaoundé, Cameroun"
+  },
+  "hero": {
+    "title": "Développement Durable Par l'Innovation",
+    "subtitle": "Broadway Corporation unit Enterprise et Farmhouse pour créer une approche globale du développement.",
+    "discoverButton": "Découvrir Notre Histoire",
+    "contactButton": "Nous Contacter",
+    "learnMoreButton": "En Savoir Plus",
+    "sectors": {
+      "logistics": {
+        "title": "Solutions Logistiques",
+        "subtitle": "Systèmes efficaces de transport et de gestion de la chaîne d'approvisionnement au Cameroun et au-delà."
+      },
+      "construction": {
+        "title": "Construction & Infrastructure",
+        "subtitle": "Construire les fondations du développement durable avec des services de construction de qualité."
+      },
+      "realEstate": {
+        "title": "Développement Immobilier",
+        "subtitle": "Création d'espaces de vie et de travail modernes et durables pour les communautés."
+      },
+      "technology": {
+        "title": "Technologie & Innovation",
+        "subtitle": "Exploiter les technologies de pointe pour résoudre les défis de développement en Afrique."
+      }
+    }
+  },
+  "divisions": {
+    "title": "Nos Divisions",
+    "enterprise": {
+      "title": "Broadway Enterprise",
+      "description": "Axée sur les équipements scientifiques, la recherche, l'éducation et le développement communautaire, Broadway Enterprise propose des solutions innovantes pour faire progresser la science et l'éducation.",
+      "button": "Explorer Enterprise"
+    },
+    "farmhouse": {
+      "title": "Broadway Farmhouse",
+      "description": "Dédiée aux pratiques agricoles modernes, à l'élevage, à l'aquaculture et à l'agriculture durable, Broadway Farmhouse promeut l'innovation agricole.",
+      "button": "Découvrir Farmhouse"
+    }
+  },
+  "services": {
+    "title": "Nos Services Clés",
+    "scientific": {
+      "title": "Équipement Scientifique",
+      "description": "Fourniture d'équipements scientifiques et de fournitures médicales de qualité aux institutions."
+    },
+    "education": {
+      "title": "Éducation & Tutorat",
+      "description": "Soutien à l'éducation STEM par des services de tutorat et des programmes académiques."
+    },
+    "agriculture": {
+      "title": "Agriculture Moderne",
+      "description": "Mise en œuvre de pratiques agricoles durables et innovantes."
+    },
+    "laboratory": {
+      "title": "Construction de Laboratoires",
+      "description": "Conception et construction de laboratoires et d'espaces éducatifs."
+    },
+    "livestock": {
+      "title": "Élevage & Aquaculture",
+      "description": "Élevage et production d'espèces animales et aquatiques de qualité."
+    },
+    "community": {
+      "title": "Développement Communautaire",
+      "description": "Soutien aux communautés locales par des initiatives de formation et de développement."
+    }
+  },
+  "future": {
+    "title": "Projets Futurs",
+    "subtitle": "Explorez nos prochaines initiatives conçues pour créer un impact durable",
+    "projects": {
+      "roadhouse": {
+        "tag": "Hôtellerie",
+        "title": "Broadway Relais Routier",
+        "description": "Un complexe d'accueil routier durable offrant une alimentation de qualité, des hébergements et des opportunités économiques locales.",
+        "link": "Explorer Ce Projet"
+      },
+      "resort": {
+        "tag": "Agrotourisme",
+        "title": "Ferme Éducative & Resort",
+        "description": "Une destination unique combinant l'éducation à l'agriculture durable avec des expériences d'écotourisme.",
+        "link": "En Savoir Plus sur Cette Initiative"
+      },
+      "scorpion": {
+        "tag": "Recherche",
+        "title": "Ferme de Recherche sur les Scorpions",
+        "description": "Un centre de recherche innovant dédié à l'étude des scorpions pour des applications médicales et agricoles potentielles.",
+        "link": "Découvrir Ce Projet"
+      }
+    }
+  },
+  "cta": {
+    "title": "Prêt à Collaborer?",
+    "subtitle": "Rejoignez-nous dans notre mission de promouvoir le développement durable par l'innovation, l'éducation et l'agriculture.",
+    "button": "Contactez-Nous Aujourd'hui"
+  },
+  "footer": {
+    "description": "Développement durable par la science, l'éducation, l'agriculture et l'avancement communautaire.",
+    "quickLinks": "Liens Rapides",
+    "aboutUs": "À Propos",
+    "newsUpdates": "Actualités",
+    "contactUs": "Contactez-Nous",
+    "privacy": "Politique de Confidentialité",
+    "terms": "Conditions d'Utilisation",
+    "rights": "Tous droits réservés.",
+    "rightsReserved": "Tous droits réservés.",
+    "backToPortal": "Retour au Portail",
+    "followUs": "Suivez-Nous",
+    "socialMedia": {
+      "facebook": "Facebook",
+      "twitter": "Twitter",
+      "linkedin": "LinkedIn",
+      "instagram": "Instagram",
+      "youtube": "YouTube"
+    }
+  },
+  "notFound": {
+    "title": "Page Non Trouvée",
+    "description": "La page que vous recherchez a peut-être été supprimée, son nom a été modifié ou elle est temporairement indisponible.",
+    "homeButton": "Retour à l'Accueil",
+    "contactButton": "Contacter le Support"
+  },
+  "contact": {
+    "pageTitle": "Contactez-Nous",
+    "metaDescription": "Entrez en contact avec Broadway Corporation. Nous sommes là pour répondre à vos questions et discuter des collaborations potentielles.",
+    "heroTitle": "Contactez-Nous",
+    "heroSubtitle": "Nous sommes là pour répondre à vos questions et discuter de comment nous pouvons travailler ensemble.",
+    "introTitle": "Connectons-Nous",
+    "introText": "Que vous ayez des questions sur nos services, que vous souhaitiez explorer des opportunités de collaboration ou que vous soyez intéressé à en savoir plus sur notre travail, nous sommes là pour vous aider.",
+    "formTitle": "Envoyez-Nous un Message",
+    "successMessage": "Merci pour votre message. Nous vous répondrons dans les plus brefs délais!",
+    "locationsTitle": "Nos Emplacements",
+    "socialTitle": "Connectez-Vous Avec Nous",
+    "mapPlaceholder": "Carte Interactive Bientôt Disponible",
+    "mapText": "Nos emplacements aux États-Unis et au Cameroun nous permettent de combiner vision globale et expertise locale.",
+    "faqTitle": "Questions Fréquemment Posées",
+    "form": {
+      "nameLabel": "Votre Nom",
+      "emailLabel": "Adresse Email",
+      "subjectLabel": "Sujet",
+      "messageLabel": "Votre Message",
+      "submitButton": "Envoyer le Message"
+    },
+    "locations": {
+      "us": {
+        "country": "États-Unis",
+        "address": "123 Innovation Drive, Suite 200",
+        "city": "Boston, MA 02110",
+        "type": "Siège Stratégique"
+      },
+      "cameroon": {
+        "country": "Cameroun",
+        "address": "456 Avenue du Développement",
+        "city": "Yaoundé",
+        "type": "Centre Opérationnel"
+      }
+    },
+    "faq": {
+      "question1": "Comment puis-je établir un partenariat avec Broadway Corporation?",
+      "answer1": "Nous accueillons les partenariats avec des organisations qui partagent notre engagement pour le développement durable. Veuillez nous contacter avec des détails sur votre organisation et vos intérêts, et notre équipe vous contactera pour discuter des opportunités de collaboration potentielles.",
+      "question2": "Offrez-vous des opportunités de stage ou de bénévolat?",
+      "answer2": "Oui, nous offrons périodiquement des stages et des postes de bénévoles dans nos divisions. Veuillez envoyer votre CV et vos domaines d'intérêt à notre département RH, et nous vous informerons de toute opportunité correspondante.",
+      "question3": "Comment puis-je rester informé de vos projets et initiatives?",
+      "answer3": "Vous pouvez vous abonner à notre newsletter, nous suivre sur les réseaux sociaux ou consulter régulièrement notre section Actualités pour les dernières mises à jour sur notre travail et notre impact."
+    },
+    "heroSlider": {
+      "logistics": {
+        "title": "Solutions Logistiques",
+        "subtitle": "Systèmes efficaces de transport et de gestion de la chaîne d'approvisionnement au Cameroun et au-delà."
+      },
+      "construction": {
+        "title": "Construction & Infrastructure",
+        "subtitle": "Construire les fondations du développement durable avec des services de construction de qualité."
+      },
+      "realEstate": {
+        "title": "Développement Immobilier",
+        "subtitle": "Création d'espaces de vie et de travail modernes et durables pour les communautés."
+      },
+      "technology": {
+        "title": "Technologie & Innovation",
+        "subtitle": "Exploiter les technologies de pointe pour résoudre les défis de développement en Afrique."
+      },
+      "learnMoreButton": "En Savoir Plus"
+    }
+  },
+  "partners": {
+    "title": "Partenaires & Soutiens",
+    "subtitle": "Fiers de collaborer avec des organisations de premier plan dans divers secteurs pour stimuler l'innovation et le développement durable.",
+    "viewAllButton": "Voir Tous les Partenaires",
+    "pageTitle": "Nos Partenaires",
+    "metaDescription": "Découvrez les organisations qui collaborent avec Broadway Corporation sur des projets de développement durable au Cameroun et au-delà.",
+    "heroText": "Découvrez les organisations qui s'associent à Broadway Corporation pour stimuler l'innovation et le développement durable.",
+    "filterTitle": "Parcourir par Catégorie",
+    "learnMoreAbout": "En savoir plus sur",
+    "noPartnersFound": "Aucun partenaire trouvé pour cette catégorie",
+    "tryDifferentFilter": "Veuillez essayer un autre filtre",
+    "viewAllPartners": "Voir tous les partenaires",
+    "ctaTitle": "Intéressé à devenir partenaire?",
+    "ctaDescription": "Rejoignez notre réseau de partenaires et contribuez au développement durable et à l'innovation. Contactez-nous pour explorer les opportunités de collaboration.",
+    "contactButton": "Contactez-Nous",
+    "filters": {
+      "all": "Tous les Partenaires",
+      "education": "Éducation",
+      "agriculture": "Agriculture",
+      "healthcare": "Santé",
+      "technology": "Technologie",
+      "community": "Communauté"
+    },
+    "categories": {
+      "education": "Éducation",
+      "agriculture": "Agriculture",
+      "healthcare": "Santé",
+      "technology": "Technologie",
+      "community": "Communauté"
+    }
+  },
+  "testimonials": {
+    "title": "Ce Que Disent Nos Clients",
+    "subtitle": "Écoutez les organisations qui ont collaboré avec nous sur des projets transformateurs",
+    "viewMoreButton": "Lire Plus de Témoignages"
+  },
+  "errors": {
+    "general": {
+      "title": "Une Erreur Est Survenue",
+      "description": "Nous avons rencontré une erreur inattendue. Veuillez réessayer ou contacter le support si le problème persiste.",
+      "homeButton": "Retour à la Page d'Accueil",
+      "contactButton": "Contacter le Support"
+    },
+    "serverError": {
+      "title": "Erreur Serveur",
+      "description": "Nous rencontrons des difficultés techniques. Notre équipe a été notifiée et travaille sur une solution.",
+      "code": "500"
+    },
+    "forbidden": {
+      "title": "Accès Refusé",
+      "description": "Vous n'avez pas la permission d'accéder à cette ressource.",
+      "code": "403"
+    },
+    "missingTranslation": "Traduction manquante"
+  }
+} 
