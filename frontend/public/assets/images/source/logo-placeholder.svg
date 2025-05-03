@@ -1,0 +1,5 @@
+<svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="200" fill="#003366" />
+  <text x="200" y="90" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="#FFA500" text-anchor="middle">BROADWAY</text>
+  <text x="200" y="130" font-family="Arial, sans-serif" font-size="24" fill="#FFFFFF" text-anchor="middle">CORPORATION</text>
+</svg> 

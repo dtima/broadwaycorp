@@ -1,0 +1,18 @@
+<svg width="1920" height="800" viewBox="0 0 1920 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#002244" />
+      <stop offset="100%" stop-color="#003366" />
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M0 0h40v40H0z" fill="none" />
+      <path d="M0 0h10v10H0z" fill="#FFFFFF" fill-opacity="0.05" />
+    </pattern>
+  </defs>
+  <rect width="1920" height="800" fill="url(#heroGradient)" />
+  <rect width="1920" height="800" fill="url(#grid)" />
+  
+  <!-- Abstract wave shapes -->
+  <path d="M0,320 C320,290 480,450 800,460 C1120,470 1280,290 1600,300 L1600,800 L0,800 Z" fill="#FFA500" fill-opacity="0.1" />
+  <path d="M0,400 C320,380 480,500 800,510 C1120,520 1280,370 1600,380 L1600,800 L0,800 Z" fill="#FFFFFF" fill-opacity="0.08" />
+</svg> 
