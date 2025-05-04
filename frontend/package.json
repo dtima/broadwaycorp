@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:netlify": "pnpm build && cp netlify.toml dist && cp public/_redirects dist",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "node --experimental-vm-modules --no-warnings node_modules/jest/bin/jest.js",
