@@ -1,54 +1,154 @@
-# React + TypeScript + Vite
+# Broadway Corporation Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend codebase for the Broadway Corporation website, built with React, TypeScript, Vite, and TailwindCSS.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Modern React with functional components and hooks
+- Type safety with TypeScript
+- Fast development and builds with Vite
+- Utility-first styling with TailwindCSS
+- Responsive design for all device sizes
+- Dark mode support
+- Internationalization (i18n) support
+- Component-based architecture
+- Unit tests with Jest and React Testing Library
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- Node.js 18+ 
+- PNPM 8+
+
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
+
+```bash
+pnpm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+3. Start the development server:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+pnpm dev
 ```
+
+The development server will start at `http://localhost:3000`.
+
+## Building for Production
+
+To build the application for production:
+
+```bash
+pnpm build
+```
+
+To preview the production build:
+
+```bash
+pnpm preview
+```
+
+## Testing
+
+To run tests:
+
+```bash
+pnpm test
+```
+
+To watch tests:
+
+```bash
+pnpm test:watch
+```
+
+## Deployment to Netlify
+
+This project is configured for easy deployment to Netlify.
+
+### Option 1: Automatic Deployment via GitHub
+
+1. Push your code to a GitHub repository
+2. Log in to Netlify and click "New site from Git"
+3. Choose GitHub and select your repository
+4. Configure build settings:
+   - Build command: `pnpm build:netlify`
+   - Publish directory: `dist`
+5. Click "Deploy site"
+
+### Option 2: Manual Deployment
+
+To deploy manually using the Netlify CLI:
+
+1. Install the Netlify CLI:
+
+```bash
+npm install -g netlify-cli
+```
+
+2. Build your site:
+
+```bash
+pnpm build:netlify
+```
+
+3. Deploy to Netlify:
+
+```bash
+netlify deploy
+```
+
+For production deployment:
+
+```bash
+netlify deploy --prod
+```
+
+### Environment Variables
+
+The following environment variables should be set in your Netlify configuration:
+
+- `NODE_VERSION`: Set to `20`
+- `NPM_FLAGS`: Set to `--version`
+
+### Troubleshooting Netlify Deployment
+
+If your deployment shows a 404 page:
+
+1. Verify that `netlify.toml` is in your repository
+2. Check that the `_redirects` file is correctly copied to the `dist` folder
+3. Make sure your build command is set to `pnpm build:netlify`
+4. Check the Netlify deploy logs for any errors
+
+## Project Structure
+
+```
+frontend/
+├── public/              # Static assets
+├── src/
+│   ├── assets/          # Images, fonts, etc.
+│   ├── components/      # Reusable components
+│   │   ├── common/      # Shared components (Button, Input, etc.)
+│   │   └── layout/      # Layout components (Header, Footer, etc.)
+│   ├── contexts/        # React contexts
+│   ├── hooks/           # Custom React hooks
+│   ├── i18n/            # Internationalization
+│   ├── lib/             # Utility functions
+│   ├── pages/           # Page components
+│   ├── router/          # Routing configuration
+│   ├── services/        # API services
+│   ├── styles/          # Global styles and CSS variables
+│   ├── tests/           # Test setup
+│   ├── App.tsx          # Main App component
+│   └── main.tsx         # Entry point
+├── netlify.toml         # Netlify configuration
+└── package.json         # Dependencies and scripts
+```
+
+## License
+
+Copyright © 2023 Broadway Corporation. All rights reserved.
