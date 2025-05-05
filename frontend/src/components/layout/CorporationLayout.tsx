@@ -21,6 +21,7 @@ const CorporationLayout = ({ title, description, canonicalUrl }: CorporationLayo
         {title || <title>{t('corporation.pageTitle')} | Broadway Corporation</title>}
         {description || <meta name="description" content={t('corporation.metaDescription')} />}
         {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <html lang={language} />
       </Helmet>
       

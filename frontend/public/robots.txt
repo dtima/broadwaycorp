@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://broadwaycorp.netlify.app/sitemap.xml
+Sitemap: https://broadway-corp.netlify.app/sitemap.xml

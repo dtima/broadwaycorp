@@ -3,9 +3,9 @@
 # Build settings
 [build]
   # Directory to publish (the output of the build)
-  publish = "dist"
+  publish = "frontend/dist"
   # Build command
-  command = "pnpm build:netlify"
+  command = "cd frontend && pnpm build:netlify"
 
 # Redirects for SPA routing
 [[redirects]]
