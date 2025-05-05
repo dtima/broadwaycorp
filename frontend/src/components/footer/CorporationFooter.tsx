@@ -103,6 +103,15 @@ const CorporationFooter = () => {
                   </motion.span>
                 </motion.div>
               </li>
+              <li>
+                <motion.div whileHover="hover">
+                  <motion.span variants={linkVariants}>
+                    <Link to={`/${language}/corporation/initiatives`} className="text-white/80 transition-colors inline-flex items-center">
+                      <span className="mr-1">›</span> Initiatives
+                    </Link>
+                  </motion.span>
+                </motion.div>
+              </li>
             </ul>
           </motion.div>
 

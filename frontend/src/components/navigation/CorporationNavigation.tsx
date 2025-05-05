@@ -57,6 +57,7 @@ const CorporationNavigation = () => {
             <NavLink to={`/${language}/corporation/about`} label={t('navigation.about')} />
             <NavLink to={`/${language}/corporation/services`} label={t('corporation.services')} />
             <NavLink to={`/${language}/corporation/team`} label={t('navigation.aboutSubmenu.leadership')} />
+            <NavLink to={`/${language}/corporation/initiatives`} label="Initiatives" />
             <NavLink to={`/${language}/corporation/contact`} label={t('navigation.contact')} />
             
             <div className="flex items-center space-x-4">
@@ -149,6 +150,11 @@ const CorporationNavigation = () => {
                 <MobileNavLink 
                   to={`/${language}/corporation/team`} 
                   label={t('navigation.aboutSubmenu.leadership')}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                />
+                <MobileNavLink 
+                  to={`/${language}/corporation/initiatives`} 
+                  label="Initiatives"
                   onClick={() => setIsMobileMenuOpen(false)}
                 />
                 <MobileNavLink 

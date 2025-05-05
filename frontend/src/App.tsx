@@ -16,6 +16,13 @@ const CorporationHome = lazy(() => import('./pages/corporation/CorporationHome')
 const EnterpriseHome = lazy(() => import('./pages/enterprise/EnterpriseHome'));
 const FarmhouseHome = lazy(() => import('./pages/farmhouse/FarmhouseHome'));
 
+// Corporation Pages
+const CorporationAbout = lazy(() => import('./pages/corporation/CorporationAbout'));
+const CorporationCEOMessage = lazy(() => import('./pages/corporation/CorporationCEOMessage'));
+const CorporationTeam = lazy(() => import('./pages/corporation/CorporationTeam'));
+const CorporationServices = lazy(() => import('./pages/corporation/CorporationServices'));
+const CorporationInitiatives = lazy(() => import('./pages/corporation/CorporationInitiatives'));
+
 // Enterprise Pages
 const EnterpriseAbout = lazy(() => import('./pages/enterprise/EnterpriseAbout'));
 const EnterpriseServices = lazy(() => import('./pages/enterprise/EnterpriseServices'));
@@ -53,10 +60,12 @@ function App() {
         <Route path="/:lang/corporation" element={<CorporationLayout />}>
           <Route index element={<CorporationHome />} />
 
-          {/* Add Corporation specific routes here */}
-          <Route path="about" element={<AboutPage division="corporation" />} />
-          <Route path="services" element={<div>Corporation Services Page</div>} />
-          <Route path="team" element={<div>Corporation Team Page</div>} />
+          {/* Corporation specific routes */}
+          <Route path="about" element={<CorporationAbout />} />
+          <Route path="about/ceo-message" element={<CorporationCEOMessage />} />
+          <Route path="team" element={<CorporationTeam />} />
+          <Route path="services" element={<CorporationServices />} />
+          <Route path="initiatives" element={<CorporationInitiatives />} />
           <Route path="contact" element={<ContactPage division="corporation" />} />
         </Route>
 

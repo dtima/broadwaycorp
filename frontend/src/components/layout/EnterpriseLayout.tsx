@@ -19,6 +19,7 @@ const EnterpriseLayout = ({ title, description, canonicalUrl }: EnterpriseLayout
         {title && <title>{title}</title>}
         {description && <meta name="description" content={description} />}
         {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <html lang={language} />
       </Helmet>
       

@@ -1,6 +1,9 @@
 /* Import font declarations */
 @import './styles/fonts.css';
 
+/* Import custom utilities */
+@import './styles/utilities.css';
+
 /* Import Tailwind CSS base, components, and utilities */
 @tailwind base;
 @tailwind components;
