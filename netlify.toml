@@ -5,7 +5,7 @@
   # Directory to publish (the output of the build)
   publish = "frontend/dist"
   # Build command
-  command = "cd frontend && pnpm build:netlify"
+  command = "cd frontend && pnpm install && pnpm build:netlify"
 
 # Redirects for SPA routing
 [[redirects]]
@@ -42,8 +42,6 @@
 # Environment variables
 [context.production.environment]
   NODE_VERSION = "20"
-  NPM_FLAGS = "--version"
   
 [context.deploy-preview.environment]
-  NODE_VERSION = "20"
-  NPM_FLAGS = "--version" 
+  NODE_VERSION = "20" 
