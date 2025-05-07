@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from '../../hooks/useLanguage';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { Section, Container, ResponsiveGrid, ResponsiveContainer } from '../../components/layout';
 import { Button, Image } from '../../components/common';
@@ -11,6 +11,7 @@ import { useEffect } from 'react';
 const CorporationAbout = () => {
   const { t } = useTranslation();
   const { language } = useLanguage();
+  const shouldReduceMotion = useReducedMotion();
 
   // Scroll to top on component mount
   useEffect(() => {
@@ -54,23 +55,23 @@ const CorporationAbout = () => {
           <div className="max-w-4xl mx-auto text-center">
             <motion.h1 
               className="text-4xl md:text-5xl font-bold mb-4"
-              initial={{ opacity: 0, y: 20 }}
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: shouldReduceMotion ? 0 : 0.5 }}
             >
               {t('about.title')}
             </motion.h1>
             <motion.div 
               className="w-24 h-1 bg-brand-orange mx-auto mb-6"
-              initial={{ opacity: 0, width: 0 }}
+              initial={shouldReduceMotion ? false : { opacity: 0, width: 0 }}
               animate={{ opacity: 1, width: 96 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: shouldReduceMotion ? 0 : 0.5, delay: shouldReduceMotion ? 0 : 0.2 }}
             />
             <motion.p 
               className="text-xl text-white/90 dark:text-white/80 mb-0"
-              initial={{ opacity: 0 }}
+              initial={shouldReduceMotion ? false : { opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              transition={{ duration: shouldReduceMotion ? 0 : 0.5, delay: shouldReduceMotion ? 0 : 0.3 }}
             >
               {t('about.subtitle')}
             </motion.p>
@@ -94,12 +95,12 @@ const CorporationAbout = () => {
 
       {/* About Broadway Section */}
       <Section background="white" padding="xl">
-        <ResponsiveContainer maxWidth="screen-lg" className="max-w-4xl mx-auto">
+        <ResponsiveContainer maxWidth="screen-lg" className="max-w-4xl">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.5 }}
           >
             <h2 className="text-3xl font-bold text-brand-navy dark:text-brand-orange mb-6">{t('about.aboutBroadwayTitle')}</h2>
             
@@ -120,12 +121,12 @@ const CorporationAbout = () => {
 
       {/* Mission & Values Section */}
       <Section background="light" padding="lg">
-        <ResponsiveContainer maxWidth="screen-lg" className="max-w-4xl mx-auto">
+        <ResponsiveContainer maxWidth="screen-lg" className="max-w-4xl">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.5 }}
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-brand-navy dark:text-brand-orange mb-4">
@@ -137,10 +138,10 @@ const CorporationAbout = () => {
             {/* Mission */}
             <motion.div 
               className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-8 border border-gray-100 dark:border-gray-700"
-              initial={{ opacity: 0, x: -30 }}
+              initial={shouldReduceMotion ? false : { opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: shouldReduceMotion ? 0 : 0.5 }}
             >
               <h3 className="text-2xl font-bold text-brand-navy dark:text-brand-orange mb-4">
                 {t('about.missionTitle')}
@@ -154,10 +155,10 @@ const CorporationAbout = () => {
             {/* Values */}
             <motion.div 
               className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-8 border border-gray-100 dark:border-gray-700"
-              initial={{ opacity: 0, x: 30 }}
+              initial={shouldReduceMotion ? false : { opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: shouldReduceMotion ? 0 : 0.5, delay: shouldReduceMotion ? 0 : 0.2 }}
             >
               <h3 className="text-2xl font-bold text-brand-navy dark:text-brand-orange mb-4">
                 {t('about.valuesTitle')}
@@ -199,10 +200,10 @@ const CorporationAbout = () => {
       <section className="bg-gradient-to-br from-brand-navy to-brand-navy-dark dark:from-gray-900 dark:to-gray-800 py-16 text-white">
         <ResponsiveContainer maxWidth="screen-lg" className="text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.5 }}
           >
             <h2 className="text-3xl font-bold mb-4">{t('about.ctaTitle')}</h2>
             <p className="text-xl max-w-2xl mx-auto mb-8 text-white/90">{t('about.ctaDescription')}</p>

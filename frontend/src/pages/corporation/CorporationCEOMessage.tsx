@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from '../../hooks/useLanguage';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { Section, Container, Grid } from '../../components/layout';
 import { Button, Image } from '../../components/common';
@@ -11,6 +11,7 @@ import { useEffect } from 'react';
 const CorporationCEOMessage = () => {
   const { t } = useTranslation();
   const { language } = useLanguage();
+  const shouldReduceMotion = useReducedMotion();
 
   // Scroll to top on component mount
   useEffect(() => {
@@ -55,23 +56,23 @@ const CorporationCEOMessage = () => {
           <div className="max-w-4xl mx-auto text-center">
             <motion.h1 
               className="text-4xl md:text-5xl font-bold mb-4"
-              initial={{ opacity: 0, y: 20 }}
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: shouldReduceMotion ? 0 : 0.5 }}
             >
               {t('navigation.aboutSubmenu.ceoMessage')}
             </motion.h1>
             <motion.div 
               className="w-24 h-1 bg-brand-orange mx-auto mb-6"
-              initial={{ opacity: 0, width: 0 }}
+              initial={shouldReduceMotion ? false : { opacity: 0, width: 0 }}
               animate={{ opacity: 1, width: 96 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: shouldReduceMotion ? 0 : 0.5, delay: shouldReduceMotion ? 0 : 0.2 }}
             />
             <motion.p 
               className="text-xl text-white/90 dark:text-white/80 mb-0"
-              initial={{ opacity: 0 }}
+              initial={shouldReduceMotion ? false : { opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              transition={{ duration: shouldReduceMotion ? 0 : 0.5, delay: shouldReduceMotion ? 0 : 0.3 }}
             >
               {t('ceoMessage.heroTagline')}
             </motion.p>
@@ -99,9 +100,9 @@ const CorporationCEOMessage = () => {
           <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
             <motion.div
               className="w-full md:w-1/3 flex-shrink-0"
-              initial={{ opacity: 0, x: -30 }}
+              initial={shouldReduceMotion ? false : { opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: shouldReduceMotion ? 0 : 0.5 }}
             >
               <div className="relative overflow-hidden rounded-xl shadow-md">
                 <Image 
@@ -119,9 +120,9 @@ const CorporationCEOMessage = () => {
             
             <motion.div
               className="w-full md:w-2/3"
-              initial={{ opacity: 0, x: 30 }}
+              initial={shouldReduceMotion ? false : { opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: shouldReduceMotion ? 0 : 0.5, delay: shouldReduceMotion ? 0 : 0.2 }}
             >
               <div className="bg-brand-navy/5 dark:bg-brand-navy/10 rounded-xl p-6 mb-8 relative">
                 <svg className="absolute top-4 left-4 w-8 h-8 text-brand-orange opacity-30" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -180,10 +181,10 @@ const CorporationCEOMessage = () => {
       <Section background="light" padding="lg">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.5 }}
           >
             <h2 className="text-3xl font-bold text-brand-navy dark:text-brand-orange mb-4">
               {t('ceoMessage.ctaTitle')}
