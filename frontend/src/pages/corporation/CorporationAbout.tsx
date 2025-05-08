@@ -7,6 +7,9 @@ import { Section, Container, ResponsiveGrid, ResponsiveContainer } from '../../c
 import { Button, Image } from '../../components/common';
 import { Breadcrumb, SubNavigation } from '../../components/navigation';
 import { useEffect } from 'react';
+// Import SEO Schema components
+import WebPageSchema from '../../components/seo/WebPageSchema';
+import BreadcrumbSchema from '../../components/seo/BreadcrumbSchema';
 
 const CorporationAbout = () => {
   const { t } = useTranslation();
@@ -23,6 +26,13 @@ const CorporationAbout = () => {
     { label: t('navigation.home'), path: `/${language}` },
     { label: t('navigation.corporation'), path: `/${language}/corporation` },
     { label: t('navigation.about'), current: true }
+  ];
+
+  // Setup schema breadcrumb items
+  const schemaBreadcrumbs = [
+    { name: t('navigation.home'), url: 'https://broadway-corp.com' },
+    { name: t('navigation.corporation'), url: 'https://broadway-corp.com/corporation' },
+    { name: t('navigation.about'), url: 'https://broadway-corp.com/corporation/about' }
   ];
 
   // Setup sub-navigation items
@@ -48,6 +58,16 @@ const CorporationAbout = () => {
         <title>{t('navigation.about')} - {t('corporation.title')}</title>
         <meta name="description" content={t('corporation.metaDescription')} />
       </Helmet>
+
+      {/* SEO Schema Markup */}
+      <WebPageSchema
+        title={`${t('navigation.about')} - ${t('corporation.title')}`}
+        description={t('corporation.metaDescription')}
+        url="https://broadway-corp.com/corporation/about"
+        imageUrl="https://broadway-corp.com/assets/images/about-hero.jpg"
+      />
+      
+      <BreadcrumbSchema items={schemaBreadcrumbs} />
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-brand-navy to-brand-navy-dark dark:from-gray-900 dark:to-gray-800 py-16 md:py-20 text-white">

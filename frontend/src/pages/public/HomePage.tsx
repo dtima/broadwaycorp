@@ -12,6 +12,10 @@ import DivisionCard from '../../components/home/DivisionCard';
 import IconCard from '../../components/common/IconCard';
 import AnimateOnScroll from '../../components/animation/AnimateOnScroll';
 
+// Import SEO components
+import OrganizationSchema from '../../components/seo/OrganizationSchema';
+import WebPageSchema from '../../components/seo/WebPageSchema';
+
 // Import animation utilities
 import { useAnimatedCounter } from '../../lib/animations/hooks';
 import { fadeInUp, staggerContainer, fadeIn } from '../../lib/animations/variants';
@@ -148,8 +152,26 @@ const HomePage = () => {
   return (
     <Layout 
       title={`Broadway Corporation - ${t('hero.subtitle')}`}
-      description={t('hero.subtitle')}
+      description={t('home.metaDescription')}
     >
+      {/* SEO Schema Markup */}
+      <OrganizationSchema 
+        name="Broadway Corporation"
+        url="https://broadway-corp.com"
+        logo="https://broadway-corp.com/logo.png"
+        sameAs={[
+          "https://www.linkedin.com/company/broadway-corporation",
+          "https://twitter.com/broadwaycorp"
+        ]}
+      />
+      
+      <WebPageSchema
+        title={`Broadway Corporation - ${t('hero.subtitle')}`}
+        description={t('home.metaDescription')}
+        url="https://broadway-corp.com"
+        imageUrl="https://broadway-corp.com/assets/images/hero-background.jpg"
+      />
+      
       {/* Hero Section */}
       <HeroSection
         title={t('hero.title')}

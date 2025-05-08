@@ -19,8 +19,8 @@ const CorporationInitiatives = () => {
   return (
     <>
       <Helmet>
-        <title>Future Initiatives - {t('corporation.title')}</title>
-        <meta name="description" content="Explore Broadway Corporation's innovative future initiatives in agro-tourism, bio-research, and sustainable development." />
+        <title>{t('initiatives.title')} - {t('corporation.title')}</title>
+        <meta name="description" content={t('initiatives.metaDescription')} />
       </Helmet>
 
       {/* Hero Section */}
@@ -33,7 +33,7 @@ const CorporationInitiatives = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              Future Growth Initiatives
+              {t('initiatives.heroTitle')}
             </motion.h1>
             <motion.div 
               className="w-24 h-1 bg-brand-orange mx-auto mb-6"
@@ -47,7 +47,7 @@ const CorporationInitiatives = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              Pioneering innovative approaches to sustainable development
+              {t('initiatives.heroSubtitle')}
             </motion.p>
           </div>
         </Container>
@@ -65,7 +65,7 @@ const CorporationInitiatives = () => {
               {t('navigation.corporation')}
             </Link>
             <span className="mx-2 text-gray-400 dark:text-gray-500">/</span>
-            <span className="text-gray-700 dark:text-gray-300">Initiatives</span>
+            <span className="text-gray-700 dark:text-gray-300">{t('initiatives.title')}</span>
           </nav>
         </Container>
       </div>
@@ -80,14 +80,14 @@ const CorporationInitiatives = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl font-bold text-brand-navy dark:text-brand-orange mb-6">Our Vision for the Future</h2>
+              <h2 className="text-3xl font-bold text-brand-navy dark:text-brand-orange mb-6">{t('initiatives.visionTitle')}</h2>
               
               <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-                At Broadway Corporation, we're continuously exploring innovative approaches to expand our impact and create sustainable solutions for the challenges of tomorrow. Our future initiatives represent our commitment to pushing boundaries and developing new models for growth and development.
+                {t('initiatives.visionText1')}
               </p>
               
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                These forward-looking projects build upon our established foundations in enterprise and agriculture, while venturing into exciting new territories that combine economic opportunity, environmental stewardship, and community empowerment.
+                {t('initiatives.visionText2')}
               </p>
             </motion.div>
             
@@ -127,23 +127,23 @@ const CorporationInitiatives = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-brand-navy dark:text-brand-orange mb-4">
-              Key Future Initiatives
+              {t('initiatives.keyInitiativesTitle')}
             </h2>
             <p className="text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-              Our strategic initiatives are designed to create innovative solutions that address complex challenges while opening new opportunities for sustainable growth.
+              {t('initiatives.keyInitiativesDescription')}
             </p>
           </motion.div>
 
           {/* Agro-Tourism Initiative */}
           <div className="mb-16">
             <InitiativeCard
-              title="Agro-Tourism Development"
-              description="Creating immersive agricultural experiences that showcase sustainable farming while generating additional revenue streams."
+              title={t('initiatives.agroTourism.title')}
+              description={t('initiatives.agroTourism.description')}
               features={[
-                "Visitor-friendly demonstration farms that highlight innovative agricultural practices",
-                "Interactive educational programs for visitors of all ages",
-                "Farm-to-table culinary experiences featuring locally grown produce",
-                "Accommodation options that blend comfort with authentic rural experiences"
+                t('initiatives.agroTourism.feature1'),
+                t('initiatives.agroTourism.feature2'),
+                t('initiatives.agroTourism.feature3'),
+                t('initiatives.agroTourism.feature4')
               ]}
               imageSrc="/assets/images/agro-tourism.jpg"
               imageAlt="Agro-Tourism Experience"
@@ -156,13 +156,13 @@ const CorporationInitiatives = () => {
           {/* Bio-Research Initiative */}
           <div className="mb-16">
             <InitiativeCard
-              title="Bio-Research Innovation Hub"
-              description="Investing in cutting-edge biological research to develop solutions for agricultural challenges and explore new sustainable technologies."
+              title={t('initiatives.bioResearch.title')}
+              description={t('initiatives.bioResearch.description')}
               features={[
-                "Research facilities focused on crop resilience and disease resistance",
-                "Partnerships with academic institutions to foster knowledge exchange",
-                "Development of biological pest control methods to reduce chemical usage",
-                "Exploration of native plant species with potential medicinal or nutritional value"
+                t('initiatives.bioResearch.feature1'),
+                t('initiatives.bioResearch.feature2'),
+                t('initiatives.bioResearch.feature3'),
+                t('initiatives.bioResearch.feature4')
               ]}
               imageSrc="/assets/images/bio-research.jpg"
               imageAlt="Bio-Research Innovation"
@@ -175,13 +175,13 @@ const CorporationInitiatives = () => {
           {/* Renewable Energy Initiative */}
           <div className="mb-16">
             <InitiativeCard
-              title="Integrated Renewable Energy Systems"
-              description="Developing and implementing renewable energy solutions that power our operations while serving as demonstration models for communities."
+              title={t('initiatives.renewableEnergy.title')}
+              description={t('initiatives.renewableEnergy.description')}
               features={[
-                "Solar installations optimized for agricultural settings",
-                "Biogas production from agricultural waste",
-                "Energy-efficient building designs that minimize environmental impact",
-                "Training programs on renewable energy system management and maintenance"
+                t('initiatives.renewableEnergy.feature1'),
+                t('initiatives.renewableEnergy.feature2'),
+                t('initiatives.renewableEnergy.feature3'),
+                t('initiatives.renewableEnergy.feature4')
               ]}
               imageSrc="/assets/images/renewable-energy.jpg"
               imageAlt="Renewable Energy Solutions"
@@ -194,13 +194,13 @@ const CorporationInitiatives = () => {
           {/* Digital Agriculture Initiative */}
           <div>
             <InitiativeCard
-              title="Digital Agriculture Platform"
-              description="Creating technology solutions that help farmers monitor crops, optimize resource usage, and access markets more effectively."
+              title={t('initiatives.digitalAgriculture.title')}
+              description={t('initiatives.digitalAgriculture.description')}
               features={[
-                "Mobile applications for agricultural information and market access",
-                "IoT sensors for soil moisture, temperature, and crop health monitoring",
-                "Data analysis tools to help farmers make informed decisions",
-                "Digital marketplace connecting farmers directly with buyers"
+                t('initiatives.digitalAgriculture.feature1'),
+                t('initiatives.digitalAgriculture.feature2'),
+                t('initiatives.digitalAgriculture.feature3'),
+                t('initiatives.digitalAgriculture.feature4')
               ]}
               imageSrc="/assets/images/digital-agriculture.jpg"
               imageAlt="Digital Agriculture Solutions"

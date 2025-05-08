@@ -98,6 +98,7 @@ const LandingPortal = () => {
               <button
                 className="text-sm px-3 py-1 rounded border border-white/30 hover:bg-white/10 transition-colors"
                 onClick={toggleLanguage}
+                aria-label={language === 'en' ? "Switch to French" : "Switch to English"}
               >
                 {t('language.toggle')}
               </button>
@@ -131,6 +132,7 @@ const LandingPortal = () => {
               <button
                 className="text-sm px-3 py-1 rounded border border-white/30 hover:bg-white/10 transition-colors w-fit"
                 onClick={toggleLanguage}
+                aria-label={language === 'en' ? "Switch to French" : "Switch to English"}
               >
                 {t('language.toggle')}
               </button>

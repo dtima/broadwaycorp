@@ -69,19 +69,21 @@ const ContactPage: React.FC<ContactPageProps> = ({ division }) => {
     {
       id: 'us',
       country: t('contact.locations.us.country'),
-      address: t('contact.locations.us.address'),
-      city: t('contact.locations.us.city'),
-      email: 'info@broadwaycorp.com',
-      phone: '+1 (555) 123-4567',
+      address: '1434 Hildreth Ave',
+      city: 'Columbus, OH 43203',
+      country_full: 'United States',
+      email: 'enquiries@broadway-corp.com',
+      phone: '+1 (614) 556 1333',
       type: t('contact.locations.us.type')
     },
     {
       id: 'cameroon',
       country: t('contact.locations.cameroon.country'),
-      address: t('contact.locations.cameroon.address'),
-      city: t('contact.locations.cameroon.city'),
-      email: 'cameroon@broadwaycorp.com',
-      phone: '+237 (123) 456-789',
+      address: 'Batibo Avenue, Damas',
+      city: 'Yaoundé',
+      country_full: 'Cameroon',
+      email: 'cameroon@broadway-corp.com',
+      phone: '+237 6 77 18 14 87',
       type: t('contact.locations.cameroon.type')
     }
   ];
@@ -127,16 +129,10 @@ const ContactPage: React.FC<ContactPageProps> = ({ division }) => {
         {/* Introduction */}
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-brand-navy mb-4">
-            {division 
-              ? t(`${division}.contact.title`, { fallback: t('contact.introTitle') }) 
-              : t('contact.introTitle')
-            }
+            {t('contact.introTitle')}
           </h2>
           <p className="text-lg text-brand-gray-dark">
-            {division 
-              ? t(`${division}.contact.intro`, { fallback: t('contact.introText') }) 
-              : t('contact.introText')
-            }
+            {t('contact.introText')}
           </p>
         </div>
         
@@ -245,6 +241,7 @@ const ContactPage: React.FC<ContactPageProps> = ({ division }) => {
                   <p className="text-brand-gray-dark">
                     {location.address}<br />
                     {location.city}
+                    {location.country_full && <><br />{location.country_full}</>}
                   </p>
                   
                   <div className="flex items-center">

@@ -157,6 +157,25 @@
     "approach3": "Orientée vers la durabilité: Créer un impact durable grâce au transfert de connaissances et au renforcement des capacités",
     "servicesTitle": "Nos Services",
     "servicesSubtitle": "Nous fournissons des solutions complètes dans quatre domaines clés pour soutenir l'avancement scientifique et le développement éducatif au Cameroun.",
+    "scientificTitle": "Équipement Scientifique",
+    "scientificDescription": "Fourniture d'équipements scientifiques et de fournitures médicales de qualité aux institutions.",
+    "educationTitle": "Éducation & Tutorat",
+    "educationDescription": "Soutien à l'éducation STEM par des services de tutorat et des programmes académiques.",
+    "communityTitle": "Développement Communautaire",
+    "communityDescription": "Soutien aux communautés locales par des initiatives de formation et de développement.",
+    "laboratoryServices": {
+      "title": "Excellence en Construction de Laboratoires",
+      "description": "Broadway Enterprise se spécialise dans la conception et la construction d'installations de laboratoire de pointe pour les institutions éducatives à travers le Cameroun. Notre équipe d'experts gère tout, de la conception à l'achèvement.",
+      "workstations": "Postes de Travail de Laboratoire Personnalisés",
+      "equipment": "Installation d'Équipements Scientifiques", 
+      "fixtures": "Éviers et Accessoires de Laboratoire",
+      "cta": {
+        "title": "Besoin d'une Solution de Laboratoire Personnalisée?",
+        "description": "Nous concevons et construisons des laboratoires adaptés à vos besoins spécifiques d'éducation et de recherche.",
+        "button": "Explorez Nos Services"
+      }
+    },
+    "schools": "Écoles Équipées",
     "services": {
       "scientific": {
         "title": "Équipement Scientifique",
@@ -404,9 +423,9 @@
       "description": "Dédiée aux pratiques agricoles modernes, à l'élevage et à l'agriculture durable.",
       "buttonText": "Visiter le Site Ferme"
     },
-    "overview": "Broadway Corporation opère à travers trois divisions spécialisées pour offrir des solutions complètes de développement durable.",
+    "overview": "Broadway Corporation opère à travers trois divisions spécialisées pour fournir des solutions complètes de développement durable.",
     "corporateHeadquarters": "Siège Social",
-    "corporateLocation": "Boston, États-Unis",
+    "corporateLocation": "Columbus, OH, USA",
     "operationalHub": "Centre Opérationnel",
     "operationalLocation": "Yaoundé, Cameroun"
   },
@@ -554,8 +573,8 @@
     "locations": {
       "us": {
         "country": "États-Unis",
-        "address": "123 Innovation Drive, Suite 200",
-        "city": "Boston, MA 02110",
+        "address": "1434 Hildreth Ave",
+        "city": "Columbus, OH 43203",
         "type": "Siège Stratégique"
       },
       "cameroon": {
@@ -647,5 +666,77 @@
       "code": "403"
     },
     "missingTranslation": "Traduction manquante"
+  },
+  "initiatives": {
+    "title": "Initiatives Futures",
+    "metaDescription": "Explorez les initiatives de croissance future de Broadway Corporation axées sur l'innovation et le développement durable dans plusieurs secteurs.",
+    "heroTitle": "Initiatives de Croissance Future",
+    "heroSubtitle": "Promouvoir des approches innovantes pour le développement durable",
+    "visionTitle": "Notre Vision pour l'Avenir",
+    "visionText1": "À Broadway Corporation, nous explorons continuellement des approches innovantes pour étendre notre impact et créer des solutions durables pour les défis de demain. Nos initiatives futures représentent notre engagement à repousser les limites et à développer de nouveaux modèles de croissance et de développement.",
+    "visionText2": "Ces projets d'avenir s'appuient sur nos fondations établies dans l'entreprise et l'agriculture, tout en s'aventurant dans de nouveaux territoires passionnants qui combinent opportunité économique, gestion environnementale et autonomisation communautaire.",
+    "keyInitiativesTitle": "Initiatives Clés pour l'Avenir",
+    "keyInitiativesDescription": "Nos initiatives stratégiques sont conçues pour créer des solutions innovantes qui répondent à des défis complexes tout en ouvrant de nouvelles opportunités pour une croissance durable.",
+    "agroTourism": {
+      "title": "Développement de l'Agro-Tourisme",
+      "description": "Créer des expériences agricoles immersives qui mettent en valeur l'agriculture durable tout en générant des sources de revenus supplémentaires.",
+      "feature1": "Fermes de démonstration accueillantes qui mettent en valeur des pratiques agricoles innovantes",
+      "feature2": "Programmes éducatifs interactifs pour visiteurs de tous âges",
+      "feature3": "Expériences culinaires de la ferme à la table mettant en vedette des produits cultivés localement",
+      "feature4": "Options d'hébergement qui mêlent confort et expériences rurales authentiques"
+    },
+    "bioResearch": {
+      "title": "Centre d'Innovation en Bio-Recherche",
+      "description": "Investir dans la recherche biologique de pointe pour développer des solutions aux défis agricoles et explorer de nouvelles technologies durables.",
+      "feature1": "Installations de recherche axées sur la résilience des cultures et la résistance aux maladies",
+      "feature2": "Partenariats avec des institutions académiques pour favoriser l'échange de connaissances",
+      "feature3": "Développement de méthodes biologiques de lutte contre les parasites pour réduire l'utilisation de produits chimiques",
+      "feature4": "Exploration d'espèces végétales indigènes à potentiel médicinal ou nutritionnel"
+    },
+    "renewableEnergy": {
+      "title": "Systèmes Intégrés d'Énergie Renouvelable",
+      "description": "Développer et mettre en œuvre des solutions d'énergie renouvelable qui alimentent nos opérations tout en servant de modèles de démonstration pour les communautés.",
+      "feature1": "Installations solaires optimisées pour les environnements agricoles",
+      "feature2": "Production de biogaz à partir de déchets agricoles",
+      "feature3": "Conceptions de bâtiments économes en énergie qui minimisent l'impact environnemental",
+      "feature4": "Programmes de formation sur la gestion et l'entretien des systèmes d'énergie renouvelable"
+    },
+    "digitalAgriculture": {
+      "title": "Plateforme d'Agriculture Numérique",
+      "description": "Créer des solutions technologiques qui aident les agriculteurs à surveiller les cultures, optimiser l'utilisation des ressources et accéder plus efficacement aux marchés.",
+      "feature1": "Applications mobiles pour l'information agricole et l'accès au marché",
+      "feature2": "Réseaux de capteurs pour la surveillance environnementale et l'agriculture de précision",
+      "feature3": "Outils d'analyse de données pour améliorer les décisions agricoles",
+      "feature4": "Marché numérique connectant directement les agriculteurs aux acheteurs"
+    },
+    "timeline": {
+      "title": "Feuille de Route de Mise en Œuvre",
+      "description": "Notre feuille de route stratégique décrit l'approche progressive pour donner vie à ces initiatives innovantes.",
+      "phase1": {
+        "title": "Recherche & Planification",
+        "description": "Réalisation d'études de faisabilité, d'études de marché et élaboration de plans de mise en œuvre détaillés pour nos initiatives clés.",
+        "timeframe": "2023-2024"
+      },
+      "phase2": {
+        "title": "Programmes Pilotes",
+        "description": "Lancement de programmes pilotes à petite échelle pour tester les concepts, recueillir des commentaires et affiner nos approches.",
+        "timeframe": "2024-2025"
+      },
+      "phase3": {
+        "title": "Développement d'Infrastructure",
+        "description": "Construction de l'infrastructure physique et des systèmes technologiques nécessaires pour soutenir nos initiatives.",
+        "timeframe": "2025-2026"
+      },
+      "phase4": {
+        "title": "Mise en Œuvre Complète & Intégration",
+        "description": "Assurer que les initiatives fonctionnent harmonieusement ensemble et mesurer leur impact économique, social et environnemental.",
+        "timeframe": "2026-2027"
+      }
+    },
+    "getInvolved": {
+      "title": "Impliquez-Vous",
+      "description": "Nous accueillons les partenariats et collaborations qui peuvent aider à donner vie à ces initiatives. Contactez-nous pour en savoir plus et explorer les opportunités de participation.",
+      "contactButton": "Contactez-Nous"
+    }
   }
 } 

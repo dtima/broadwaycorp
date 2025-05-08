@@ -4,6 +4,11 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 
+// Import lab images
+import lab1Image from '../../assets/images/Laboratoires/lab1.jpg';
+import lab2Image from '../../assets/images/Laboratoires/lab2.jpg';
+import lab3Image from '../../assets/images/Laboratoires/lab3.jpg';
+
 const EnterpriseHome = () => {
   const { t } = useTranslation();
   const { language } = useLanguage();
@@ -215,6 +220,122 @@ const EnterpriseHome = () => {
               </div>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Laboratory Construction Services Section */}
+      <section className="py-16 bg-white">
+        <div className="container-custom">
+          <motion.div 
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-3xl font-bold text-brand-navy mb-4">{t('enterprise.laboratoryServices.title')}</h2>
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+              {t('enterprise.laboratoryServices.description')}
+            </p>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <motion.div
+              className="rounded-lg overflow-hidden shadow-md h-64 relative"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1, duration: 0.5 }}
+              whileHover={{ scale: 1.03 }}
+            >
+              <img 
+                src={lab1Image} 
+                alt="Laboratory Workstations with Blue Base"
+                className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = 'https://placehold.co/600x400/004080/ffffff?text=Laboratory+Workstations';
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                <div className="p-4 text-white">
+                  <h3 className="font-bold text-lg">{t('enterprise.laboratoryServices.workstations')}</h3>
+                </div>
+              </div>
+            </motion.div>
+            
+            <motion.div
+              className="rounded-lg overflow-hidden shadow-md h-64 relative"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              whileHover={{ scale: 1.03 }}
+            >
+              <img 
+                src={lab2Image} 
+                alt="Fully Equipped Science Laboratory"
+                className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = 'https://placehold.co/600x400/004080/ffffff?text=Laboratory+Equipment';
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                <div className="p-4 text-white">
+                  <h3 className="font-bold text-lg">{t('enterprise.laboratoryServices.equipment')}</h3>
+                </div>
+              </div>
+            </motion.div>
+            
+            <motion.div
+              className="rounded-lg overflow-hidden shadow-md h-64 relative"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+              whileHover={{ scale: 1.03 }}
+            >
+              <img 
+                src={lab3Image} 
+                alt="Laboratory Sink Installation with Educational Materials"
+                className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = 'https://placehold.co/600x400/004080/ffffff?text=Laboratory+Sinks';
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                <div className="p-4 text-white">
+                  <h3 className="font-bold text-lg">{t('enterprise.laboratoryServices.fixtures')}</h3>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+          
+          <motion.div
+            className="bg-blue-50 p-8 rounded-lg border border-blue-100 shadow-sm"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+          >
+            <div className="flex flex-col md:flex-row md:items-center justify-between">
+              <div className="mb-4 md:mb-0 md:mr-8">
+                <h3 className="text-xl font-bold text-brand-navy mb-2">{t('enterprise.laboratoryServices.cta.title')}</h3>
+                <p className="text-gray-700">{t('enterprise.laboratoryServices.cta.description')}</p>
+              </div>
+              <Link 
+                to={`/${language}/enterprise/services`} 
+                className="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors whitespace-nowrap"
+              >
+                {t('enterprise.laboratoryServices.cta.button')}
+                <svg className="w-5 h-5 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
 

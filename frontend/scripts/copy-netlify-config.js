@@ -15,6 +15,12 @@ async function copyNetlifyConfig() {
       join(distDir, '_redirects')
     );
     
+    // Copy sitemap.xml file
+    await copyFile(
+      join(publicDir, 'sitemap.xml'),
+      join(distDir, 'sitemap.xml')
+    );
+    
     console.log('✅ Successfully copied Netlify configuration files to dist');
   } catch (error) {
     console.error('❌ Error copying Netlify configuration files:', error);

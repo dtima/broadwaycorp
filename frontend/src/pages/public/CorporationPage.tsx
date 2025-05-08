@@ -3,6 +3,7 @@ import Layout from '../../components/layout/Layout';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../hooks/useLanguage';
+import Button from '../../components/common/Button';
 
 const CorporationPage = () => {
   const { t } = useTranslation();
@@ -26,6 +27,19 @@ const CorporationPage = () => {
             <p className="text-white/90 text-center max-w-2xl text-lg">
               {t('corporation.heroTagline')}
             </p>
+            <div className="mt-6 flex flex-wrap gap-4 justify-center">
+              <Link to={`/${language}/corporation/about`} className="inline-block px-6 py-3 bg-brand-orange text-white rounded hover:bg-opacity-90 transition-all font-medium">
+                {t('common.learnMore')}
+              </Link>
+              <Button
+                href={`/${language}/contact`} 
+                variant="outline"
+                size="lg"
+                className="border-white text-white hover:bg-white hover:text-brand-navy"
+              >
+                {t('contact.contactButton')}
+              </Button>
+            </div>
           </div>
         </div>
       </div>
@@ -130,36 +144,30 @@ const CorporationPage = () => {
           </div>
 
           {/* Operational Model */}
-          <div className="mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-brand-navy mb-6">{t('corporation.modelTitle')}</h2>
-            <div className="space-y-6">
-              <div className="bg-brand-gray-light p-6 rounded-lg">
-                <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
-                  <div className="flex-shrink-0 bg-brand-navy w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl font-bold">1</div>
-                  <div>
-                    <h3 className="text-xl font-bold text-brand-navy mb-2">{t('corporation.modelStep1Title')}</h3>
-                    <p className="text-brand-gray-dark">{t('corporation.modelStep1Text')}</p>
-                  </div>
+          <div className="mb-16">
+            <h2 className="text-2xl md:text-3xl font-bold text-brand-navy mb-8">{t('corporation.modelTitle')}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <div className="flex flex-col items-center text-center">
+                  <div className="flex-shrink-0 bg-brand-navy w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-6">1</div>
+                  <h3 className="text-xl font-bold text-brand-navy mb-4">{t('corporation.modelStep1Title')}</h3>
+                  <p className="text-brand-gray-dark">{t('corporation.modelStep1Text')}</p>
                 </div>
               </div>
               
-              <div className="bg-brand-gray-light p-6 rounded-lg">
-                <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
-                  <div className="flex-shrink-0 bg-brand-navy w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl font-bold">2</div>
-                  <div>
-                    <h3 className="text-xl font-bold text-brand-navy mb-2">{t('corporation.modelStep2Title')}</h3>
-                    <p className="text-brand-gray-dark">{t('corporation.modelStep2Text')}</p>
-                  </div>
+              <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <div className="flex flex-col items-center text-center">
+                  <div className="flex-shrink-0 bg-brand-navy w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-6">2</div>
+                  <h3 className="text-xl font-bold text-brand-navy mb-4">{t('corporation.modelStep2Title')}</h3>
+                  <p className="text-brand-gray-dark">{t('corporation.modelStep2Text')}</p>
                 </div>
               </div>
               
-              <div className="bg-brand-gray-light p-6 rounded-lg">
-                <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
-                  <div className="flex-shrink-0 bg-brand-navy w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl font-bold">3</div>
-                  <div>
-                    <h3 className="text-xl font-bold text-brand-navy mb-2">{t('corporation.modelStep3Title')}</h3>
-                    <p className="text-brand-gray-dark">{t('corporation.modelStep3Text')}</p>
-                  </div>
+              <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <div className="flex flex-col items-center text-center">
+                  <div className="flex-shrink-0 bg-brand-navy w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-6">3</div>
+                  <h3 className="text-xl font-bold text-brand-navy mb-4">{t('corporation.modelStep3Title')}</h3>
+                  <p className="text-brand-gray-dark">{t('corporation.modelStep3Text')}</p>
                 </div>
               </div>
             </div>
