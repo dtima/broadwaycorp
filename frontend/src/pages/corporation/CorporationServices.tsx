@@ -20,7 +20,7 @@ const CorporationServices = () => {
     <>
       <Helmet>
         <title>{t('corporation.services')} - {t('corporation.title')}</title>
-        <meta name="description" content="Discover comprehensive services across our divisions, from scientific equipment and education to sustainable agriculture and livestock breeding." />
+        <meta name="description" content={t('corporationServices.metaDescription')} />
       </Helmet>
 
       {/* Hero Section */}

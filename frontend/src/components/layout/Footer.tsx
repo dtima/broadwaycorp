@@ -67,9 +67,9 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-bold text-brand-navy mb-4">{t('navigation.contact')}</h3>
             <address className="not-italic text-gray-600">
-              <p>Email: <a href="mailto:info@broadwaycorp.com" className="hover:text-brand-orange transition-colors">info@broadwaycorp.com</a></p>
+              <p>Email: <a href="mailto:enquiries@broadway-corp.com" className="hover:text-brand-orange transition-colors">enquiries@broadway-corp.com</a></p>
               <p>Phone: +123-456-7890</p>
-              <p className="mt-4">Broadway Corporation<br />123 Innovation Drive<br />City, Country</p>
+              <p className="mt-4">Broadway Corporation<br />1434 Hildreth Ave<br />Columbus, OH 43203</p>
             </address>
           </div>
         </div>

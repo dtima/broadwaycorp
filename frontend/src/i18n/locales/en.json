@@ -20,7 +20,8 @@
   "language": {
     "en": "English",
     "fr": "French",
-    "toggle": "FR"
+    "toggle": "FR",
+    "toggle.ariaLabel": "Switch to {{lang}}"
   },
   "about": {
     "pageTitle": "About Us",
@@ -157,79 +158,32 @@
     "approach3": "Sustainability-driven: Creating lasting impact through knowledge transfer and capacity building",
     "servicesTitle": "Our Services",
     "servicesSubtitle": "We provide comprehensive solutions across four key areas to support scientific advancement and educational development in Cameroon.",
-    "services": {
-      "scientific": {
-        "title": "Scientific Equipment",
-        "description": "We supply high-quality scientific instruments and healthcare supplies to schools, universities, research institutions, and healthcare facilities.",
-        "item1": "Laboratory equipment for educational institutions",
-        "item2": "Specialized research instruments",
-        "item3": "Medical and healthcare supplies"
-      },
-      "education": {
-        "title": "Education & Tutoring",
-        "description": "We offer educational support programs and tutoring services focused on STEM subjects to enhance learning outcomes.",
-        "item1": "After-school STEM programs",
-        "item2": "Teacher training workshops",
-        "item3": "Educational materials development"
-      },
-      "laboratory": {
-        "title": "Laboratory Construction",
-        "description": "We design and build modern, functional laboratory spaces tailored to specific educational and research needs.",
-        "item1": "Laboratory design consulting",
-        "item2": "Construction and renovation services",
-        "item3": "Safety protocol implementation"
-      },
-      "community": {
-        "title": "Community Development",
-        "description": "We implement initiatives that strengthen communities through knowledge-sharing and capacity building.",
-        "item1": "Vocational training programs",
-        "item2": "Community education workshops",
-        "item3": "Environmental awareness campaigns"
+    "scientificTitle": "Scientific Equipment",
+    "scientificDescription": "Providing quality scientific equipment and healthcare supplies to institutions.",
+    "educationTitle": "Education & Tutoring",
+    "educationDescription": "Supporting STEM education through tutoring services and academic programs.",
+    "communityTitle": "Community Development",
+    "communityDescription": "Supporting local communities through training and development initiatives.",
+    "laboratoryServices": {
+      "title": "Laboratory Construction Excellence",
+      "description": "Broadway Enterprise specializes in designing and building state-of-the-art laboratory facilities for educational institutions across Cameroon. Our expert team handles everything from concept to completion.",
+      "workstations": "Custom Laboratory Workstations",
+      "equipment": "Scientific Equipment Installation", 
+      "fixtures": "Laboratory Sinks & Fixtures",
+      "cta": {
+        "title": "Need a Custom Laboratory Solution?",
+        "description": "We design and build laboratories tailored to your specific educational and research requirements.",
+        "button": "Explore Our Services"
       }
     },
-    "impactTitle": "Our Impact",
-    "impact": {
-      "stat1Label": "Schools Equipped",
-      "stat1Description": "Educational institutions supported with scientific equipment",
-      "stat2Label": "Students Reached",
-      "stat2Description": "Young minds engaged through our educational programs",
-      "stat3Label": "Labs Constructed",
-      "stat3Description": "Modern laboratory spaces built or renovated",
-      "stat4Label": "Communities Served",
-      "stat4Description": "Local communities positively impacted by our initiatives"
-    },
-    "caseStudiesTitle": "Our Work in Action",
-    "results": "Results",
-    "caseStudies": {
-      "case1": {
-        "location": "Yaoundé",
-        "title": "Comprehensive Science Laboratory for Secondary School",
-        "description": "We equipped a public secondary school in Yaoundé with a complete science laboratory, including chemistry, biology, and physics equipment, and provided training for teachers on effective lab instruction.",
-        "results": "Improved practical science education for over 1,200 students annually, with a 40% increase in science examination scores after the first year."
-      },
-      "case2": {
-        "location": "Douala",
-        "title": "Community STEM Education Center",
-        "description": "We established a community education center in Douala focused on providing after-school STEM programs for underserved students, equipped with computers, basic lab equipment, and educational materials.",
-        "results": "Engaged over 500 students in the first year, with 85% of participants reporting increased interest in pursuing STEM careers."
-      }
-    },
-    "sdgTitle": "Our Contribution to Sustainable Development Goals",
-    "sdgDescription": "Broadway Enterprise's work directly aligns with several UN Sustainable Development Goals, focusing our efforts on creating meaningful, lasting change.",
-    "sdgs": {
-      "sdg4": {
-        "title": "SDG 4: Quality Education",
-        "description": "Ensuring inclusive and equitable quality education and promoting lifelong learning opportunities for all."
-      },
-      "sdg3": {
-        "title": "SDG 3: Good Health and Well-being",
-        "description": "Ensuring healthy lives and promoting well-being for all at all ages through improved scientific capacity."
-      },
-      "sdg6": {
-        "title": "SDG 6: Clean Water and Sanitation",
-        "description": "Supporting scientific research and education related to water quality testing and sanitation improvements."
-      }
-    },
+    "schools": "Schools Equipped",
+    "schoolsDescription": "Educational institutions supplied with scientific equipment",
+    "students": "Students Reached",
+    "studentsDescription": "Young minds engaged through our educational programs",
+    "communities": "Communities Served",
+    "communitiesDescription": "Local communities positively impacted by our initiatives",
+    "partners": "Partners Engaged",
+    "partnersDescription": "Organizations collaborating with us on development projects",
     "ctaTitle": "Partner with Broadway Enterprise",
     "ctaDescription": "Join us in our mission to advance science, education, and sustainable development in Cameroon.",
     "ctaButton": "Contact Us Today"
@@ -528,8 +482,8 @@
     "locations": {
       "us": {
         "country": "United States",
-        "address": "123 Innovation Drive, Suite 200",
-        "city": "Boston, MA 02110",
+        "address": "1434 Hildreth Ave",
+        "city": "Columbus, OH 43203",
         "type": "Strategic Headquarters"
       },
       "cameroon": {
@@ -644,8 +598,80 @@
     },
     "overview": "Broadway Corporation operates through three specialized divisions to deliver comprehensive sustainable development solutions.",
     "corporateHeadquarters": "Corporate Headquarters",
-    "corporateLocation": "Boston, USA",
+    "corporateLocation": "Columbus, OH, USA",
     "operationalHub": "Operational Hub",
     "operationalLocation": "Yaoundé, Cameroon"
+  },
+  "initiatives": {
+    "title": "Future Initiatives",
+    "metaDescription": "Explore Broadway Corporation's future growth initiatives focused on innovation and sustainable development across multiple sectors.",
+    "heroTitle": "Future Growth Initiatives",
+    "heroSubtitle": "Pioneering innovative approaches to sustainable development",
+    "visionTitle": "Our Vision for the Future",
+    "visionText1": "At Broadway Corporation, we're continuously exploring innovative approaches to expand our impact and create sustainable solutions for the challenges of tomorrow. Our future initiatives represent our commitment to pushing boundaries and developing new models for growth and development.",
+    "visionText2": "These forward-looking projects build upon our established foundations in enterprise and agriculture, while venturing into exciting new territories that combine economic opportunity, environmental stewardship, and community empowerment.",
+    "keyInitiativesTitle": "Key Future Initiatives",
+    "keyInitiativesDescription": "Our strategic initiatives are designed to create innovative solutions that address complex challenges while opening new opportunities for sustainable growth.",
+    "agroTourism": {
+      "title": "Agro-Tourism Development",
+      "description": "Creating immersive agricultural experiences that showcase sustainable farming while generating additional revenue streams.",
+      "feature1": "Visitor-friendly demonstration farms that highlight innovative agricultural practices",
+      "feature2": "Interactive educational programs for visitors of all ages",
+      "feature3": "Farm-to-table culinary experiences featuring locally grown produce",
+      "feature4": "Accommodation options that blend comfort with authentic rural experiences"
+    },
+    "bioResearch": {
+      "title": "Bio-Research Innovation Hub",
+      "description": "Investing in cutting-edge biological research to develop solutions for agricultural challenges and explore new sustainable technologies.",
+      "feature1": "Research facilities focused on crop resilience and disease resistance",
+      "feature2": "Partnerships with academic institutions to foster knowledge exchange",
+      "feature3": "Development of biological pest control methods to reduce chemical usage",
+      "feature4": "Exploration of native plant species with potential medicinal or nutritional value"
+    },
+    "renewableEnergy": {
+      "title": "Integrated Renewable Energy Systems",
+      "description": "Developing and implementing renewable energy solutions that power our operations while serving as demonstration models for communities.",
+      "feature1": "Solar installations optimized for agricultural settings",
+      "feature2": "Biogas production from agricultural waste",
+      "feature3": "Energy-efficient building designs that minimize environmental impact",
+      "feature4": "Training programs on renewable energy system management and maintenance"
+    },
+    "digitalAgriculture": {
+      "title": "Digital Agriculture Platform",
+      "description": "Creating technology solutions that help farmers monitor crops, optimize resource usage, and access markets more effectively.",
+      "feature1": "Mobile applications for agricultural information and market access",
+      "feature2": "Sensor networks for environmental monitoring and precision agriculture",
+      "feature3": "Data analysis tools to improve farming decisions",
+      "feature4": "Digital marketplace connecting farmers directly with buyers"
+    },
+    "timeline": {
+      "title": "Implementation Roadmap",
+      "description": "Our strategic roadmap outlines the phased approach to bringing these innovative initiatives to life.",
+      "phase1": {
+        "title": "Research & Planning",
+        "description": "Conducting feasibility studies, market research, and developing detailed implementation plans for our key initiatives.",
+        "timeframe": "2023-2024"
+      },
+      "phase2": {
+        "title": "Pilot Programs",
+        "description": "Launching small-scale pilot programs to test concepts, gather feedback, and refine our approaches.",
+        "timeframe": "2024-2025"
+      },
+      "phase3": {
+        "title": "Infrastructure Development",
+        "description": "Building the physical infrastructure and technological systems required to support our initiatives.",
+        "timeframe": "2025-2026"
+      },
+      "phase4": {
+        "title": "Full Implementation & Integration",
+        "description": "Ensuring initiatives work seamlessly together and measuring their economic, social, and environmental impact.",
+        "timeframe": "2026-2027"
+      }
+    },
+    "getInvolved": {
+      "title": "Get Involved",
+      "description": "We welcome partnerships and collaborations that can help bring these initiatives to life. Reach out to learn more and explore opportunities to participate.",
+      "contactButton": "Contact Us"
+    }
   }
-} 
+}

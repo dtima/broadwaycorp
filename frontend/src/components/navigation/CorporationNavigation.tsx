@@ -82,7 +82,7 @@ const CorporationNavigation = () => {
   
   return (
     <motion.nav 
-      className={`fixed w-full z-50 bg-brand-navy text-white transition-all duration-300 ${
+      className={`fixed w-full z-50 bg-white text-brand-navy transition-all duration-300 ${
         scrolled ? 'shadow-lg py-2' : 'py-4'
       }`}
       initial={shouldReduceMotion ? false : { y: -100 }}
@@ -97,7 +97,7 @@ const CorporationNavigation = () => {
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
             <Link to={`/${language}/corporation`} className="flex items-center">
-              <span className="text-xl font-bold">Broadway Corporation</span>
+              <span className="text-xl font-bold text-brand-navy">Broadway Corporation</span>
             </Link>
           </motion.div>
           
@@ -106,16 +106,16 @@ const CorporationNavigation = () => {
             <NavLink to={`/${language}/corporation/about`} label={t('navigation.about')} />
             <NavLink to={`/${language}/corporation/services`} label={t('corporation.services')} />
             <NavLink to={`/${language}/corporation/team`} label={t('navigation.aboutSubmenu.leadership')} />
-            <NavLink to={`/${language}/corporation/initiatives`} label="Initiatives" />
+            <NavLink to={`/${language}/corporation/initiatives`} label={t('initiatives.title')} />
             <NavLink to={`/${language}/corporation/contact`} label={t('navigation.contact')} />
             
             <div className="flex items-center space-x-4">
               <motion.button
                 whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
                 whileTap={shouldReduceMotion ? {} : { scale: 0.95 }}
-                className="text-sm px-3 py-1 rounded border border-white/30 hover:bg-white/10 transition-colors"
+                className="text-sm px-3 py-1 rounded border border-brand-navy/30 hover:bg-brand-navy/5 transition-colors"
                 onClick={toggleLanguage}
-                aria-label={t('language.toggle.ariaLabel', { lang: language === 'en' ? 'Français' : 'English' })}
+                aria-label={language === 'en' ? "Switch to French" : "Switch to English"}
               >
                 {language === 'en' ? 'Français (FR)' : 'English (EN)'}
               </motion.button>
@@ -141,7 +141,7 @@ const CorporationNavigation = () => {
             ref={mobileMenuButtonRef}
             whileTap={shouldReduceMotion ? {} : { scale: 0.95 }}
             onClick={toggleMobileMenu}
-            className="md:hidden text-white focus:outline-none"
+            className="md:hidden text-brand-navy focus:outline-none"
             aria-label={isMobileMenuOpen ? t('navigation.closeMenu') : t('navigation.openMenu')}
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-menu-container"
@@ -164,7 +164,7 @@ const CorporationNavigation = () => {
           <motion.div 
             id="mobile-menu-container"
             ref={mobileMenuRef}
-            className="md:hidden bg-brand-navy-dark"
+            className="md:hidden bg-white border-t border-gray-200"
             role="dialog"
             aria-modal="true"
             aria-labelledby="mobile-menu-title"
@@ -192,12 +192,12 @@ const CorporationNavigation = () => {
                 <MobileNavLink to={`/${language}/corporation/about`} label={t('navigation.about')} onClick={() => setIsMobileMenuOpen(false)} />
                 <MobileNavLink to={`/${language}/corporation/services`} label={t('corporation.services')} onClick={() => setIsMobileMenuOpen(false)} />
                 <MobileNavLink to={`/${language}/corporation/team`} label={t('navigation.aboutSubmenu.leadership')} onClick={() => setIsMobileMenuOpen(false)} />
-                <MobileNavLink to={`/${language}/corporation/initiatives`} label="Initiatives" onClick={() => setIsMobileMenuOpen(false)} />
+                <MobileNavLink to={`/${language}/corporation/initiatives`} label={t('initiatives.title')} onClick={() => setIsMobileMenuOpen(false)} />
                 <MobileNavLink to={`/${language}/corporation/contact`} label={t('navigation.contact')} onClick={() => setIsMobileMenuOpen(false)} />
                 
-                <div className="flex flex-col space-y-4 pt-2 border-t border-white/10">
+                <div className="flex flex-col space-y-4 pt-2 border-t border-gray-200">
                   <motion.button
-                    className="w-fit text-sm px-3 py-1 rounded border border-white/30 hover:bg-white/10 transition-colors"
+                    className="w-fit text-sm px-3 py-1 rounded border border-brand-navy/30 hover:bg-brand-navy/5 transition-colors"
                     onClick={() => {
                       toggleLanguage();
                       setIsMobileMenuOpen(false);
@@ -206,7 +206,7 @@ const CorporationNavigation = () => {
                       open: { opacity: 1, y: 0 },
                       closed: { opacity: 0, y: 20 }
                     }}
-                    aria-label={t('language.toggle.ariaLabel', { lang: language === 'en' ? 'Français' : 'English' })}
+                    aria-label={language === 'en' ? "Switch to French" : "Switch to English"}
                   >
                     {language === 'en' ? 'Français (FR)' : 'English (EN)'}
                   </motion.button>
@@ -235,7 +235,7 @@ const NavLink = ({ to, label }: { to: string; label: string }) => {
                    (to !== `/${location.pathname.split('/')[1]}/corporation` && location.pathname.startsWith(to) && to.length > 1 && location.pathname !== to && !to.endsWith("/corporation") ) ||
                    (to.endsWith('/corporation') && location.pathname.startsWith(to) && location.pathname.split('/').length === to.split('/').length);
 
-  const activeStyle = isActive ? "text-brand-orange font-semibold" : "hover:text-brand-orange";
+  const activeStyle = isActive ? "text-brand-orange font-semibold" : "text-brand-navy hover:text-brand-orange";
 
   return (
     <motion.div
@@ -275,7 +275,7 @@ const MobileNavLink = ({
                    (to !== `/${location.pathname.split('/')[1]}/corporation` && location.pathname.startsWith(to) && to.length > 1 && location.pathname !== to && !to.endsWith("/corporation") ) ||
                    (to.endsWith('/corporation') && location.pathname.startsWith(to) && location.pathname.split('/').length === to.split('/').length);
 
-  const activeMobileStyle = isActive ? "text-brand-orange font-semibold" : "hover:text-brand-orange";
+  const activeMobileStyle = isActive ? "text-brand-orange font-semibold" : "text-brand-navy hover:text-brand-orange";
 
   return (
     <motion.div
