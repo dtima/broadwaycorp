@@ -96,8 +96,9 @@ const ContactPage: React.FC<ContactPageProps> = ({ division }) => {
     { id: 'instagram', name: 'Instagram', icon: 'M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25zM12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z', url: 'https://instagram.com/' }
   ];
 
-  return (
-    <Layout>
+  // Create the content for the page
+  const contactContent = (
+    <>
       <Helmet>
         <title>{division ? `${getDivisionTitle()} - ${t('contact.pageTitle')}` : `${t('contact.pageTitle')} | Broadway Corporation`}</title>
         <meta name="description" content={t('contact.metaDescription')} />
@@ -248,7 +249,7 @@ const ContactPage: React.FC<ContactPageProps> = ({ division }) => {
                     <svg className="w-5 h-5 text-brand-orange mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                     </svg>
-                    <a href={`mailto:${location.email}`} className="text-brand-navy hover:text-brand-orange transition-colors">
+                    <a href={`mailto:${location.email}`} className="text-brand-orange hover:underline">
                       {location.email}
                     </a>
                   </div>
@@ -257,76 +258,42 @@ const ContactPage: React.FC<ContactPageProps> = ({ division }) => {
                     <svg className="w-5 h-5 text-brand-orange mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                     </svg>
-                    <a href={`tel:${location.phone.replace(/[^0-9+]/g, '')}`} className="text-brand-navy hover:text-brand-orange transition-colors">
-                      {location.phone}
-                    </a>
+                    <span className="text-brand-gray-dark">{location.phone}</span>
                   </div>
                 </div>
               </div>
             ))}
-            
-            {/* Social Media Links */}
-            <div className="mt-8">
-              <h3 className="text-xl font-bold text-brand-navy mb-4">{t('contact.socialTitle')}</h3>
-              <div className="flex flex-wrap gap-4">
-                {socialLinks.map((social) => (
-                  <a 
-                    key={social.id}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center w-12 h-12 bg-brand-navy hover:bg-brand-orange text-white rounded-full transition-colors"
-                    aria-label={social.name}
-                  >
-                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path d={social.icon}></path>
-                    </svg>
-                  </a>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
         
-        {/* Map Section */}
-        <div className="rounded-lg overflow-hidden mb-12 bg-brand-gray-light">
-          <div className="aspect-[16/7] relative">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center p-8">
-                <svg className="w-16 h-16 text-brand-orange mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path>
-                </svg>
-                <h3 className="text-xl font-bold text-brand-navy mb-2">{t('contact.mapPlaceholder')}</h3>
-                <p className="text-brand-gray-dark">{t('contact.mapText')}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        {/* FAQ Section */}
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-brand-navy mb-6 text-center">{t('contact.faqTitle')}</h2>
+        {/* Connect with us on social media */}
+        <div className="max-w-3xl mx-auto text-center">
+          <h3 className="text-xl font-bold text-brand-navy mb-4">{t('contact.socialTitle')}</h3>
+          <p className="text-brand-gray-dark mb-6">{t('contact.socialText')}</p>
           
-          <div className="space-y-4">
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-lg font-bold text-brand-navy mb-2">{t('contact.faq.question1')}</h3>
-              <p className="text-brand-gray-dark">{t('contact.faq.answer1')}</p>
-            </div>
-            
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-lg font-bold text-brand-navy mb-2">{t('contact.faq.question2')}</h3>
-              <p className="text-brand-gray-dark">{t('contact.faq.answer2')}</p>
-            </div>
-            
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-lg font-bold text-brand-navy mb-2">{t('contact.faq.question3')}</h3>
-              <p className="text-brand-gray-dark">{t('contact.faq.answer3')}</p>
-            </div>
+          <div className="flex justify-center space-x-6">
+            {socialLinks.map((social) => (
+              <a 
+                key={social.id}
+                href={social.url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label={social.name}
+                className="w-12 h-12 bg-brand-navy hover:bg-brand-orange text-white rounded-full flex items-center justify-center transition-colors"
+              >
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d={social.icon}></path>
+                </svg>
+              </a>
+            ))}
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   );
+
+  // Return the content wrapped in Layout only if no division is provided
+  return division ? contactContent : <Layout>{contactContent}</Layout>;
 };
 
 export default ContactPage; 

@@ -49,16 +49,39 @@ const EnterpriseFooter = () => {
           {/* Column 3: Contact */}
           <div>
             <h4 className="text-lg font-semibold mb-4">{t('navigation.contact')}</h4>
-            <address className="not-italic text-white/80">
-              <p className="mb-2">456 Development Avenue</p>
-              <p className="mb-2">Yaoundé</p>
-              <p className="mb-2">Cameroon</p>
-              <p>
-                <a href="mailto:enterprise@broadwaycorp.com" className="text-brand-orange hover:underline">
-                  enterprise@broadwaycorp.com
-                </a>
-              </p>
-            </address>
+            {/* United States HQ */}
+            <div className="mb-4">
+              <p className="font-semibold text-white mb-1">United States</p>
+              <p className="text-xs text-white/60 mb-1">Strategic Headquarters</p>
+              <address className="not-italic text-white/80 text-sm">
+                <p className="mb-1">1434 Hildreth Ave</p>
+                <p className="mb-1">Columbus, OH 43203</p>
+                <p className="mb-1">United States</p>
+                <p className="mb-1">
+                  <a href="mailto:enquiries@broadway-corp.com" className="text-brand-orange hover:underline">
+                    enquiries@broadway-corp.com
+                  </a>
+                </p>
+                <p>+1 (614) 556 1333</p>
+              </address>
+            </div>
+            
+            {/* Cameroon Office */}
+            <div>
+              <p className="font-semibold text-white mb-1">Cameroon</p>
+              <p className="text-xs text-white/60 mb-1">Operational Hub</p>
+              <address className="not-italic text-white/80 text-sm">
+                <p className="mb-1">Batibo Avenue, Damas</p>
+                <p className="mb-1">Yaoundé</p>
+                <p className="mb-1">Cameroon</p>
+                <p className="mb-1">
+                  <a href="mailto:cameroon@broadway-corp.com" className="text-brand-orange hover:underline">
+                    cameroon@broadway-corp.com
+                  </a>
+                </p>
+                <p>+237 6 77 18 14 87</p>
+              </address>
+            </div>
           </div>
 
           {/* Column 4: Social */}

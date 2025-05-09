@@ -4,9 +4,55 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 
+// Import team member images
+import tebohImage from '../../assets/images/team/2.jpg';
+import nancyImage from '../../assets/images/team/4.jpg';
+import jerryImage from '../../assets/images/team/1.jpeg';
+import emiliaImage from '../../assets/images/team/3.jpg';
+import njintiImage from '../../assets/images/team/5.jpg';
+
 const EnterpriseAbout = () => {
   const { t } = useTranslation();
   const { language } = useLanguage();
+
+  // Define team members
+  const teamMembers = [
+    {
+      id: 1,
+      name: "Teboh Gustave Ngu",
+      title: t('leadership.team.ceo.title'),
+      bio: t('leadership.team.ceo.bio'),
+      image: tebohImage
+    },
+    {
+      id: 2,
+      name: "Nancy Makeoh Mafor",
+      title: t('leadership.team.projectManager.title'),
+      bio: t('leadership.team.projectManager.bio'),
+      image: nancyImage
+    },
+    {
+      id: 3,
+      name: "Jerry",
+      title: "Operations Manager",
+      bio: "Jerry oversees the day-to-day operations of Broadway Enterprise, ensuring efficient processes and high-quality service delivery.",
+      image: jerryImage
+    },
+    {
+      id: 4,
+      name: "Emilia",
+      title: "Education Specialist",
+      bio: "Emilia leads our educational programs and curriculum development, bringing extensive experience in STEM education to our team.",
+      image: emiliaImage
+    },
+    {
+      id: 5,
+      name: "Njinti",
+      title: "Laboratory Coordinator",
+      bio: "Njinti coordinates our laboratory construction projects, ensuring they meet the highest standards of quality and safety.",
+      image: njintiImage
+    }
+  ];
 
   return (
     <div>
@@ -184,56 +230,32 @@ const EnterpriseAbout = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Team Member Cards */}
-            <motion.div 
-              className="bg-white rounded-lg shadow-md overflow-hidden"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1, duration: 0.5 }}
-            >
-              <div className="h-64 bg-gray-200"></div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-brand-navy mb-1">{t('leadership.team.ceo.name')}</h3>
-                <p className="text-blue-600 mb-4">{t('leadership.team.ceo.title')}</p>
-                <p className="text-gray-700">
-                  {t('leadership.team.ceo.bio')}
-                </p>
-              </div>
-            </motion.div>
-            
-            <motion.div 
-              className="bg-white rounded-lg shadow-md overflow-hidden"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-            >
-              <div className="h-64 bg-gray-200"></div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-brand-navy mb-1">{t('leadership.team.projectManager.name')}</h3>
-                <p className="text-blue-600 mb-4">{t('leadership.team.projectManager.title')}</p>
-                <p className="text-gray-700">
-                  {t('leadership.team.projectManager.bio')}
-                </p>
-              </div>
-            </motion.div>
-            
-            <motion.div 
-              className="bg-white rounded-lg shadow-md overflow-hidden"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3, duration: 0.5 }}
-            >
-              <div className="h-64 bg-gray-200"></div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-brand-navy mb-1">{t('leadership.team.financeAdviser.name')}</h3>
-                <p className="text-blue-600 mb-4">{t('leadership.team.financeAdviser.title')}</p>
-                <p className="text-gray-700">
-                  {t('leadership.team.financeAdviser.bio')}
-                </p>
-              </div>
-            </motion.div>
+            {teamMembers.map((member, index) => (
+              <motion.div 
+                key={member.id}
+                className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                whileHover={{ y: -10, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)" }}
+              >
+                <div className="h-80 overflow-hidden bg-gray-100">
+                  <img 
+                    src={member.image} 
+                    alt={`${member.name} - ${member.title}`}
+                    className="w-full h-full object-contain transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
+                <div className="p-6 flex-grow">
+                  <h3 className="text-xl font-bold text-brand-navy mb-1">{member.name}</h3>
+                  <p className="text-blue-600 mb-4">{member.title}</p>
+                  <p className="text-gray-700">
+                    {member.bio}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

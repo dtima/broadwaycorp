@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 
+// Import components
+import Partners from '../../components/enterprise/Partners';
+
 // Import lab images
 import lab1Image from '../../assets/images/Laboratoires/lab1.jpg';
 import lab2Image from '../../assets/images/Laboratoires/lab2.jpg';
@@ -396,13 +399,16 @@ const EnterpriseHome = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.4, duration: 0.5 }}
             >
-              <div className="text-4xl font-bold mb-2">10+</div>
-              <h3 className="text-xl font-bold mb-2">{t('enterprise.partners')}</h3>
-              <p className="text-white/80">{t('enterprise.partnersDescription')}</p>
+              <div className="text-4xl font-bold mb-2">6+</div>
+              <h3 className="text-xl font-bold mb-2">{t('enterprise.partners.title')}</h3>
+              <p className="text-white/80">{t('enterprise.partners.subtitle')}</p>
             </motion.div>
           </div>
         </div>
       </section>
+
+      {/* Partners Section */}
+      <Partners />
 
       {/* CTA Section */}
       <section className="py-16">

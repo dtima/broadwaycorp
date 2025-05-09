@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useLanguage } from '../../hooks/useLanguage';
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
+import BCLogo from '../../assets/logos/Corporation/BC Logo.svg';
 
 const CorporationNavigation = () => {
   const { t } = useTranslation();
@@ -97,6 +98,7 @@ const CorporationNavigation = () => {
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
             <Link to={`/${language}/corporation`} className="flex items-center">
+              <img src={BCLogo} alt="Broadway Corporation Logo" className="h-10 mr-2" />
               <span className="text-xl font-bold text-brand-navy">Broadway Corporation</span>
             </Link>
           </motion.div>

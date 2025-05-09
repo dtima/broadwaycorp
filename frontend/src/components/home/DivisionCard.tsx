@@ -10,12 +10,13 @@ interface DivisionCardProps {
   description: string;
   icon: ReactNode;
   color: string;
+  logo?: string;
 }
 
 /**
  * Card component to display division information on the homepage
  */
-const DivisionCard = ({ divisionId, title, description, icon, color }: DivisionCardProps) => {
+const DivisionCard = ({ divisionId, title, description, icon, color, logo }: DivisionCardProps) => {
   const { language } = useLanguage();
 
   return (
@@ -28,7 +29,11 @@ const DivisionCard = ({ divisionId, title, description, icon, color }: DivisionC
     >
       <div className={`p-4 ${color} text-white`}>
         <div className="flex items-center">
-          {icon}
+          {logo ? (
+            <img src={logo} alt={`${title} Logo`} className="w-8 h-8 mr-2" />
+          ) : (
+            icon
+          )}
           <h3 className="text-xl font-bold ml-2">{title}</h3>
         </div>
       </div>

@@ -46,7 +46,21 @@
   "ceoMessage": {
     "metaDescription": "Read the welcome message from Ngu Teboh Gustave, Founder and CEO of Broadway Corporation.",
     "heroTagline": "A message about our mission, vision, and commitment to sustainable development.",
-    "quote": "We believe that sustainable development isn't just a goal; it's our responsibility. We're building a resilient, knowledge-driven future for Africa and beyond."
+    "quote": "We believe that sustainable development isn't just a goal; it's our responsibility. We're building a resilient, knowledge-driven future for Africa and beyond.",
+    "greeting": "As the CEO and General Manager of Broadway Corporation, I am proud to lead a dynamic holding company committed to driving sustainable development through innovation in science, education, agriculture, and community advancement.",
+    "paragraph1": "Our three divisions—Broadway Enterprise, Broadway Farmhouse, and Broadway Corporation—are united by a common vision: to empower communities, foster growth, and create lasting impact across Cameroon. Through Broadway Enterprise, we strengthen educational and scientific infrastructure; through Broadway Farmhouse, we champion sustainable farming and food security.",
+    "paragraph2": "I believe in hard work, creativity, and unwavering attention to detail. I am strict because I care deeply about excellence—and I take great pride in helping others grow and succeed. At Broadway Corporation, we don't just talk about change; we build it.",
+    "paragraph3": "To our youth: your future begins with the choices you make today. Be hardworking, act with integrity, and most importantly—learn to follow instructions. Discipline and humility are keys to success. And above all, stay resilient against the temptation of corruption. It is a silent worm that eats away our human dignity and destroys the foundations of a better future.",
+    "paragraph4": "Let's keep growing, innovating, and building a stronger, brighter tomorrow together.",
+    "paragraph5": "",
+    "paragraph6": "",
+    "paragraph7": "",
+    "closing": "— Teboh Gustave, Ngu\nCEO & General Manager\nBroadway Corporation",
+    "ceoName": "Teboh Gustave, Ngu",
+    "ceoTitle": "CEO & General Manager",
+    "portraitAlt": "Teboh Gustave, Ngu - CEO and General Manager of Broadway Corporation",
+    "ctaTitle": "Learn More About Our Vision",
+    "ctaDescription": "Discover how our leadership team is working to create sustainable impact."
   },
   "leadership": {
     "metaDescription": "Meet the leadership team behind Broadway Corporation's vision of sustainable development through innovation.",
@@ -162,31 +176,195 @@
     "scientificDescription": "Providing quality scientific equipment and healthcare supplies to institutions.",
     "educationTitle": "Education & Tutoring",
     "educationDescription": "Supporting STEM education through tutoring services and academic programs.",
-    "communityTitle": "Community Development",
-    "communityDescription": "Supporting local communities through training and development initiatives.",
+    "laboratoryTitle": "Laboratory Construction",
+    "laboratoryDescription": "Designing and building state-of-the-art laboratory facilities for educational institutions.",
+    "communityTitle": "Scorpion Farming",
+    "communityDescription": "Pioneering innovative scorpion farming techniques for medical research and sustainable development.",
+    
     "laboratoryServices": {
-      "title": "Laboratory Construction Excellence",
-      "description": "Broadway Enterprise specializes in designing and building state-of-the-art laboratory facilities for educational institutions across Cameroon. Our expert team handles everything from concept to completion.",
+      "title": "Laboratory Construction Services",
+      "description": "We design and build state-of-the-art laboratory facilities tailored to educational institutions' specific needs and requirements.",
       "workstations": "Custom Laboratory Workstations",
-      "equipment": "Scientific Equipment Installation", 
-      "fixtures": "Laboratory Sinks & Fixtures",
+      "equipment": "Scientific Equipment Installation",
+      "fixtures": "Laboratory Sinks and Fixtures",
       "cta": {
-        "title": "Need a Custom Laboratory Solution?",
-        "description": "We design and build laboratories tailored to your specific educational and research requirements.",
-        "button": "Explore Our Services"
+        "title": "Need Laboratory Infrastructure?",
+        "description": "Contact us to discuss your institution's laboratory design and construction needs.",
+        "button": "Learn More About Our Services"
       }
     },
+
+    "services": {
+      "scientific": {
+        "title": "Scientific Equipment",
+        "description": "Providing quality scientific equipment and healthcare supplies to institutions.",
+        "item1": "Laboratory glassware and equipment",
+        "item2": "Microscopes and observation tools",
+        "item3": "Chemical reagents and supplies"
+      },
+      "education": {
+        "title": "Education & Tutoring",
+        "description": "Supporting STEM education through tutoring services and academic programs.",
+        "item1": "Customized STEM curriculum development",
+        "item2": "Teacher training and support",
+        "item3": "Student tutoring and mentorship"
+      },
+      "laboratory": {
+        "title": "Laboratory Construction",
+        "description": "Designing and building state-of-the-art laboratory facilities for educational institutions.",
+        "item1": "Custom laboratory workstations",
+        "item2": "Scientific equipment installation",
+        "item3": "Laboratory sinks and fixtures"
+      },
+      "community": {
+        "title": "Scorpion Farming",
+        "description": "Pioneering innovative scorpion farming techniques for medical research and sustainable development.",
+        "item1": "Scorpion breeding and husbandry programs",
+        "item2": "Venom extraction and processing",
+        "item3": "Research collaboration with medical institutions"
+      }
+    },
+
     "schools": "Schools Equipped",
     "schoolsDescription": "Educational institutions supplied with scientific equipment",
     "students": "Students Reached",
     "studentsDescription": "Young minds engaged through our educational programs",
     "communities": "Communities Served",
     "communitiesDescription": "Local communities positively impacted by our initiatives",
-    "partners": "Partners Engaged",
-    "partnersDescription": "Organizations collaborating with us on development projects",
-    "ctaTitle": "Partner with Broadway Enterprise",
-    "ctaDescription": "Join us in our mission to advance science, education, and sustainable development in Cameroon.",
-    "ctaButton": "Contact Us Today"
+    "partners": {
+      "title": "Our Partners & Clients",
+      "subtitle": "We're proud to collaborate with leading educational institutions across Cameroon",
+      "description": "These trusted institutions have partnered with Broadway Enterprise to enhance their scientific and educational capabilities.",
+      "schools": {
+        "stjass": "St. Joseph's Secondary School (St. JASS)",
+        "mevick": "MEVICK Bilingual Grammar School",
+        "ipb": "Institut Polyvalent Bilingue (IPB)",
+        "wecare": "WECARE Academy",
+        "ecole": "École Bilingue Albert Perière",
+        "elohim": "Complex Scolaire Bilingue ELOHIM"
+      },
+      "cta": "Want to become a partner?",
+      "ctaButton": "Contact Us"
+    },
+    "ctaTitle": "Ready to Collaborate?",
+    "ctaDescription": "Contact us to learn more about our services and how we can support your institution's scientific and educational needs.",
+    "ctaButton": "Get in Touch",
+    "impactTitle": "Our Impact",
+    "impact": {
+      "stat1Label": "Schools Equipped",
+      "stat1Description": "Educational institutions supplied with scientific equipment",
+      "stat2Label": "Students Reached",
+      "stat2Description": "Young minds engaged through our educational programs",
+      "stat3Label": "Communities Served",
+      "stat3Description": "Local communities positively impacted by our initiatives",
+      "stat4Label": "Partners Engaged",
+      "stat4Description": "Organizations collaborating with us on development projects"
+    },
+    "studentGallery": {
+      "title": "Empowering Young Scientists",
+      "description": "Our impact extends beyond numbers. These images showcase how Broadway Enterprise is nurturing the next generation of scientific talent through hands-on education and access to proper laboratory equipment.",
+      "collaborativeLearning": "Collaborative Learning",
+      "collaborativeDescription": "Students working together to analyze color charts in the laboratory",
+      "geologicalStudies": "Geological Studies",
+      "geologicalDescription": "Cataloging and analyzing mineral samples",
+      "handsOnChemistry": "Hands-on Chemistry",
+      "chemistryDescription": "Students performing controlled experiments with proper equipment",
+      "teamResearch": "Team Research", 
+      "teamDescription": "Collaborative learning environment fostering scientific discovery",
+      "supportButton": "Support Our Educational Initiatives"
+    },
+    "caseStudiesTitle": "Case Studies",
+    "results": "Results",
+    "caseStudies": {
+      "case1": {
+        "location": "Yaoundé",
+        "title": "STEM Laboratory Program for Secondary Schools",
+        "description": "We designed and built fully equipped science laboratories for three secondary schools in Yaoundé, providing modern equipment and comprehensive training for teachers to enhance STEM education capabilities.",
+        "results": "Improved practical science education for over 1,500 students annually, with a 40% increase in student performance in science subjects and growing interest in STEM careers."
+      },
+      "case2": {
+        "location": "Bamenda",
+        "title": "Community Science Education Initiative",
+        "description": "We implemented a community-based science education program in rural Bamenda, establishing a mobile science laboratory and training local educators to bring hands-on science learning to underserved areas.",
+        "results": "Reached over 2,000 students across 12 rural communities, provided training for 24 local educators, and established sustainable science education infrastructure that continues to serve the region."
+      }
+    },
+    "sdgTitle": "Sustainable Development Goals",
+    "sdgDescription": "Broadway Enterprise's work directly contributes to several UN Sustainable Development Goals, focusing our efforts on creating meaningful, lasting change through education and innovation.",
+    "sdgs": {
+      "sdg3": {
+        "title": "SDG 3: Good Health and Well-being",
+        "description": "Supporting health education and providing quality equipment for health science training to improve overall well-being."
+      },
+      "sdg4": {
+        "title": "SDG 4: Quality Education",
+        "description": "Enhancing educational opportunities through modern equipment, teacher training, and innovative learning approaches."
+      },
+      "sdg6": {
+        "title": "SDG 6: Clean Water and Sanitation",
+        "description": "Promoting water quality education and supporting research on water purification technologies."
+      }
+    },
+    "productGallery": {
+      "title": "Our Scientific Equipment",
+      "description": "Broadway Enterprise provides high-quality scientific equipment and educational resources to schools, research institutions, and laboratories across Cameroon.",
+      "categories": {
+        "scientificEquipment": "Scientific Equipment",
+        "educationalResources": "Educational Resources",
+        "educationalTechnology": "Educational Technology"
+      },
+      "products": {
+        "glassware": {
+          "name": "Laboratory Glassware Set",
+          "description": "High-quality reagent bottles, conical flasks, and beakers for various laboratory applications"
+        },
+        "bunsenBurner": {
+          "name": "Bunsen Burner",
+          "description": "Professional-grade burner with precise flame control for laboratory experiments"
+        },
+        "fossils": {
+          "name": "Fossil Collection Kit",
+          "description": "Comprehensive fossil collection for geological studies and natural history education"
+        },
+        "testTubes": {
+          "name": "Laboratory Test Tube Set",
+          "description": "Complete test tube setup with rack and microscope for detailed specimen analysis"
+        },
+        "slides": {
+          "name": "Microscope Slide Collection",
+          "description": "High-quality prepared slides for biological studies and educational purposes"
+        },
+        "chemistryLab": {
+          "name": "Chemistry Lab Equipment",
+          "description": "Professional laboratory setup for advanced chemical experiments and research"
+        },
+        "projector": {
+          "name": "Digital Projector",
+          "description": "Modern digital projection system for enhanced classroom visual presentations"
+        }
+      }
+    },
+    "featuredEquipment": {
+      "title": "Featured Laboratory Equipment",
+      "description": "Our specialized laboratory equipment is carefully selected to meet the needs of educational institutions and research facilities across Cameroon.",
+      "featured": "Featured",
+      "starterKit": {
+        "name": "Complete Laboratory Starter Kit",
+        "description": "Essential equipment for school laboratories, including test tubes, microscopes, and measurement tools"
+      },
+      "microSlides": {
+        "name": "Microscope Slides",
+        "description": "Prepared slides for biological research"
+      },
+      "eduTech": {
+        "name": "Educational Technology",
+        "description": "Modern projection equipment for classrooms"
+      }
+    },
+    "coreServices": {
+      "title": "Our Core Services",
+      "description": "From cutting-edge laboratory equipment to comprehensive educational programs, we provide the tools and knowledge needed to advance science and education in Cameroon."
+    }
   },
   "farmhouse": {
     "pageTitle": "Broadway Farmhouse",
@@ -206,6 +384,38 @@
     "servicesTitle": "Our Services",
     "servicesSubtitle": "We provide comprehensive agricultural solutions across four key areas to support sustainable food production and economic growth in Cameroon.",
     "services": {
+      "title": "Comprehensive Agricultural Solutions",
+      "navOverview": "Overview",
+      "relatedTitle": "Related Information",
+
+      "organic": {
+        "title": "Organic Farming",
+        "description": "We implement certified organic farming practices that prioritize soil health, biodiversity, and sustainable resource management to produce high-quality, chemical-free crops.",
+        "item1": "Soil health management through natural amendments",
+        "item2": "Beneficial insect and biodiversity promotion",
+        "item3": "Natural pest and disease control methods"
+      },
+      "sustainable": {
+        "title": "Sustainable Practices",
+        "description": "Our sustainable agricultural methods focus on long-term ecological balance, minimizing environmental impact while maximizing productivity and promoting economic viability.",
+        "item1": "Water conservation and irrigation efficiency",
+        "item2": "Renewable energy integration in farm operations",
+        "item3": "Circular economy approach to farming waste"
+      },
+      "community": {
+        "title": "Community Programs",
+        "description": "We develop and implement community-based agricultural initiatives that empower local farmers, improve food security, and strengthen rural economies through collaborative approaches.",
+        "item1": "Farmer cooperative development and support",
+        "item2": "Knowledge sharing and skills transfer networks",
+        "item3": "Market access improvement for small-scale farmers"
+      },
+      "education": {
+        "title": "Agricultural Education",
+        "description": "Our educational programs provide practical training and knowledge transfer to equip farmers with modern techniques, business skills, and sustainable practices.",
+        "item1": "Hands-on farming technique workshops",
+        "item2": "Agricultural entrepreneurship training",
+        "item3": "Youth engagement in modern agriculture"
+      },
       "agriculture": {
         "title": "Sustainable Agriculture",
         "description": "We implement modern, sustainable farming practices to enhance crop yields while preserving natural resources.",
@@ -281,7 +491,63 @@
     "futureProjectsTitle": "Future Projects",
     "ctaTitle": "Partner with Broadway Farmhouse",
     "ctaDescription": "Join us in our mission to advance sustainable agriculture and food security in Cameroon.",
-    "ctaButton": "Contact Us Today"
+    "ctaButton": "Contact Us Today",
+    "projectsTitle": "Our Projects",
+    "projectsDescription": "Discover the innovative agricultural initiatives we're implementing across Cameroon to enhance food security, economic opportunity, and sustainability.",
+    "projectsOverview": "Project Overview",
+    "featuredProjectsTitle": "Featured Projects",
+    "sustainabilityTitle": "Sustainability Impact",
+    "viewProjectButton": "View Project Details",
+    "project1Description": "An integrated farming system that combines crop production, livestock raising, and aquaculture for small-scale farmers.",
+    "tag1": "Sustainable",
+    "tag2": "Community-based",
+    "tag3": "Training",
+    
+    "projects": {
+      "navOverview": "Overview",
+      "navStats": "Impact Statistics",
+      "stat1Label": "Active Projects",
+      "stat1Description": "Current initiatives across different regions",
+      "stat2Label": "Farmers Involved", 
+      "stat2Description": "Local farmers participating in our projects",
+      "stat3Label": "Hectares Covered",
+      "stat3Description": "Land under sustainable management",
+      "stat4Label": "Communities Impacted", 
+      "stat4Description": "Local communities with improved food security",
+      
+      "project1": {
+        "title": "Integrated Aquaponics System",
+        "location": "Bamenda Region",
+        "description": "A closed-loop system combining fish farming with hydroponics to produce both fish and vegetables with minimal water usage and maximum efficiency.",
+        "results": "Provides sustainable protein and produce for over 200 families while using 90% less water than conventional farming."
+      },
+      "project2": {
+        "title": "Organic Cocoa Cultivation",
+        "location": "Southwest Region",
+        "description": "Training and supporting local farmers in organic cocoa cultivation techniques that improve soil health, increase biodiversity, and command premium prices.",
+        "results": "Increased income for 150 farmers by 30% through access to premium organic markets."
+      },
+      "project3": {
+        "title": "Sustainable Livestock Program",
+        "location": "Northwest Region",
+        "description": "Implementing rotational grazing systems and improving livestock genetics to enhance productivity while reducing environmental impact.",
+        "results": "Improved livestock health and productivity for 85 small-scale farmers, with 40% reduction in feed costs."
+      },
+      
+      "sustainability": {
+        "title": "Environmental Sustainability",
+        "description": "All our agricultural projects are designed with environmental sustainability as a core principle, focusing on water conservation, soil health, biodiversity preservation, and carbon footprint reduction.",
+        "carbon": "Carbon Reduction",
+        "carbonStat": "40%",
+        "carbonDescription": "Average reduction in carbon footprint compared to conventional farming practices",
+        "water": "Water Conservation",
+        "waterStat": "65%",
+        "waterDescription": "Average water usage reduction through efficient irrigation systems",
+        "biodiversity": "Biodiversity Increase",
+        "biodiversityStat": "80%",
+        "biodiversityDescription": "Increase in beneficial insects and pollinators on project sites"
+      }
+    }
   },
   "news": {
     "pageTitle": "News & Updates",
@@ -498,8 +764,7 @@
       "answer1": "We welcome partnerships with organizations that share our commitment to sustainable development. Please contact us with details about your organization and interests, and our team will follow up to discuss potential collaboration opportunities.",
       "question2": "Do you offer internship or volunteer opportunities?",
       "answer2": "Yes, we periodically offer internships and volunteer positions across our divisions. Please send your resume and areas of interest to our HR department, and we'll inform you of any matching opportunities.",
-      "question3": "How can I stay updated on your projects and initiatives?",
-      "answer3": "You can subscribe to our newsletter, follow us on social media, or regularly check our News section for the latest updates on our work and impact."
+      "question3": "How can I stay updated on your projects and initiatives?"
     },
     "heroSlider": {
       "logistics": {

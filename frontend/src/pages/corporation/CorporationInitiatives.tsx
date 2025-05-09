@@ -405,7 +405,7 @@ interface TimelineItemProps {
   isLast?: boolean;
 }
 
-const TimelineItem = ({ phase, title, description, features, delay, isLast = false }: TimelineItemProps) => {
+const TimelineItem = ({ phase, title, description, features, delay }: TimelineItemProps) => {
   return (
     <div className="flex mb-12">
       <motion.div 

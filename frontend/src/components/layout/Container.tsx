@@ -1,66 +1,94 @@
-import { ReactNode } from 'react';
+import { ReactNode, ElementType } from 'react';
 
-export interface ContainerProps {
-  /** Container content */
+type ContainerSize = 'sm' | 'md' | 'lg' | 'xl' | 'full';
+
+interface ContainerProps {
   children: ReactNode;
-  /** Maximum width of the container */
-  maxWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'full' | 'screen-sm' | 'screen-md' | 'screen-lg' | 'screen-xl';
-  /** Whether padding should be applied */
-  withPadding?: boolean;
-  /** Whether to center the container horizontally */
-  centered?: boolean;
-  /** Additional CSS classes */
+  size?: ContainerSize | string; // Allow string values for backward compatibility
+  maxWidth?: ContainerSize | string; // Allow string values for backward compatibility
   className?: string;
+  as?: ElementType;
+  id?: string;
+  centered?: boolean;
+  paddingY?: boolean;
+  withPadding?: boolean; // Alias for paddingY
 }
 
 /**
- * A responsive container component that provides consistent
- * max-width and padding constraints across the application
+ * Container component for consistent layout and responsive spacing
+ * 
+ * This component provides consistent horizontal padding and max-width constraints
+ * with responsive behavior across different screen sizes.
  */
 const Container = ({
   children,
-  maxWidth = 'lg',
-  withPadding = true,
-  centered = true,
+  size = 'lg',
+  maxWidth, // Alias for size
   className = '',
+  as: Component = 'div',
+  id,
+  centered = false,
+  paddingY = false,
+  withPadding = false // Alias for paddingY
 }: ContainerProps) => {
-  // Fixed max widths
-  const fixedWidths = {
-    xs: 'max-w-xs', // 320px
-    sm: 'max-w-sm', // 384px
-    md: 'max-w-md', // 448px
-    lg: 'max-w-lg', // 512px
-    xl: 'max-w-xl', // 576px
-    '2xl': 'max-w-2xl', // 672px
-    full: 'max-w-full',
+  // Use maxWidth as fallback for size (for backward compatibility)
+  const effectiveSize = maxWidth || size;
+  // Use withPadding as fallback for paddingY (for backward compatibility)
+  const effectivePaddingY = paddingY || withPadding;
+  
+  // Base container classes with consistent horizontal padding across screen sizes
+  const baseClasses = 'px-4 sm:px-6 md:px-8 mx-auto';
+  
+  // Size-specific max-width constraints
+  let sizeClasses = '';
+  
+  // Standard size mapping
+  const standardSizes: Record<string, string> = {
+    sm: 'max-w-screen-sm', // 640px
+    md: 'max-w-screen-md', // 768px  
+    lg: 'max-w-screen-lg', // 1024px
+    xl: 'max-w-screen-xl', // 1280px
+    full: 'max-w-none'     // No constraint
   };
   
-  // Screen-based responsive max widths
-  const screenWidths = {
-    'screen-sm': 'max-w-screen-sm', // 640px
-    'screen-md': 'max-w-screen-md', // 768px
-    'screen-lg': 'max-w-screen-lg', // 1024px
-    'screen-xl': 'max-w-screen-xl', // 1280px
-  };
+  // For backward compatibility, handle both standard sizes and custom maxWidth values
+  if (typeof effectiveSize === 'string') {
+    if (effectiveSize in standardSizes) {
+      sizeClasses = standardSizes[effectiveSize];
+    } else if (effectiveSize.startsWith('screen-')) {
+      // Handle legacy 'screen-X' format
+      const sizePart = effectiveSize.replace('screen-', '');
+      if (sizePart in standardSizes) {
+        sizeClasses = standardSizes[sizePart];
+      } else {
+        // Fallback for custom screen sizes
+        sizeClasses = `max-w-${effectiveSize}`;
+      }
+    } else {
+      // Fallback for any other string format
+      sizeClasses = `max-w-${effectiveSize}`;
+    }
+  }
   
-  const maxWidthClasses = maxWidth in fixedWidths 
-    ? fixedWidths[maxWidth as keyof typeof fixedWidths]
-    : screenWidths[maxWidth as keyof typeof screenWidths];
+  // Optional vertical padding
+  const paddingClasses = effectivePaddingY ? 'py-8 md:py-12' : '';
   
-  const paddingClasses = withPadding ? 'px-4 sm:px-6 lg:px-8' : '';
-  const centeringClasses = centered ? 'mx-auto' : '';
-
+  // Optional centering of content
+  const centerClasses = centered ? 'flex flex-col items-center justify-center' : '';
+  
+  // Combine all classes
   const containerClasses = [
-    maxWidthClasses,
+    baseClasses,
+    sizeClasses,
     paddingClasses,
-    centeringClasses,
+    centerClasses,
     className,
   ].filter(Boolean).join(' ');
-
+  
   return (
-    <div className={containerClasses}>
+    <Component className={containerClasses} id={id}>
       {children}
-    </div>
+    </Component>
   );
 };
 
