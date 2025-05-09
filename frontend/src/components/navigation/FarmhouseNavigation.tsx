@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from '../../hooks/useLanguage';
 import { useState } from 'react';
+import FarmhouseLogo from '../../assets/logos/Farmhouse/BROFAH.svg';
 
 const FarmhouseNavigation = () => {
   const { t } = useTranslation();
@@ -19,6 +20,7 @@ const FarmhouseNavigation = () => {
           {/* Logo */}
           <div className="flex items-center">
             <Link to={`/${language}/farmhouse`} className="flex items-center">
+              <img src={FarmhouseLogo} alt="Broadway Farmhouse Logo" className="h-10 mr-2" />
               <span className="text-xl font-bold">Broadway Farmhouse</span>
             </Link>
           </div>

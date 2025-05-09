@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from '../../hooks/useLanguage';
 import { useState } from 'react';
+import EnterpriseLogo from '../../assets/logos/Enterprise/BWE.svg';
 
 const EnterpriseNavigation = () => {
   const { t } = useTranslation();
@@ -19,6 +20,7 @@ const EnterpriseNavigation = () => {
           {/* Logo */}
           <div className="flex items-center">
             <Link to={`/${language}/enterprise`} className="flex items-center">
+              <img src={EnterpriseLogo} alt="Broadway Enterprise Logo" className="h-10 mr-2" />
               <span className="text-xl font-bold">Broadway Enterprise</span>
             </Link>
           </div>

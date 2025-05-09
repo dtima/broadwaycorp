@@ -45,7 +45,21 @@
   "ceoMessage": {
     "metaDescription": "Lisez le message de bienvenue de Ngu Teboh Gustave, Fondateur et PDG de Broadway Corporation.",
     "heroTagline": "Un message sur notre mission, notre vision et notre engagement pour le développement durable.",
-    "quote": "Nous croyons que le développement durable n'est pas seulement un objectif; c'est notre responsabilité. Nous construisons un avenir résilient et axé sur le savoir pour l'Afrique et au-delà."
+    "quote": "Nous croyons que le développement durable n'est pas seulement un objectif; c'est notre responsabilité. Nous construisons un avenir résilient et axé sur le savoir pour l'Afrique et au-delà.",
+    "greeting": "En tant que PDG et Directeur Général de Broadway Corporation, je suis fier de diriger une société holding dynamique engagée à promouvoir le développement durable grâce à l'innovation dans la science, l'éducation, l'agriculture et le progrès communautaire.",
+    "paragraph1": "Nos trois divisions—Broadway Enterprise, Broadway Farmhouse et Broadway Corporation—sont unies par une vision commune : autonomiser les communautés, favoriser la croissance et créer un impact durable à travers le Cameroun. Par Broadway Enterprise, nous renforçons l'infrastructure éducative et scientifique ; par Broadway Farmhouse, nous défendons l'agriculture durable et la sécurité alimentaire.",
+    "paragraph2": "Je crois au travail acharné, à la créativité et à une attention sans faille aux détails. Je suis strict parce que je me soucie profondément de l'excellence—et je suis très fier d'aider les autres à grandir et à réussir. Chez Broadway Corporation, nous ne nous contentons pas de parler de changement ; nous le construisons.",
+    "paragraph3": "À notre jeunesse : votre avenir commence par les choix que vous faites aujourd'hui. Soyez travailleurs, agissez avec intégrité et surtout—apprenez à suivre les instructions. La discipline et l'humilité sont les clés du succès. Et par-dessus tout, restez résilients face à la tentation de la corruption. C'est un ver silencieux qui ronge notre dignité humaine et détruit les fondements d'un avenir meilleur.",
+    "paragraph4": "Continuons à grandir, à innover et à construire ensemble un avenir plus fort et plus brillant.",
+    "paragraph5": "",
+    "paragraph6": "",
+    "paragraph7": "",
+    "closing": "— Teboh Gustave, Ngu\nPDG & Directeur Général\nBroadway Corporation",
+    "ceoName": "Teboh Gustave, Ngu",
+    "ceoTitle": "PDG & Directeur Général",
+    "portraitAlt": "Teboh Gustave, Ngu - PDG et Directeur Général de Broadway Corporation",
+    "ctaTitle": "En Savoir Plus Sur Notre Vision",
+    "ctaDescription": "Découvrez comment notre équipe de direction travaille à créer un impact durable."
   },
   "leadership": {
     "metaDescription": "Rencontrez l'équipe de direction derrière la vision de Broadway Corporation du développement durable par l'innovation.",
@@ -156,54 +170,56 @@
     "approach2": "Centrée sur la communauté: Développer des solutions adaptées aux besoins et au contexte locaux",
     "approach3": "Orientée vers la durabilité: Créer un impact durable grâce au transfert de connaissances et au renforcement des capacités",
     "servicesTitle": "Nos Services",
-    "servicesSubtitle": "Nous fournissons des solutions complètes dans quatre domaines clés pour soutenir l'avancement scientifique et le développement éducatif au Cameroun.",
+    "servicesSubtitle": "Nous proposons des solutions complètes dans quatre domaines clés pour soutenir le progrès scientifique et le développement éducatif au Cameroun.",
     "scientificTitle": "Équipement Scientifique",
-    "scientificDescription": "Fourniture d'équipements scientifiques et de fournitures médicales de qualité aux institutions.",
+    "scientificDescription": "Fourniture d'équipements scientifiques et de matériel médical de qualité aux institutions.",
     "educationTitle": "Éducation & Tutorat",
-    "educationDescription": "Soutien à l'éducation STEM par des services de tutorat et des programmes académiques.",
-    "communityTitle": "Développement Communautaire",
-    "communityDescription": "Soutien aux communautés locales par des initiatives de formation et de développement.",
+    "educationDescription": "Soutien à l'éducation STEM grâce à des services de tutorat et des programmes académiques.",
+    "communityTitle": "Élevage de Scorpions",
+    "communityDescription": "Techniques innovantes d'élevage de scorpions pour la recherche médicale et le développement durable.",
+    "laboratoryTitle": "Construction de Laboratoires",
+    "laboratoryDescription": "Conception et construction d'installations de laboratoire de pointe pour les établissements d'enseignement.",
     "laboratoryServices": {
-      "title": "Excellence en Construction de Laboratoires",
-      "description": "Broadway Enterprise se spécialise dans la conception et la construction d'installations de laboratoire de pointe pour les institutions éducatives à travers le Cameroun. Notre équipe d'experts gère tout, de la conception à l'achèvement.",
+      "title": "Services de Construction de Laboratoires",
+      "description": "Nous concevons et construisons des installations de laboratoire de pointe adaptées aux besoins et exigences spécifiques des établissements d'enseignement.",
       "workstations": "Postes de Travail de Laboratoire Personnalisés",
-      "equipment": "Installation d'Équipements Scientifiques", 
+      "equipment": "Installation d'Équipement Scientifique",
       "fixtures": "Éviers et Accessoires de Laboratoire",
       "cta": {
-        "title": "Besoin d'une Solution de Laboratoire Personnalisée?",
-        "description": "Nous concevons et construisons des laboratoires adaptés à vos besoins spécifiques d'éducation et de recherche.",
-        "button": "Explorez Nos Services"
+        "title": "Besoin d'Infrastructure de Laboratoire?",
+        "description": "Contactez-nous pour discuter des besoins de conception et de construction de laboratoire de votre institution.",
+        "button": "En Savoir Plus Sur Nos Services"
       }
     },
     "schools": "Écoles Équipées",
     "services": {
       "scientific": {
         "title": "Équipement Scientifique",
-        "description": "Nous fournissons des instruments scientifiques et des fournitures médicales de haute qualité aux écoles, universités, institutions de recherche et établissements de santé.",
-        "item1": "Équipement de laboratoire pour institutions éducatives",
-        "item2": "Instruments de recherche spécialisés",
-        "item3": "Fournitures médicales et de santé"
+        "description": "Fourniture d'équipements scientifiques et de matériel médical de qualité aux institutions.",
+        "item1": "Verrerie et équipement de laboratoire",
+        "item2": "Microscopes et outils d'observation",
+        "item3": "Réactifs chimiques et fournitures"
       },
       "education": {
         "title": "Éducation & Tutorat",
-        "description": "Nous offrons des programmes de soutien éducatif et des services de tutorat axés sur les matières STEM pour améliorer les résultats d'apprentissage.",
-        "item1": "Programmes STEM parascolaires",
-        "item2": "Ateliers de formation pour enseignants",
-        "item3": "Développement de matériel éducatif"
+        "description": "Soutien à l'éducation STEM grâce à des services de tutorat et des programmes académiques.",
+        "item1": "Développement de programmes STEM personnalisés",
+        "item2": "Formation et soutien des enseignants",
+        "item3": "Tutorat et mentorat des élèves"
       },
       "laboratory": {
         "title": "Construction de Laboratoires",
-        "description": "Nous concevons et construisons des espaces de laboratoire modernes et fonctionnels adaptés aux besoins éducatifs et de recherche spécifiques.",
-        "item1": "Consultation en conception de laboratoires",
-        "item2": "Services de construction et de rénovation",
-        "item3": "Mise en œuvre de protocoles de sécurité"
+        "description": "Conception et construction d'installations de laboratoire de pointe pour les établissements d'enseignement.",
+        "item1": "Postes de travail de laboratoire sur mesure",
+        "item2": "Installation d'équipements scientifiques",
+        "item3": "Éviers et accessoires de laboratoire"
       },
       "community": {
-        "title": "Développement Communautaire",
-        "description": "Nous mettons en œuvre des initiatives qui renforcent les communautés par le partage des connaissances et le renforcement des capacités.",
-        "item1": "Programmes de formation professionnelle",
-        "item2": "Ateliers d'éducation communautaire",
-        "item3": "Campagnes de sensibilisation environnementale"
+        "title": "Élevage de Scorpions",
+        "description": "Techniques innovantes d'élevage de scorpions pour la recherche médicale et le développement durable.",
+        "item1": "Programmes d'élevage et d'entretien des scorpions",
+        "item2": "Extraction et traitement de venin",
+        "item3": "Collaboration de recherche avec des institutions médicales"
       }
     },
     "impactTitle": "Notre Impact",
@@ -212,46 +228,134 @@
       "stat1Description": "Institutions éducatives soutenues avec des équipements scientifiques",
       "stat2Label": "Étudiants Touchés",
       "stat2Description": "Jeunes esprits engagés à travers nos programmes éducatifs",
-      "stat3Label": "Laboratoires Construits",
-      "stat3Description": "Espaces de laboratoire modernes construits ou rénovés",
-      "stat4Label": "Communautés Servies",
-      "stat4Description": "Communautés locales positivement impactées par nos initiatives"
+      "stat3Label": "Communautés Servies",
+      "stat3Description": "Communautés locales positivement impactées par nos initiatives",
+      "stat4Label": "Partenaires Engagés",
+      "stat4Description": "Organisations collaborant avec nous sur des projets de développement"
     },
-    "caseStudiesTitle": "Notre Travail en Action",
+    "studentGallery": {
+      "title": "Former les Jeunes Scientifiques",
+      "description": "Notre impact va au-delà des chiffres. Ces images montrent comment Broadway Enterprise nourrit la prochaine génération de talents scientifiques grâce à une éducation pratique et à l'accès à un équipement de laboratoire approprié.",
+      "collaborativeLearning": "Apprentissage Collaboratif",
+      "collaborativeDescription": "Étudiants travaillant ensemble pour analyser des graphiques de couleurs en laboratoire",
+      "geologicalStudies": "Études Géologiques",
+      "geologicalDescription": "Catalogage et analyse d'échantillons minéraux",
+      "handsOnChemistry": "Chimie Pratique",
+      "chemistryDescription": "Étudiants réalisant des expériences contrôlées avec un équipement adéquat",
+      "teamResearch": "Recherche en Équipe", 
+      "teamDescription": "Environnement d'apprentissage collaboratif favorisant la découverte scientifique",
+      "supportButton": "Soutenez Nos Initiatives Éducatives"
+    },
+    "caseStudiesTitle": "Études de Cas",
     "results": "Résultats",
     "caseStudies": {
       "case1": {
         "location": "Yaoundé",
-        "title": "Laboratoire Scientifique Complet pour École Secondaire",
-        "description": "Nous avons équipé une école secondaire publique à Yaoundé d'un laboratoire scientifique complet, comprenant des équipements de chimie, biologie et physique, et avons formé les enseignants sur l'enseignement efficace en laboratoire.",
-        "results": "Amélioration de l'éducation scientifique pratique pour plus de 1 200 élèves par an, avec une augmentation de 40% des résultats aux examens scientifiques après la première année."
+        "title": "Programme de Laboratoire STEM pour Écoles Secondaires",
+        "description": "Nous avons conçu et construit des laboratoires scientifiques entièrement équipés pour trois écoles secondaires à Yaoundé, fournissant des équipements modernes et une formation complète pour les enseignants afin d'améliorer les capacités d'éducation STEM.",
+        "results": "Amélioration de l'éducation scientifique pratique pour plus de 1 500 élèves par an, avec une augmentation de 40% des performances des élèves en matières scientifiques et un intérêt croissant pour les carrières STEM."
       },
       "case2": {
-        "location": "Douala",
-        "title": "Centre d'Éducation STEM Communautaire",
-        "description": "Nous avons établi un centre d'éducation communautaire à Douala axé sur la fourniture de programmes STEM parascolaires pour les élèves défavorisés, équipé d'ordinateurs, d'équipements de laboratoire de base et de matériel éducatif.",
-        "results": "Plus de 500 élèves engagés la première année, avec 85% des participants déclarant un intérêt accru pour poursuivre des carrières en STEM."
+        "location": "Bamenda",
+        "title": "Initiative d'Éducation Scientifique Communautaire",
+        "description": "Nous avons mis en œuvre un programme d'éducation scientifique communautaire en zone rurale de Bamenda, établissant un laboratoire scientifique mobile et formant des éducateurs locaux pour apporter un apprentissage scientifique pratique aux zones mal desservies.",
+        "results": "Atteint plus de 2 000 élèves dans 12 communautés rurales, fourni une formation à 24 éducateurs locaux, et établi une infrastructure d'éducation scientifique durable qui continue de servir la région."
       }
     },
-    "sdgTitle": "Notre Contribution aux Objectifs de Développement Durable",
-    "sdgDescription": "Le travail de Broadway Enterprise s'aligne directement avec plusieurs Objectifs de Développement Durable des Nations Unies, concentrant nos efforts sur la création de changements significatifs et durables.",
+    "sdgTitle": "Objectifs de Développement Durable",
+    "sdgDescription": "Le travail de Broadway Enterprise contribue directement à plusieurs Objectifs de Développement Durable des Nations Unies, concentrant nos efforts sur la création de changements significatifs et durables par l'éducation et l'innovation.",
     "sdgs": {
-      "sdg4": {
-        "title": "ODD 4: Éducation de Qualité",
-        "description": "Assurer une éducation de qualité inclusive et équitable et promouvoir des opportunités d'apprentissage tout au long de la vie pour tous."
-      },
       "sdg3": {
         "title": "ODD 3: Bonne Santé et Bien-être",
-        "description": "Assurer une vie saine et promouvoir le bien-être pour tous à tout âge grâce à l'amélioration des capacités scientifiques."
+        "description": "Soutenir l'éducation à la santé et fournir des équipements de qualité pour la formation en sciences de la santé afin d'améliorer le bien-être général."
+      },
+      "sdg4": {
+        "title": "ODD 4: Éducation de Qualité",
+        "description": "Améliorer les opportunités éducatives grâce à des équipements modernes, la formation des enseignants et des approches d'apprentissage innovantes."
       },
       "sdg6": {
         "title": "ODD 6: Eau Propre et Assainissement",
-        "description": "Soutenir la recherche scientifique et l'éducation liées aux tests de qualité de l'eau et aux améliorations d'assainissement."
+        "description": "Promouvoir l'éducation sur la qualité de l'eau et soutenir la recherche sur les technologies de purification de l'eau."
       }
     },
-    "ctaTitle": "Partenariat avec Broadway Enterprise",
-    "ctaDescription": "Rejoignez-nous dans notre mission pour faire progresser la science, l'éducation et le développement durable au Cameroun.",
-    "ctaButton": "Contactez-Nous Dès Aujourd'hui"
+    "ctaTitle": "Prêt à Collaborer?",
+    "ctaDescription": "Contactez-nous pour en savoir plus sur nos services et comment nous pouvons répondre aux besoins scientifiques et éducatifs de votre institution.",
+    "ctaButton": "Contactez-Nous",
+    "productGallery": {
+      "title": "Notre Équipement Scientifique",
+      "description": "Broadway Enterprise fournit des équipements scientifiques et des ressources éducatives de haute qualité aux écoles, institutions de recherche et laboratoires à travers le Cameroun.",
+      "categories": {
+        "scientificEquipment": "Équipement Scientifique",
+        "educationalResources": "Ressources Éducatives",
+        "educationalTechnology": "Technologie Éducative"
+      },
+      "products": {
+        "glassware": {
+          "name": "Ensemble de Verrerie de Laboratoire",
+          "description": "Flacons à réactifs, erlenmeyers et béchers de haute qualité pour diverses applications de laboratoire"
+        },
+        "bunsenBurner": {
+          "name": "Bec Bunsen",
+          "description": "Brûleur de qualité professionnelle avec contrôle précis de la flamme pour les expériences de laboratoire"
+        },
+        "fossils": {
+          "name": "Kit de Collection de Fossiles",
+          "description": "Collection complète de fossiles pour les études géologiques et l'éducation en histoire naturelle"
+        },
+        "testTubes": {
+          "name": "Ensemble de Tubes à Essai",
+          "description": "Installation complète de tubes à essai avec support et microscope pour l'analyse détaillée des spécimens"
+        },
+        "slides": {
+          "name": "Collection de Lames de Microscope",
+          "description": "Lames préparées de haute qualité pour les études biologiques et les fins éducatives"
+        },
+        "chemistryLab": {
+          "name": "Équipement de Laboratoire de Chimie",
+          "description": "Installation de laboratoire professionnelle pour expériences chimiques avancées et recherche"
+        },
+        "projector": {
+          "name": "Projecteur Numérique",
+          "description": "Système de projection numérique moderne pour des présentations visuelles améliorées en classe"
+        }
+      }
+    },
+    "featuredEquipment": {
+      "title": "Équipement de Laboratoire en Vedette",
+      "description": "Notre équipement de laboratoire spécialisé est soigneusement sélectionné pour répondre aux besoins des établissements d'enseignement et des installations de recherche à travers le Cameroun.",
+      "featured": "En Vedette",
+      "starterKit": {
+        "name": "Kit de Démarrage de Laboratoire Complet",
+        "description": "Équipement essentiel pour les laboratoires scolaires, comprenant tubes à essai, microscopes et outils de mesure"
+      },
+      "microSlides": {
+        "name": "Lames de Microscope",
+        "description": "Lames préparées pour la recherche biologique"
+      },
+      "eduTech": {
+        "name": "Technologie Éducative",
+        "description": "Équipement de projection moderne pour les salles de classe"
+      }
+    },
+    "coreServices": {
+      "title": "Nos Services Principaux",
+      "description": "Des équipements de laboratoire de pointe aux programmes éducatifs complets, nous fournissons les outils et les connaissances nécessaires pour faire progresser la science et l'éducation au Cameroun."
+    },
+    "partners": {
+      "title": "Nos Partenaires et Clients",
+      "subtitle": "Nous sommes fiers de collaborer avec des institutions éducatives de premier plan au Cameroun",
+      "description": "Ces institutions de confiance se sont associées à Broadway Enterprise pour améliorer leurs capacités scientifiques et éducatives.",
+      "schools": {
+        "stjass": "École Secondaire St. Joseph (St. JASS)",
+        "mevick": "MEVICK Collège Bilingue",
+        "ipb": "Institut Polyvalent Bilingue (IPB)",
+        "wecare": "Académie WECARE",
+        "ecole": "École Bilingue Albert Perière",
+        "elohim": "Complex Scolaire Bilingue ELOHIM"
+      },
+      "cta": "Vous souhaitez devenir partenaire?",
+      "ctaButton": "Contactez-Nous"
+    }
   },
   "farmhouse": {
     "pageTitle": "Broadway Farmhouse",
@@ -271,6 +375,38 @@
     "servicesTitle": "Nos Services",
     "servicesSubtitle": "Nous fournissons des solutions agricoles complètes dans quatre domaines clés pour soutenir la production alimentaire durable et la croissance économique au Cameroun.",
     "services": {
+      "title": "Solutions Agricoles Complètes",
+      "navOverview": "Aperçu",
+      "relatedTitle": "Informations Connexes",
+
+      "organic": {
+        "title": "Agriculture Biologique",
+        "description": "Nous mettons en œuvre des pratiques d'agriculture biologique certifiées qui privilégient la santé des sols, la biodiversité et la gestion durable des ressources pour produire des cultures de haute qualité, sans produits chimiques.",
+        "item1": "Gestion de la santé des sols grâce à des amendements naturels",
+        "item2": "Promotion des insectes bénéfiques et de la biodiversité",
+        "item3": "Méthodes naturelles de lutte contre les ravageurs et les maladies"
+      },
+      "sustainable": {
+        "title": "Pratiques Durables",
+        "description": "Nos méthodes agricoles durables se concentrent sur l'équilibre écologique à long terme, minimisant l'impact environnemental tout en maximisant la productivité et en favorisant la viabilité économique.",
+        "item1": "Conservation de l'eau et efficacité de l'irrigation",
+        "item2": "Intégration des énergies renouvelables dans les opérations agricoles",
+        "item3": "Approche d'économie circulaire pour les déchets agricoles"
+      },
+      "community": {
+        "title": "Programmes Communautaires",
+        "description": "Nous développons et mettons en œuvre des initiatives agricoles communautaires qui autonomisent les agriculteurs locaux, améliorent la sécurité alimentaire et renforcent les économies rurales grâce à des approches collaboratives.",
+        "item1": "Développement et soutien de coopératives d'agriculteurs",
+        "item2": "Réseaux de partage des connaissances et de transfert de compétences",
+        "item3": "Amélioration de l'accès au marché pour les petits agriculteurs"
+      },
+      "education": {
+        "title": "Éducation Agricole",
+        "description": "Nos programmes éducatifs fournissent une formation pratique et un transfert de connaissances pour équiper les agriculteurs avec des techniques modernes, des compétences commerciales et des pratiques durables.",
+        "item1": "Ateliers pratiques sur les techniques agricoles",
+        "item2": "Formation à l'entrepreneuriat agricole",
+        "item3": "Engagement des jeunes dans l'agriculture moderne"
+      },
       "agriculture": {
         "title": "Agriculture Durable",
         "description": "Nous mettons en œuvre des pratiques agricoles modernes et durables pour améliorer les rendements des cultures tout en préservant les ressources naturelles.",
@@ -346,7 +482,63 @@
     "futureProjectsTitle": "Projets Futurs",
     "ctaTitle": "Partenariat avec Broadway Farmhouse",
     "ctaDescription": "Rejoignez-nous dans notre mission pour faire progresser l'agriculture durable et la sécurité alimentaire au Cameroun.",
-    "ctaButton": "Contactez-Nous Dès Aujourd'hui"
+    "ctaButton": "Contactez-Nous Dès Aujourd'hui",
+    "projectsTitle": "Nos Projets",
+    "projectsDescription": "Découvrez les initiatives agricoles innovantes que nous mettons en œuvre au Cameroun pour améliorer la sécurité alimentaire, les opportunités économiques et la durabilité.",
+    "projectsOverview": "Aperçu des Projets",
+    "featuredProjectsTitle": "Projets Phares",
+    "sustainabilityTitle": "Impact sur la Durabilité",
+    "viewProjectButton": "Voir les Détails du Projet",
+    "project1Description": "Un système agricole intégré qui combine la production végétale, l'élevage et l'aquaculture pour les petits agriculteurs.",
+    "tag1": "Durable",
+    "tag2": "Communautaire",
+    "tag3": "Formation",
+    
+    "projects": {
+      "navOverview": "Aperçu",
+      "navStats": "Statistiques d'Impact",
+      "stat1Label": "Projets Actifs",
+      "stat1Description": "Initiatives actuelles dans différentes régions",
+      "stat2Label": "Agriculteurs Impliqués", 
+      "stat2Description": "Agriculteurs locaux participant à nos projets",
+      "stat3Label": "Hectares Couverts",
+      "stat3Description": "Terres sous gestion durable",
+      "stat4Label": "Communautés Impactées", 
+      "stat4Description": "Communautés locales avec une sécurité alimentaire améliorée",
+      
+      "project1": {
+        "title": "Système Aquaponique Intégré",
+        "location": "Région de Bamenda",
+        "description": "Un système en circuit fermé combinant l'élevage de poissons avec l'hydroponie pour produire à la fois du poisson et des légumes avec une utilisation minimale d'eau et une efficacité maximale.",
+        "results": "Fournit des protéines et des produits durables à plus de 200 familles tout en utilisant 90% moins d'eau que l'agriculture conventionnelle."
+      },
+      "project2": {
+        "title": "Culture Biologique du Cacao",
+        "location": "Région du Sud-Ouest",
+        "description": "Formation et soutien aux agriculteurs locaux dans les techniques de culture biologique du cacao qui améliorent la santé des sols, augmentent la biodiversité et commandent des prix premium.",
+        "results": "Augmentation des revenus de 150 agriculteurs de 30% grâce à l'accès aux marchés biologiques premium."
+      },
+      "project3": {
+        "title": "Programme d'Élevage Durable",
+        "location": "Région du Nord-Ouest",
+        "description": "Mise en œuvre de systèmes de pâturage rotatif et amélioration de la génétique du bétail pour augmenter la productivité tout en réduisant l'impact environnemental.",
+        "results": "Amélioration de la santé et de la productivité du bétail pour 85 petits agriculteurs, avec une réduction de 40% des coûts d'alimentation."
+      },
+      
+      "sustainability": {
+        "title": "Durabilité Environnementale",
+        "description": "Tous nos projets agricoles sont conçus avec la durabilité environnementale comme principe fondamental, en mettant l'accent sur la conservation de l'eau, la santé des sols, la préservation de la biodiversité et la réduction de l'empreinte carbone.",
+        "carbon": "Réduction de Carbone",
+        "carbonStat": "40%",
+        "carbonDescription": "Réduction moyenne de l'empreinte carbone par rapport aux pratiques agricoles conventionnelles",
+        "water": "Conservation de l'Eau",
+        "waterStat": "65%",
+        "waterDescription": "Réduction moyenne de l'utilisation d'eau grâce à des systèmes d'irrigation efficaces",
+        "biodiversity": "Augmentation de la Biodiversité",
+        "biodiversityStat": "80%",
+        "biodiversityDescription": "Augmentation des insectes bénéfiques et des pollinisateurs sur les sites des projets"
+      }
+    }
   },
   "news": {
     "pageTitle": "Actualités & Mises à Jour",

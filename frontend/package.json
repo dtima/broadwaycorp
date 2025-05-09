@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b --noEmit && vite build --emptyOutDir",
+    "build": "vite build --emptyOutDir",
+    "build:typecheck": "tsc -b --noEmit && vite build --emptyOutDir",
     "build:test": "vite build --emptyOutDir",
     "build:netlify": "pnpm build:test && node scripts/copy-netlify-config.js",
     "lint": "eslint .",

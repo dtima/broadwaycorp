@@ -1,76 +1,107 @@
-import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
-import { useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 
-interface NavItem {
+export interface NavItem {
+  id: string;
   label: string;
-  path: string;
-  current?: boolean;
+  href: string;
 }
 
 interface SubNavigationProps {
   items: NavItem[];
+  activeId?: string;
   className?: string;
+  ariaLabel?: string;
 }
 
 /**
  * Reusable sub-navigation component for consistent secondary navigation
+ * with improved mobile responsiveness and accessibility
  */
-const SubNavigation: React.FC<SubNavigationProps> = ({ items, className = "" }) => {
-  const { t } = useTranslation();
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
+const SubNavigation: React.FC<SubNavigationProps> = ({ 
+  items, 
+  activeId,
+  className = '',
+  ariaLabel = 'Page sections'
+}) => {
+  const [isExpanded, setIsExpanded] = useState(false);
   
-  // Scroll active item into view when component loads
-  useEffect(() => {
-    const scrollContainer = scrollContainerRef.current;
-    if (!scrollContainer) return;
-    
-    const activeItem = scrollContainer.querySelector('[aria-current="page"]');
-    if (activeItem) {
-      const containerWidth = scrollContainer.offsetWidth;
-      const itemLeft = (activeItem as HTMLElement).offsetLeft;
-      const itemWidth = (activeItem as HTMLElement).offsetWidth;
-      
-      // Center the active item if possible
-      scrollContainer.scrollLeft = itemLeft - (containerWidth / 2) + (itemWidth / 2);
-    }
-  }, [items]);
+  // Find the active item for the mobile view
+  const activeItem = items.find(item => item.id === activeId);
   
   return (
-    <div 
-      className="relative overflow-hidden" 
-      aria-label={t('navigation.subNavigation')}
+    <nav 
+      className={`sticky top-0 bg-white shadow-sm z-10 py-3 ${className}`}
+      aria-label={ariaLabel}
     >
-      <div 
-        ref={scrollContainerRef}
-        className={`
-          flex space-x-1 overflow-x-auto pb-2 scrollbar-none
-          -mx-4 px-4 md:-mx-6 md:px-6 lg:-mx-8 lg:px-8
-          ${className}
-        `}
-      >
-        {items.map((item, index) => (
-          <Link 
-            key={index}
-            to={item.path}
-            className={`
-              px-4 py-3 inline-block font-medium text-sm whitespace-nowrap flex-shrink-0
-              ${item.current 
-                ? 'text-brand-navy dark:text-brand-orange border-b-2 border-brand-orange' 
-                : 'text-gray-500 dark:text-gray-400 hover:text-brand-navy dark:hover:text-brand-orange border-b-2 border-transparent hover:border-brand-orange/50'
-              }
-            `}
-            {...(item.current ? { 'aria-current': 'page' } : {})}
+      <div className="container-custom">
+        {/* Mobile view - dropdown style navigation */}
+        <div className="md:hidden relative">
+          <button 
+            className="flex w-full justify-between items-center px-4 py-2 text-left text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+            onClick={() => setIsExpanded(!isExpanded)}
+            aria-expanded={isExpanded}
+            aria-controls="subnav-menu"
           >
-            {item.label}
-          </Link>
-        ))}
+            <span className="font-medium">{activeItem?.label || 'Navigate to section'}</span>
+            <svg 
+              className={`w-5 h-5 ml-2 transition-transform ${isExpanded ? 'rotate-180' : ''}`} 
+              xmlns="http://www.w3.org/2000/svg" 
+              viewBox="0 0 20 20" 
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+            </svg>
+          </button>
+          
+          {/* Dropdown menu */}
+          {isExpanded && (
+            <div 
+              id="subnav-menu"
+              className="absolute z-10 mt-1 w-full bg-white border border-gray-300 rounded-md shadow-lg"
+            >
+              <div className="py-2">
+                {items.map((item) => (
+                  <a 
+                    key={item.id}
+                    href={item.href}
+                    className={`block px-4 py-2 text-sm ${
+                      activeId === item.id 
+                        ? 'bg-green-50 text-green-700 font-medium' 
+                        : 'text-gray-700 hover:bg-gray-50 hover:text-green-700'
+                    }`}
+                    onClick={() => setIsExpanded(false)}
+                    aria-current={activeId === item.id ? 'location' : undefined}
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+        
+        {/* Desktop view - horizontal navigation */}
+        <div className="hidden md:block overflow-x-auto scrollbar-hide">
+          <div className="flex space-x-8 mx-auto" role="list">
+            {items.map((item) => (
+              <a 
+                key={item.id}
+                href={item.href}
+                className={`text-sm font-medium whitespace-nowrap transition-colors px-1 py-2 border-b-2 ${
+                  activeId === item.id 
+                    ? 'text-green-700 border-green-700' 
+                    : 'text-gray-700 hover:text-green-700 border-transparent hover:border-green-300'
+                }`}
+                aria-current={activeId === item.id ? 'location' : undefined}
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
-      
-      {/* Shadow indicators for scroll */}
-      <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-white dark:from-gray-900 to-transparent w-4 md:w-6 lg:w-8 z-10 pointer-events-none"></div>
-      <div className="absolute inset-y-0 right-0 bg-gradient-to-l from-white dark:from-gray-900 to-transparent w-4 md:w-6 lg:w-8 z-10 pointer-events-none"></div>
-    </div>
+    </nav>
   );
 };
 

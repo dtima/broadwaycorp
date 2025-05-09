@@ -31,10 +31,11 @@ i18n
     },
     // Enhanced missing key handling
     saveMissing: isDevelopment,
-    missingKeyHandler: (lng, ns, key) => {
+    missingKeyHandler: (lng, _ns, key) => {
       if (isDevelopment) {
-        console.warn(`[i18n] Missing translation: ${key} (${lng})`);
+        console.warn(`Missing translation key: ${key} for language: ${lng}`);
       }
+      return key;
     },
     parseMissingKeyHandler: (key) => {
       // This will be shown in the UI for missing keys

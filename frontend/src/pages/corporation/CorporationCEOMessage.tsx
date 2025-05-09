@@ -1,11 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from '../../hooks/useLanguage';
-import { Link } from 'react-router-dom';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { Section, Container, Grid } from '../../components/layout';
 import { Button, Image } from '../../components/common';
 import { Breadcrumb, SubNavigation } from '../../components/navigation';
+import { convertToNavItems } from '../../utils/navigation';
 import { useEffect } from 'react';
 
 const CorporationCEOMessage = () => {
@@ -26,8 +26,8 @@ const CorporationCEOMessage = () => {
     { label: t('navigation.aboutSubmenu.ceoMessage'), current: true }
   ];
 
-  // Setup sub-navigation items
-  const subNavItems = [
+  // Setup legacy sub-navigation items
+  const legacySubNavItems = [
     { 
       label: t('navigation.about'), 
       path: `/${language}/corporation/about`
@@ -42,6 +42,11 @@ const CorporationCEOMessage = () => {
       path: `/${language}/corporation/team`
     }
   ];
+  
+  // Convert to compatible NavItem format
+  const subNavItems = convertToNavItems(legacySubNavItems);
+  // Set active ID based on current page
+  const activeId = `${language}-corporation-about-ceo-message`;
 
   return (
     <>
@@ -90,7 +95,7 @@ const CorporationCEOMessage = () => {
       {/* Sub Navigation */}
       <div className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 sticky top-20 z-10">
         <Container maxWidth="screen-lg">
-          <SubNavigation items={subNavItems} />
+          <SubNavigation items={subNavItems} activeId={activeId} />
         </Container>
       </div>
 

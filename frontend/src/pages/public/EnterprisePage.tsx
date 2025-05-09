@@ -3,6 +3,7 @@ import Layout from '../../components/layout/Layout';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../hooks/useLanguage';
+import Partners from '../../components/enterprise/Partners';
 
 const EnterprisePage = () => {
   const { t } = useTranslation();
@@ -244,6 +245,9 @@ const EnterprisePage = () => {
               </div>
             </div>
           </div>
+
+          {/* Partners and Clients Section */}
+          <Partners />
 
           {/* Case Studies */}
           <div className="mb-16">

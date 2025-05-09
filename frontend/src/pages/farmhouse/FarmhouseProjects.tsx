@@ -3,10 +3,72 @@ import { useLanguage } from '../../hooks/useLanguage';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
+import SubNavigation from '../../components/navigation/SubNavigation';
+import ExpandableText from '../../components/common/ExpandableText';
+import RelatedLinks from '../../components/navigation/RelatedLinks';
+import NextPrevNavigation from '../../components/navigation/NextPrevNavigation';
+import { useEffect, useRef, useState } from 'react';
 
 const FarmhouseProjects = () => {
   const { t } = useTranslation();
   const { language } = useLanguage();
+  const [activeSection, setActiveSection] = useState('overview');
+
+  // Refs for each section for intersection observer
+  const overviewRef = useRef<HTMLDivElement>(null);
+  const statsRef = useRef<HTMLDivElement>(null);
+  const featuredRef = useRef<HTMLDivElement>(null);
+  const sustainabilityRef = useRef<HTMLDivElement>(null);
+
+  // Setup intersection observer to update active section based on scroll
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-100px 0px -70% 0px',
+      threshold: 0
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    
+    if (overviewRef.current) observer.observe(overviewRef.current);
+    if (statsRef.current) observer.observe(statsRef.current);
+    if (featuredRef.current) observer.observe(featuredRef.current);
+    if (sustainabilityRef.current) observer.observe(sustainabilityRef.current);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  // Sub-navigation items
+  const subNavItems = [
+    { id: 'overview', label: t('farmhouse.projects.navOverview'), href: '#overview' },
+    { id: 'stats', label: t('farmhouse.projects.navStats'), href: '#stats' },
+    { id: 'featured', label: t('farmhouse.featuredProjectsTitle'), href: '#featured' },
+    { id: 'sustainability', label: t('farmhouse.sustainabilityTitle'), href: '#sustainability' }
+  ];
+
+  // Next/Previous navigation links for pages
+  const nextPrevLinks = {
+    prev: {
+      label: t('farmhouse.servicesTitle'),
+      path: `/${language}/farmhouse/services`,
+      description: t('farmhouse.servicesSubtitle')
+    },
+    next: {
+      label: t('navigation.contact'),
+      path: `/${language}/farmhouse/contact`,
+      description: t('contact.introText')
+    }
+  };
 
   return (
     <div>
@@ -57,8 +119,40 @@ const FarmhouseProjects = () => {
         </div>
       </section>
 
+      {/* Sub Navigation */}
+      <SubNavigation items={subNavItems} activeId={activeSection} />
+
+      {/* Projects Overview */}
+      <section id="overview" ref={overviewRef} className="py-16">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <motion.h2 
+              className="text-3xl font-bold text-brand-navy mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              {t('farmhouse.projectsOverview')}
+            </motion.h2>
+            <motion.p
+              className="text-lg text-gray-700"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <ExpandableText
+                text={t('farmhouse.projectsDescription')}
+                maxLines={3}
+              />
+            </motion.p>
+          </div>
+        </div>
+      </section>
+
       {/* Projects Stats */}
-      <section className="py-16">
+      <section id="stats" ref={statsRef} className="py-16 bg-gray-50">
         <div className="container-custom">
           <motion.h2 
             className="text-3xl font-bold text-center text-brand-navy mb-12"
@@ -131,7 +225,7 @@ const FarmhouseProjects = () => {
       </section>
 
       {/* Featured Projects Section */}
-      <section className="py-16 bg-gray-50">
+      <section id="featured" ref={featuredRef} className="py-16">
         <div className="container-custom">
           <motion.h2 
             className="text-3xl font-bold text-center text-brand-navy mb-12"
@@ -162,11 +256,24 @@ const FarmhouseProjects = () => {
                   </div>
                 </div>
                 <div className="p-8">
-                  <p className="text-gray-700 mb-6">{t('farmhouse.projects.project1.description')}</p>
+                  <ExpandableText
+                    text={t('farmhouse.projects.project1.description')}
+                    maxLines={3}
+                    className="text-gray-700 mb-6"
+                  />
                   <div>
                     <h4 className="font-bold text-brand-navy mb-2">{t('farmhouse.results')}</h4>
                     <p className="text-gray-700">{t('farmhouse.projects.project1.results')}</p>
                   </div>
+                  
+                  <RelatedLinks 
+                    title={t('farmhouse.services.relatedTitle')}
+                    links={[
+                      { id: 'organic', label: t('farmhouse.services.organic.title'), path: `/${language}/farmhouse/services#organic`, color: 'green' as const },
+                      { id: 'education', label: t('farmhouse.services.education.title'), path: `/${language}/farmhouse/services#education`, color: 'purple' as const }
+                    ]}
+                    className="mt-6"
+                  />
                 </div>
               </div>
             </motion.div>
@@ -189,11 +296,24 @@ const FarmhouseProjects = () => {
                   </div>
                 </div>
                 <div className="order-2 md:order-1 p-8">
-                  <p className="text-gray-700 mb-6">{t('farmhouse.projects.project2.description')}</p>
+                  <ExpandableText
+                    text={t('farmhouse.projects.project2.description')}
+                    maxLines={3}
+                    className="text-gray-700 mb-6"
+                  />
                   <div>
                     <h4 className="font-bold text-brand-navy mb-2">{t('farmhouse.results')}</h4>
                     <p className="text-gray-700">{t('farmhouse.projects.project2.results')}</p>
                   </div>
+                  
+                  <RelatedLinks 
+                    title={t('farmhouse.services.relatedTitle')}
+                    links={[
+                      { id: 'sustainable', label: t('farmhouse.services.sustainable.title'), path: `/${language}/farmhouse/services#sustainable`, color: 'amber' as const },
+                      { id: 'community', label: t('farmhouse.services.community.title'), path: `/${language}/farmhouse/services#community`, color: 'blue' as const }
+                    ]}
+                    className="mt-6"
+                  />
                 </div>
               </div>
             </motion.div>
@@ -216,11 +336,24 @@ const FarmhouseProjects = () => {
                   </div>
                 </div>
                 <div className="p-8">
-                  <p className="text-gray-700 mb-6">{t('farmhouse.projects.project3.description')}</p>
+                  <ExpandableText
+                    text={t('farmhouse.projects.project3.description')}
+                    maxLines={3}
+                    className="text-gray-700 mb-6"
+                  />
                   <div>
                     <h4 className="font-bold text-brand-navy mb-2">{t('farmhouse.results')}</h4>
                     <p className="text-gray-700">{t('farmhouse.projects.project3.results')}</p>
                   </div>
+                  
+                  <RelatedLinks 
+                    title={t('farmhouse.services.relatedTitle')}
+                    links={[
+                      { id: 'education', label: t('farmhouse.services.education.title'), path: `/${language}/farmhouse/services#education`, color: 'purple' as const },
+                      { id: 'organic', label: t('farmhouse.services.organic.title'), path: `/${language}/farmhouse/services#organic`, color: 'green' as const }
+                    ]}
+                    className="mt-6"
+                  />
                 </div>
               </div>
             </motion.div>
@@ -229,7 +362,7 @@ const FarmhouseProjects = () => {
       </section>
 
       {/* Sustainability Goals Section */}
-      <section className="py-16">
+      <section id="sustainability" ref={sustainabilityRef} className="py-16 bg-gray-50">
         <div className="container-custom">
           <motion.div 
             className="text-center mb-12"
@@ -239,9 +372,13 @@ const FarmhouseProjects = () => {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-3xl font-bold text-brand-navy mb-4">{t('farmhouse.sustainabilityTitle')}</h2>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              {t('farmhouse.sustainabilityDescription')}
-            </p>
+            <div className="max-w-3xl mx-auto">
+              <ExpandableText
+                text={t('farmhouse.sustainabilityDescription')}
+                maxLines={3}
+                className="text-lg text-gray-700"
+              />
+            </div>
           </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -310,6 +447,12 @@ const FarmhouseProjects = () => {
           </div>
         </div>
       </section>
+
+      {/* Next/Prev Navigation */}
+      <NextPrevNavigation 
+        prevLink={nextPrevLinks.prev}
+        nextLink={nextPrevLinks.next}
+      />
 
       {/* CTA Section */}
       <section className="py-16 bg-green-700 text-white">

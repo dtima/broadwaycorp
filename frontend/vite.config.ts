@@ -10,7 +10,6 @@ export default defineConfig({
     sitemap({
       hostname: 'https://broadway-corp.com',
       exclude: ['/admin/**', '/404', '/500', '/forbidden'],
-      lastmod: new Date().toISOString(),
     }),
   ],
   resolve: {

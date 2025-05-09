@@ -5,6 +5,11 @@ import { Helmet } from 'react-helmet-async';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 
+// Import logos
+import BCLogo from '../../assets/logos/Corporation/BC Logo.svg';
+import FarmhouseLogo from '../../assets/logos/Farmhouse/BROFAH.svg';
+import EnterpriseLogo from '../../assets/logos/Enterprise/BWE.svg';
+
 // DivisionCard component for reusability
 const DivisionCard = ({ 
   title, 
@@ -13,6 +18,7 @@ const DivisionCard = ({
   link, 
   color, 
   icon,
+  logo,
   delay = 0
 }: { 
   title: string; 
@@ -21,33 +27,33 @@ const DivisionCard = ({
   link: string; 
   color: string;
   icon: React.ReactNode;
+  logo?: string;
   delay?: number;
 }) => {
   return (
     <motion.div 
-      className={`bg-white rounded-lg shadow-lg overflow-hidden border-t-4 ${color}`}
+      className={`bg-white p-6 rounded-lg shadow-md border-t-4 ${color} flex flex-col h-full`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay, duration: 0.5 }}
-      whileHover={{ y: -10, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)" }}
+      transition={{ duration: 0.5, delay }}
     >
-      <div className="p-6">
-        <div className="flex items-center mb-4">
-          <div className={`w-10 h-10 rounded-full flex items-center justify-center ${color.replace('border', 'bg')}`}>
+      <div className="flex items-center mb-4">
+        {logo ? (
+          <img src={logo} alt={`${title} Logo`} className="w-10 h-10 mr-3" />
+        ) : (
+          <div className="text-brand-navy mr-3">
             {icon}
           </div>
-          <h3 className="text-xl font-bold ml-3">{title}</h3>
-        </div>
-        <p className="text-gray-600 mb-6">
-          {description}
-        </p>
-        <Link 
-          to={link} 
-          className={`inline-block px-6 py-2 rounded-md text-white ${color.replace('border', 'bg')} hover:opacity-90 transition-opacity`}
-        >
-          {buttonText}
-        </Link>
+        )}
+        <h3 className="text-xl font-bold text-brand-navy">{title}</h3>
       </div>
+      <p className="text-gray-600 flex-grow mb-6">{description}</p>
+      <Link 
+        to={link} 
+        className="inline-block px-4 py-2 bg-brand-navy text-white rounded hover:bg-brand-navy-dark transition-colors mt-auto"
+      >
+        {buttonText}
+      </Link>
     </motion.div>
   );
 };
@@ -199,6 +205,7 @@ const LandingPortal = () => {
               link={`/${language}/corporation`}
               color="border-brand-navy"
               icon={corporationIcon}
+              logo={BCLogo}
               delay={0.1}
             />
             <DivisionCard
@@ -208,6 +215,7 @@ const LandingPortal = () => {
               link={`/${language}/enterprise`}
               color="border-blue-600"
               icon={enterpriseIcon}
+              logo={EnterpriseLogo}
               delay={0.2}
             />
             <DivisionCard
@@ -217,6 +225,7 @@ const LandingPortal = () => {
               link={`/${language}/farmhouse`}
               color="border-green-700"
               icon={farmhouseIcon}
+              logo={FarmhouseLogo}
               delay={0.3}
             />
           </div>

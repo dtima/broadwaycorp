@@ -34,7 +34,7 @@ const FarmhouseServices = lazy(() => import('./pages/farmhouse/FarmhouseServices
 const FarmhouseProjects = lazy(() => import('./pages/farmhouse/FarmhouseProjects'));
 
 // Public Pages
-const HomePage = lazy(() => import('./pages/public/HomePage'));
+// const HomePage = lazy(() => import('./pages/public/HomePage'));
 const AboutPage = lazy(() => import('./pages/public/AboutPage'));
 const PartnersPage = lazy(() => import('./pages/public/PartnersPage'));
 const ContactPage = lazy(() => import('./pages/public/ContactPage'));

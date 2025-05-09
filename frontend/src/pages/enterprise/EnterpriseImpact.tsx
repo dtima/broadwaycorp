@@ -4,6 +4,12 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 
+// Import student images
+import Students1 from '../../assets/images/students/Students1.jpg';
+import Students2 from '../../assets/images/students/students2.jpg';
+import Student4 from '../../assets/images/students/Student4.jpg';
+import Student5 from '../../assets/images/students/student5.jpg';
+
 const EnterpriseImpact = () => {
   const { t } = useTranslation();
   const { language } = useLanguage();
@@ -127,6 +133,119 @@ const EnterpriseImpact = () => {
               <p className="text-gray-600">{t('enterprise.impact.stat4Description')}</p>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Student Impact Gallery */}
+      <section className="py-16 bg-gray-50">
+        <div className="container-custom">
+          <motion.div 
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-3xl font-bold text-brand-navy mb-4">{t('enterprise.studentGallery.title')}</h2>
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+              {t('enterprise.studentGallery.description')}
+            </p>
+          </motion.div>
+          
+          <div className="grid grid-cols-12 gap-4">
+            {/* First row - larger images */}
+            <motion.div 
+              className="col-span-12 md:col-span-8 relative overflow-hidden rounded-lg shadow-lg"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              whileHover={{ scale: 1.02 }}
+            >
+              <img 
+                src={Students1} 
+                alt="Students collaborating on a scientific experiment" 
+                className="w-full h-[300px] md:h-[400px] object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                <h3 className="text-white text-xl font-bold">{t('enterprise.studentGallery.collaborativeLearning')}</h3>
+                <p className="text-white/90">{t('enterprise.studentGallery.collaborativeDescription')}</p>
+              </div>
+            </motion.div>
+            
+            <motion.div 
+              className="col-span-12 md:col-span-4 relative overflow-hidden rounded-lg shadow-lg"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              whileHover={{ scale: 1.02 }}
+            >
+              <img 
+                src={Student4} 
+                alt="Student conducting a laboratory experiment" 
+                className="w-full h-[300px] md:h-[400px] object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                <h3 className="text-white text-xl font-bold">{t('enterprise.studentGallery.geologicalStudies')}</h3>
+                <p className="text-white/90">{t('enterprise.studentGallery.geologicalDescription')}</p>
+              </div>
+            </motion.div>
+            
+            {/* Second row */}
+            <motion.div 
+              className="col-span-12 md:col-span-6 relative overflow-hidden rounded-lg shadow-lg"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              whileHover={{ scale: 1.02 }}
+            >
+              <img 
+                src={Student5} 
+                alt="Students working in a professional laboratory setting" 
+                className="w-full h-[250px] md:h-[350px] object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                <h3 className="text-white text-xl font-bold">{t('enterprise.studentGallery.handsOnChemistry')}</h3>
+                <p className="text-white/90">{t('enterprise.studentGallery.chemistryDescription')}</p>
+              </div>
+            </motion.div>
+            
+            <motion.div 
+              className="col-span-12 md:col-span-6 relative overflow-hidden rounded-lg shadow-lg"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              whileHover={{ scale: 1.02 }}
+            >
+              <img 
+                src={Students2} 
+                alt="Group of students engaged in a laboratory class" 
+                className="w-full h-[250px] md:h-[350px] object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                <h3 className="text-white text-xl font-bold">{t('enterprise.studentGallery.teamResearch')}</h3>
+                <p className="text-white/90">{t('enterprise.studentGallery.teamDescription')}</p>
+              </div>
+            </motion.div>
+          </div>
+          
+          <motion.div 
+            className="text-center mt-12"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <Link 
+              to={`/${language}/enterprise/contact`} 
+              className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg font-bold hover:bg-blue-700 transition-colors"
+            >
+              {t('enterprise.studentGallery.supportButton')}
+            </Link>
+          </motion.div>
         </div>
       </section>
 
