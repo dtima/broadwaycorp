@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 
 // Import team member images
-import tebohImage from '../../assets/images/team/2.jpg';
+import tebohImage from '/images/team/ceo.jpg';
 import nancyImage from '../../assets/images/team/4.jpg';
 import jerryImage from '../../assets/images/team/1.jpeg';
 import emiliaImage from '../../assets/images/team/3.jpg';

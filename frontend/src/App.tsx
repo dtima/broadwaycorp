@@ -22,6 +22,7 @@ const CorporationCEOMessage = lazy(() => import('./pages/corporation/Corporation
 const CorporationTeam = lazy(() => import('./pages/corporation/CorporationTeam'));
 const CorporationServices = lazy(() => import('./pages/corporation/CorporationServices'));
 const CorporationInitiatives = lazy(() => import('./pages/corporation/CorporationInitiatives'));
+const CorporationCareers = lazy(() => import('./pages/corporation/CorporationCareers'));
 
 // Enterprise Pages
 const EnterpriseAbout = lazy(() => import('./pages/enterprise/EnterpriseAbout'));
@@ -66,6 +67,7 @@ function App() {
           <Route path="team" element={<CorporationTeam />} />
           <Route path="services" element={<CorporationServices />} />
           <Route path="initiatives" element={<CorporationInitiatives />} />
+          <Route path="careers" element={<CorporationCareers />} />
           <Route path="contact" element={<ContactPage division="corporation" />} />
         </Route>
 

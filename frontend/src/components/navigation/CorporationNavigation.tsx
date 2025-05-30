@@ -106,9 +106,10 @@ const CorporationNavigation = () => {
           <nav className="hidden md:flex items-center space-x-8" aria-label={t('navigation.mainNavigationLabel')}>
             <NavLink to={`/${language}/corporation`} label={t('navigation.home')} />
             <NavLink to={`/${language}/corporation/about`} label={t('navigation.about')} />
-            <NavLink to={`/${language}/corporation/services`} label={t('corporation.services')} />
+            <NavLink to={`/${language}/corporation/services`} label={t('navigation.services')} />
             <NavLink to={`/${language}/corporation/team`} label={t('navigation.aboutSubmenu.leadership')} />
-            <NavLink to={`/${language}/corporation/initiatives`} label={t('initiatives.title')} />
+            <NavLink to={`/${language}/corporation/initiatives`} label={t('navigation.initiatives')} />
+            <NavLink to={`/${language}/corporation/careers`} label={t('navigation.careers')} />
             <NavLink to={`/${language}/corporation/contact`} label={t('navigation.contact')} />
             
             <div className="flex items-center space-x-4">
@@ -192,9 +193,10 @@ const CorporationNavigation = () => {
               >
                 <MobileNavLink to={`/${language}/corporation`} label={t('navigation.home')} onClick={() => setIsMobileMenuOpen(false)} />
                 <MobileNavLink to={`/${language}/corporation/about`} label={t('navigation.about')} onClick={() => setIsMobileMenuOpen(false)} />
-                <MobileNavLink to={`/${language}/corporation/services`} label={t('corporation.services')} onClick={() => setIsMobileMenuOpen(false)} />
+                <MobileNavLink to={`/${language}/corporation/services`} label={t('navigation.services')} onClick={() => setIsMobileMenuOpen(false)} />
                 <MobileNavLink to={`/${language}/corporation/team`} label={t('navigation.aboutSubmenu.leadership')} onClick={() => setIsMobileMenuOpen(false)} />
-                <MobileNavLink to={`/${language}/corporation/initiatives`} label={t('initiatives.title')} onClick={() => setIsMobileMenuOpen(false)} />
+                <MobileNavLink to={`/${language}/corporation/initiatives`} label={t('navigation.initiatives')} onClick={() => setIsMobileMenuOpen(false)} />
+                <MobileNavLink to={`/${language}/corporation/careers`} label={t('navigation.careers')} onClick={() => setIsMobileMenuOpen(false)} />
                 <MobileNavLink to={`/${language}/corporation/contact`} label={t('navigation.contact')} onClick={() => setIsMobileMenuOpen(false)} />
                 
                 <div className="flex flex-col space-y-4 pt-2 border-t border-gray-200">
