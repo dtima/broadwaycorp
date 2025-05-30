@@ -111,7 +111,7 @@ const CorporationCEOMessage = () => {
             >
               <div className="relative overflow-hidden rounded-xl shadow-md">
                 <Image 
-                  src="/assets/images/ceo-portrait.jpg" 
+                  src="/images/team/ceo.jpg" 
                   alt={t('ceoMessage.portraitAlt')}
                   fallbackSrc="https://placehold.co/600x800/003366/ffffff?text=CEO+Portrait"
                   className="w-full aspect-[3/4] object-cover"

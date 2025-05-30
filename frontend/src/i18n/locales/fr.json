@@ -15,7 +15,10 @@
       "ceoMessage": "Message du Fondateur/PDG",
       "leadership": "Équipe de Direction"
     },
-    "partners": "Partenaires"
+    "partners": "Partenaires",
+    "services": "Services",
+    "initiatives": "Initiatives",
+    "careers": "Carrières"
   },
   "language": {
     "en": "Anglais",
@@ -54,7 +57,7 @@
     "paragraph5": "",
     "paragraph6": "",
     "paragraph7": "",
-    "closing": "— Teboh Gustave, Ngu\nPDG & Directeur Général\nBroadway Corporation",
+    "closing": "",
     "ceoName": "Teboh Gustave, Ngu",
     "ceoTitle": "PDG & Directeur Général",
     "portraitAlt": "Teboh Gustave, Ngu - PDG et Directeur Général de Broadway Corporation",
@@ -929,6 +932,51 @@
       "title": "Impliquez-Vous",
       "description": "Nous accueillons les partenariats et collaborations qui peuvent aider à donner vie à ces initiatives. Contactez-nous pour en savoir plus et explorer les opportunités de participation.",
       "contactButton": "Contactez-Nous"
+    }
+  },
+  "careers": {
+    "title": "Construisez Votre Carrière Avec Nous",
+    "subtitle": "Rejoignez notre mission de développement durable par l'innovation",
+    "metaDescription": "Rejoignez Broadway Corporation et participez à notre mission de développement durable par l'innovation. Découvrez les opportunités de carrière dans nos divisions.",
+    "whyJoinUs": {
+      "title": "Pourquoi Rejoindre Broadway Corporation ?",
+      "meaningfulImpact": {
+        "title": "Impact Significatif",
+        "description": "Travaillez sur des projets qui font une réelle différence dans le développement durable."
+      },
+      "innovationFocus": {
+        "title": "Focus sur l'Innovation",
+        "description": "Participez à des solutions de pointe en agriculture et en technologie durable."
+      },
+      "growthOpportunities": {
+        "title": "Opportunités de Croissance",
+        "description": "Apprentissage continu et développement de carrière dans un environnement dynamique."
+      }
+    },
+    "currentOpenings": {
+      "title": "Postes Disponibles",
+      "subtitle": "Explorez nos opportunités d'emploi actuelles et trouvez votre rôle idéal dans le développement durable."
+    },
+    "benefits": {
+      "title": "Avantages Sociaux",
+      "subtitle": "Nous offrons des avantages compétitifs pour soutenir le bien-être et la croissance de nos employés.",
+      "healthWellness": {
+        "title": "Santé & Bien-être",
+        "description": "Couverture médicale complète et programmes de bien-être pour vous et votre famille."
+      },
+      "learningDevelopment": {
+        "title": "Formation & Développement",
+        "description": "Opportunités de développement professionnel et programmes de formation pour faire progresser votre carrière."
+      },
+      "workLifeBalance": {
+        "title": "Équilibre Travail-Vie",
+        "description": "Arrangements de travail flexibles et congés payés généreux pour maintenir l'équilibre."
+      }
+    },
+    "cta": {
+      "title": "Prêt à Faire la Différence ?",
+      "description": "Rejoignez notre équipe et participez à la révolution du développement durable.",
+      "button": "Voir Tous les Postes"
     }
   }
 } 

@@ -2,13 +2,16 @@
   "navigation": {
     "home": "Home",
     "about": "About",
+    "services": "Services",
+    "initiatives": "Initiatives",
+    "careers": "Careers",
+    "contact": "Contact",
     "corporation": "Corporation",
     "enterprise": "Enterprise",
     "farmhouse": "Farmhouse",
-    "news": "News",
-    "contact": "Contact",
     "aboutSubmenu": {
-      "ceoMessage": "Founder/CEO's Message",
+      "overview": "Overview",
+      "ceoMessage": "CEO Message",
       "leadership": "Leadership Team"
     },
     "corporationSubmenu": {
@@ -55,7 +58,7 @@
     "paragraph5": "",
     "paragraph6": "",
     "paragraph7": "",
-    "closing": "— Teboh Gustave, Ngu\nCEO & General Manager\nBroadway Corporation",
+    "closing": "",
     "ceoName": "Teboh Gustave, Ngu",
     "ceoTitle": "CEO & General Manager",
     "portraitAlt": "Teboh Gustave, Ngu - CEO and General Manager of Broadway Corporation",
@@ -937,6 +940,51 @@
       "title": "Get Involved",
       "description": "We welcome partnerships and collaborations that can help bring these initiatives to life. Reach out to learn more and explore opportunities to participate.",
       "contactButton": "Contact Us"
+    }
+  },
+  "careers": {
+    "title": "Build Your Career With Us",
+    "subtitle": "Join our mission to drive sustainable development through innovation",
+    "metaDescription": "Join Broadway Corporation and be part of our mission to drive sustainable development through innovation. Explore career opportunities across our divisions.",
+    "whyJoinUs": {
+      "title": "Why Join Broadway Corporation?",
+      "meaningfulImpact": {
+        "title": "Meaningful Impact",
+        "description": "Work on projects that make a real difference in sustainable development."
+      },
+      "innovationFocus": {
+        "title": "Innovation Focus",
+        "description": "Be part of cutting-edge solutions in agriculture and sustainable technology."
+      },
+      "growthOpportunities": {
+        "title": "Growth Opportunities",
+        "description": "Continuous learning and career development in a dynamic environment."
+      }
+    },
+    "currentOpenings": {
+      "title": "Current Openings",
+      "subtitle": "Explore our current job opportunities and find your perfect role in driving sustainable development."
+    },
+    "benefits": {
+      "title": "Employee Benefits",
+      "subtitle": "We offer competitive benefits to support our team members' well-being and growth.",
+      "healthWellness": {
+        "title": "Health & Wellness",
+        "description": "Comprehensive medical coverage and wellness programs for you and your family."
+      },
+      "learningDevelopment": {
+        "title": "Learning & Development",
+        "description": "Professional development opportunities and training programs to advance your career."
+      },
+      "workLifeBalance": {
+        "title": "Work-Life Balance",
+        "description": "Flexible work arrangements and generous paid time off to help you maintain balance."
+      }
+    },
+    "cta": {
+      "title": "Ready to Make an Impact?",
+      "description": "Join our team and be part of the sustainable development revolution.",
+      "button": "View All Positions"
     }
   }
 }

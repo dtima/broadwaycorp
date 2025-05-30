@@ -141,7 +141,7 @@ const CorporationTeam = () => {
               name={t('leadership.team.ceo.name')}
               title={t('leadership.team.ceo.title')}
               bio={t('leadership.team.ceo.bio')}
-              imageUrl="/assets/images/team-ceo.jpg"
+              imageUrl="/images/team/ceo.jpg"
               fallbackText="CEO"
               delay={0.3}
               featured
