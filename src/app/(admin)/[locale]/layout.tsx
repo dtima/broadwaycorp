@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { NextIntlClientProvider } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import { supportedLocales } from '@/lib/i18n/config';
 import { getCurrentUser } from '@/lib/auth/session';
 import { canManageContent, canManageEmployees, getRoleFromClaims } from '@/lib/auth/rbac';
@@ -18,6 +18,10 @@ export default async function AdminLayout({ children, params }: Props) {
   const messages = (await import(`@/lib/i18n/messages/${locale}.json`)).default;
   const user = await getCurrentUser();
   const role = getRoleFromClaims(user);
+  if (!user) {
+    // Redirect unauthenticated users to sign-in
+    redirect(`/${locale}/admin/sign-in`);
+  }
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages} timeZone="UTC">

@@ -48,7 +48,10 @@ export const firebaseAuth = () => {
 };
 export const firestore = () => {
   const db = getFirestore(getFirebaseApp());
-  if (process.env.NODE_ENV !== 'production') {
+  if (
+    process.env.NEXT_PUBLIC_USE_FIREBASE_EMULATORS === 'true' &&
+    process.env.NODE_ENV !== 'production'
+  ) {
     try {
       // Avoid duplicate emulator connection
       // @ts-expect-error private
