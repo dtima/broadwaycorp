@@ -1,11 +1,13 @@
 'use server';
 import { adminDb } from '@/lib/firebase/admin';
+import { requireCanManageContent } from '@/lib/auth/rbac';
 import { revalidatePath } from 'next/cache';
 
 export async function createProject(
   locale: string,
   data: { name: string; status?: 'planned' | 'active' | 'paused' | 'done' }
 ) {
+  await requireCanManageContent();
   const now = new Date().toISOString();
   const doc = await adminDb
     .collection('projects')
@@ -19,6 +21,7 @@ export async function updateProject(
   id: string,
   patch: Partial<{ name: string; status: 'planned' | 'active' | 'paused' | 'done' }>
 ) {
+  await requireCanManageContent();
   const now = new Date().toISOString();
   await adminDb
     .collection('projects')
@@ -28,6 +31,7 @@ export async function updateProject(
 }
 
 export async function deleteProject(locale: string, id: string) {
+  await requireCanManageContent();
   await adminDb.collection('projects').doc(id).delete();
   revalidatePath(`/${locale}/admin/projects`);
 }
