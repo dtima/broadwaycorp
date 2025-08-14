@@ -24,10 +24,8 @@ describe('Authorization guards on server actions', () => {
   });
 
   it('rejects unauthenticated user for inventory (admin/editor)', async () => {
-    await expect(
-      createInventoryItem('en', { name: 'Item', quantity: 1 })
-    ).rejects.toBeInstanceOf(UnauthorizedError);
+    await expect(createInventoryItem('en', { name: 'Item', quantity: 1 })).rejects.toBeInstanceOf(
+      UnauthorizedError
+    );
   });
 });
-
-

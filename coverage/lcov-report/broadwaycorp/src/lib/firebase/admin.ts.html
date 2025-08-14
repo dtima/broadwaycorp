@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>21/30</span>
+                <span class='fraction'>15/30</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25% </span>
+                <span class="strong">16.66% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/4</span>
+                <span class='fraction'>1/6</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>21/30</span>
+                <span class='fraction'>15/30</span>
             </div>
         
             
@@ -115,20 +115,12 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -136,8 +128,16 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -157,21 +157,21 @@ import { getStorage } from 'firebase-admin/storage';
 &nbsp;
 function resolveCredential() {
   const jsonPath = process.env.FIREBASE_ADMIN_CREDENTIALS_PATH;
-  if (jsonPath &amp;&amp; fs.existsSync(jsonPath)) {
-    const raw = fs.readFileSync(jsonPath, 'utf8');
-    const svc = JSON.parse(raw) as {
+  if (<span class="branch-0 cbranch-no" title="branch not covered" >jsonPath &amp;&amp; fs.existsSync(jsonPath)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >    const raw = fs.readFileSync(jsonPath, 'utf8');</span>
+<span class="cstat-no" title="statement not covered" >    const svc = JSON.parse(raw) as {</span>
       project_id: string;
       client_email: string;
       private_key: string;
     };
-    return cert({
-      projectId: svc.project_id,
-      clientEmail: svc.client_email,
-      privateKey: svc.private_key,
-    });
-<span class="branch-0 cbranch-no" title="branch not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >    return cert({</span>
+<span class="cstat-no" title="statement not covered" >      projectId: svc.project_id,</span>
+<span class="cstat-no" title="statement not covered" >      clientEmail: svc.client_email,</span>
+<span class="cstat-no" title="statement not covered" >      privateKey: svc.private_key,</span>
+<span class="cstat-no" title="statement not covered" >    });</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
-  if (process.env.FIREBASE_ADMIN_PRIVATE_KEY &amp;&amp; process.env.FIREBASE_ADMIN_CLIENT_EMAIL) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+  if (process.env.<span class="branch-0 cbranch-no" title="branch not covered" >FIREBASE_ADMIN_PRIVATE_KEY &amp;&amp; process.env.FIREBASE_ADMIN_CLIENT_EMAIL) <span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >    return cert({</span>
 <span class="cstat-no" title="statement not covered" >      projectId: process.env.FIREBASE_ADMIN_PROJECT_ID,</span>
 <span class="cstat-no" title="statement not covered" >      clientEmail: process.env.FIREBASE_ADMIN_CLIENT_EMAIL,</span>
@@ -179,8 +179,8 @@ function resolveCredential() {
 <span class="cstat-no" title="statement not covered" >    });</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return applicationDefault();</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+  return applicationDefault();
+}
 &nbsp;
 const app = getApps().<span class="branch-0 cbranch-no" title="branch not covered" >length</span>
 <span class="cstat-no" title="statement not covered" >  ? getApps()[0]</span>
@@ -199,7 +199,7 @@ export const adminStorage = getStorage(app);
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-08-14T13:02:27.380Z
+                at 2025-08-14T22:57:05.015Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

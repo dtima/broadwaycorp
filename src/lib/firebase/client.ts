@@ -22,7 +22,7 @@ export function getFirebaseApp() {
         });
     if (!process.env.NEXT_PUBLIC_FIREBASE_API_KEY) {
       // Surface a helpful error early if envs are missing
-      // eslint-disable-next-line no-console
+
       console.error(
         'Missing Firebase env vars. Check .env.local for NEXT_PUBLIC_FIREBASE_* values and restart dev server.'
       );
