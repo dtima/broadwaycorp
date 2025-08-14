@@ -1,2 +1,0 @@
-This is a placeholder file for the CEO headshot image.
-The actual image should be placed in this directory and named 'ceo-headshot.jpg'. 

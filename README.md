@@ -1,325 +1,448 @@
-**README.md - Broadway Corporation Official Website**
-
-**1. Project Overview**
-
-The Broadway Corporation official website serves as the central online platform to showcase the diverse activities and vision of Broadway Corporation, a holding company uniting Broadway Enterprise and Broadway Farmhouse. The website aims to provide a comprehensive overview of the company's commitment to sustainable development through science, education, agriculture, and community advancement. [cite: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-
-**2. Key Features**
-
-The website will feature detailed information about the following:
-
-* **Broadway Corporation:**
-    * About Us: Mission, vision, and core values. [cite: 1, 2, 39]
-* **Broadway Enterprise:**
-    * Scientific Equipment & Healthcare Supplies: Products and services. [cite: 14, 15]
-    * Scientific Research and Education: Initiatives and collaborations. [cite: 15, 16, 17, 18, 19, 20, 21, 22, 23]
-    * Pilot Pre-Science Tutoring and Academic Support: Tutoring services and STEM programs. [cite: 17, 18]
-    * Laboratory and Classroom Construction & Design: Services offered. [cite: 18, 19]
-    * Office Equipment and Institutional Supplies. [cite: 20]
-    * Environmental Research and Solutions. [cite: 20, 21]
-    * Community Development Initiatives. [cite: 22, 23]
-* **Broadway Farmhouse:**
-    * Livestock Breeding and Animal Husbandry. [cite: 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36]
-    * Aquaculture. [cite: 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36]
-    * Modern Agricultural Practices and Horticulture. [cite: 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36]
-    * Community Development and Agricultural Training. [cite: 31, 32]
-    * Future Projects:
-        * Farm-to-Table Culinary Experience - Broadway Roadhouse. [cite: 32, 33]
-        * Agro-Tourism & Eco-Hospitality - Broadway Resort & Animal Farm. [cite: 33, 34]
-        * Scorpion Venom Milking & Research - Broadway Scorpion Farm. [cite: 35, 36]
-* **Contact Information:** Details for inquiries and collaboration.
-
-**3. Target Audience**
-
-The target audience for this website includes:
-
-* Potential clients and partners (scientific institutions, healthcare facilities, educational organizations, communities). [cite: 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36]
-* Investors and stakeholders.
-* Individuals seeking information on sustainable development, agriculture, science, and education in Africa.
-* Future employees and collaborators.
-
-**4. Technology Stack**
-
-* Frontend: React with Vite, TypeScript
-* Backend Authentication: Supabase
-
-**5. Development Approach**
-
-* Mobile-First: The website will be designed and developed with a mobile-first approach to ensure optimal viewing experience on smaller screens, progressively enhancing the experience for larger screens.
-
-**6. Website Structure (Proposed)**
-
-* **Homepage:**
-    * Introduction to Broadway Corporation.
-    * Brief overview of Broadway Enterprise and Broadway Farmhouse.
-    * Call to action (e.g., "Explore Our Services," "Learn More").
-* **About Us:**
-    * Broadway Corporation: Mission, vision, values, and history. [cite: 1, 2, 39]
-* **Broadway Enterprise:**
-    * Overview of Broadway Enterprise.
-    * Detailed pages for each division:
-        * Scientific Equipment & Healthcare Supplies [cite: 14, 15]
-        * Scientific Research and Education [cite: 15, 16]
-        * Pilot Pre-Science Tutoring and Academic Support [cite: 17, 18]
-        * Laboratory and Classroom Construction & Design [cite: 18, 19]
-        * Office Equipment and Institutional Supplies [cite: 20]
-        * Environmental Research and Solutions [cite: 20, 21]
-        * Community Development Initiatives [cite: 22, 23]
-* **Broadway Farmhouse:**
-    * Overview of Broadway Farmhouse.
-    * Detailed pages for:
-        * Livestock Breeding and Animal Husbandry [cite: 26, 27]
-        * Aquaculture [cite: 28, 29]
-        * Modern Agricultural Practices and Horticulture [cite: 30, 31]
-        * Community Development and Agricultural Training [cite: 31, 32]
-    * Future Projects:
-        * Broadway Roadhouse [cite: 32, 33]
-        * Broadway Resort & Animal Farm [cite: 33, 34]
-        * Broadway Scorpion Farm [cite: 35, 36]
-* **News & Updates:**
-    * (Optional) A blog or news section for announcements, press releases, and project highlights.
-* **Contact Us:**
-    * Contact form, email address, phone number, and location.
-
-**7. Content Strategy**
-
-* **Text:** Clear, concise, and informative content that accurately reflects Broadway Corporation's activities and vision. Emphasis on professionalism and expertise.
-* **Images:** High-quality images and videos showcasing projects, facilities, and activities.
-* **Multimedia:** (Optional) Interactive elements such as maps, data visualizations, and videos to enhance user engagement.
-
-**8. Design Considerations**
-
-* **Branding:** Consistent with Broadway Corporation's brand identity (colors, logo, typography).
-* **User Experience (UX):** Intuitive navigation, mobile responsiveness, and accessibility.
-* **Search Engine Optimization (SEO):** Keywords and metadata to improve search engine rankings.
-
-**9. Development Roadmap**
-
-* *(To be determined - e.g., Wireframing, Design, Development, Testing, Deployment)*
-
-**10. Maintenance**
-
-* Regular updates to content, security, and functionality.
-* Content Management System (CMS) for easy content updates (Consider Supabase or a headless CMS if needed).
-
-**11. Team**
-
-* *(To be defined - e.g., Project Manager, Web Designers, Developers, Content Creators)*
-
-**12. Contact**
-
-* For inquiries related to the website development, please contact:
-    * *(Your Contact Information)*
-
-This updated README.md now incorporates the tech stack and the mobile-first development approach.
-
-
-That's an excellent idea! It aligns perfectly with the structure of Broadway Corporation as a holding company. Here's how we can integrate that into the website structure and update the README:
-
-**Revised Website Structure Proposal**
-
-* **Homepage:**
-    * Introduction to Broadway Corporation (as the central entity).
-    * Prominent navigation options:
-        * **Broadway Corporation:** (Overview of the holding company - mission, vision, overarching goals).
-        * **Broadway Enterprise:** (Dedicated section for all Enterprise activities).
-        * **Broadway Farmhouse:** (Dedicated section for all Farmhouse activities).
-    * Potentially, a visually engaging section featuring highlights from both Enterprise and Farmhouse to entice users to explore further.
-
-* **Broadway Corporation Section:**
-    * About Us: Detailed information about the holding company's philosophy, values, and overall strategy.
-    * Governance/Leadership (If applicable).
-    * Overall impact and synergy between Enterprise and Farmhouse.
-
-* **Broadway Enterprise Section:**
-    * Overview of Broadway Enterprise.
-    * Detailed pages for each division (as previously outlined):
-        * Scientific Equipment & Healthcare Supplies
-        * Scientific Research and Education
-        * Pilot Pre-Science Tutoring and Academic Support
-        * Laboratory and Classroom Construction & Design
-        * Office Equipment and Institutional Supplies
-        * Environmental Research and Solutions
-        * Community Development Initiatives
-
-* **Broadway Farmhouse Section:**
-    * Overview of Broadway Farmhouse.
-    * Detailed pages for:
-        * Livestock Breeding and Animal Husbandry
-        * Aquaculture
-        * Modern Agricultural Practices and Horticulture
-        * Community Development and Agricultural Training
-    * Future Projects:
-        * Broadway Roadhouse
-        * Broadway Resort & Animal Farm
-        * Broadway Scorpion Farm
-
-* **Other Sections:**
-    * News & Updates
-    * Contact Us
-
-**Updated README.md**
-
-
-
-
-
-
-
-Here's the revised README.md to reflect this improved structure:
-
-**README.md - Broadway Corporation Official Website**
-
-**1. Project Overview**
-
-The Broadway Corporation official website serves as the central online platform to showcase the diverse activities and vision of Broadway Corporation, a holding company uniting Broadway Enterprise and Broadway Farmhouse. The website provides a clear entry point to understand the overarching corporation while allowing users to delve into the specifics of its two main divisions.
-
-**2. Key Features**
-
-The website features distinct sections for Broadway Corporation, Broadway Enterprise, and Broadway Farmhouse, with clear navigation from the homepage.
-
-* **Broadway Corporation:**
-    * About Us: Mission, vision, and core values of the holding company.
-* **Broadway Enterprise:**
-    * Scientific Equipment & Healthcare Supplies: Products and services.
-    * Scientific Research and Education: Initiatives and collaborations.
-    * Pilot Pre-Science Tutoring and Academic Support: Tutoring services and STEM programs.
-    * Laboratory and Classroom Construction & Design: Services offered.
-    * Office Equipment and Institutional Supplies.
-    * Environmental Research and Solutions.
-    * Community Development Initiatives.
-* **Broadway Farmhouse:**
-    * Livestock Breeding and Animal Husbandry.
-    * Aquaculture.
-    * Modern Agricultural Practices and Horticulture.
-    * Community Development and Agricultural Training.
-    * Future Projects:
-        * Farm-to-Table Culinary Experience - Broadway Roadhouse.
-        * Agro-Tourism & Eco-Hospitality - Broadway Resort & Animal Farm.
-        * Scorpion Venom Milking & Research - Broadway Scorpion Farm.
-* **Contact Information:** Details for inquiries and collaboration.
-
-**3. Target Audience**
-
-The target audience for this website includes:
-
-* Potential clients and partners (scientific institutions, healthcare facilities, educational organizations, communities).
-* Investors and stakeholders interested in the overall corporation or specific divisions.
-* Individuals seeking information on sustainable development, agriculture, science, and education in Africa.
-* Future employees and collaborators.
-
-**4. Technology Stack**
-
-* Frontend: React with Vite, TypeScript
-* Backend Authentication: Supabase
-
-**5. Development Approach**
-
-* Mobile-First: The website will be designed and developed with a mobile-first approach to ensure optimal viewing experience on smaller screens, progressively enhancing the experience for larger screens.
-
-**6. Website Structure**
-
-* **Homepage:**
-    * Introduction to Broadway Corporation (central focus).
-    * Primary navigation:
-        * Broadway Corporation
-        * Broadway Enterprise
-        * Broadway Farmhouse
-    * (Optional) Highlights section showcasing key initiatives from Enterprise and Farmhouse.
-* **Broadway Corporation Section:**
-    * About Us (holding company overview)
-    * Governance/Leadership (if applicable)
-    * Overall Strategy and Synergy
-* **Broadway Enterprise Section:**
-    * Overview of Broadway Enterprise
-    * Detailed pages for each division:
-        * Scientific Equipment & Healthcare Supplies
-        * Scientific Research and Education
-        * Pilot Pre-Science Tutoring and Academic Support
-        * Laboratory and Classroom Construction & Design
-        * Office Equipment and Institutional Supplies
-        * Environmental Research and Solutions
-        * Community Development Initiatives
-* **Broadway Farmhouse Section:**
-    * Overview of Broadway Farmhouse
-    * Detailed pages for:
-        * Livestock Breeding and Animal Husbandry
-        * Aquaculture
-        * Modern Agricultural Practices and Horticulture
-        * Community Development and Agricultural Training
-    * Future Projects:
-        * Broadway Roadhouse
-        * Broadway Resort & Animal Farm
-        * Broadway Scorpion Farm
-* **Other Sections:**
-    * News & Updates
-    * Contact Us
-
-**7. Content Strategy**
-
-* **Text:** Clear, concise, and informative content, tailored to each section (Corporation, Enterprise, Farmhouse).
-* **Images:** High-quality visuals representing the diverse activities of each entity.
-* **Multimedia:** (Optional) Interactive elements to enhance engagement.
-
-**8. Design Considerations**
-
-* **Branding:** Consistent branding across all sections, with potential subtle variations to distinguish Enterprise and Farmhouse.
-* **User Experience (UX):** Intuitive navigation, clear hierarchy, and mobile responsiveness.
-* **Search Engine Optimization (SEO):** Keywords optimized for each section to improve search visibility.
-
-**9. Development Roadmap**
-
-* *(To be determined - e.g., Wireframing, Design, Development, Testing, Deployment)*
-
-**10. Maintenance**
-
-* Regular updates to content, security, and functionality.
-* CMS for efficient content management.
-
-**11. Team**
-
-* *(To be defined - e.g., Project Manager, Web Designers, Developers, Content Creators)*
-
-**12. Contact**
-
-* For inquiries related to the website development, please contact:
-    * *(Your Contact Information)*
-
-This revised structure provides a much clearer and more organized representation of Broadway Corporation and its constituent parts.
-
-
-
-
-# Broadway Corporation Website Tagline Improvements
-
-## Broadway Corporation: "United Vision, Diverse Strength"
-**Current assessment:** Communicates unity and diversity, but feels somewhat generic and corporate.
-
-**Suggested improvements:**
-- "Uniting Diverse Strengths, Creating Sustainable Futures"
-- "Where Vision Meets Action: Diverse Solutions for a Sustainable World"
-- "Transforming Communities Through United Vision and Diverse Excellence"
-
-These options maintain your core message while adding purpose and impact. They tell your audience not just what you are, but what difference you make.
-
-## Broadway Enterprise: "Making it Real"
-**Current assessment:** Too vague and generic; doesn't communicate your specific value proposition.
-
-**Suggested improvements:**
-- "Advancing Science, Empowering Education"
-- "Innovative Solutions, Measurable Impact"
-- "From Laboratory to Legacy: Science That Serves"
-
-These alternatives specifically tie to your scientific and educational focus while conveying tangible benefits and outcomes.
-
-## Broadway Farmhouse: "Together lets feed them"
-**Current assessment:** Has community spirit but lacks polish and specificity; grammatically needs an apostrophe in "let's".
-
-**Suggested improvements:**
-- "Cultivating Sustainability, Harvesting Prosperity"
-- "From Soil to Society: Sustainable Agriculture for All"
-- "Growing More Than Food: Nurturing Communities"
-
-These options elevate your agricultural mission while connecting it to broader impacts on sustainability and community development.
-
-Each suggestion aims to be more memorable, specific to your divisions' work, and effective at communicating the value you provide to communities and stakeholders.
+# Broadway Corporation Web Platform
+
+Production-ready Next.js platform unifying four divisions — Farmhouse, Enterprise, Intelligence, and Resorts — with a public site and an internal Admin Dashboard. This document is the engineering source of truth for setup, operations, and quality.
+
+## Table of contents
+
+- Overview and goals
+- Architecture and tech stack
+- Prerequisites
+- Project directory setup
+- Environments and configuration
+- Quick start
+- Scripts
+- Local development (Firebase emulators)
+- Seeding local data
+- Environment variables (.env example)
+- Security and compliance
+- CI/CD and deployments
+- Quality gates (lint, types, tests)
+- Pre-commit hooks
+- Observability and performance
+- Internationalization
+- RBAC setup (Firebase custom claims)
+- Data model overview
+- Governance (branching and releases)
+- References
+
+## Overview and goals
+
+- Brand-consistent multi-division website and Admin Dashboard
+- Scalable content operations (roles, workflows)
+- Measurable performance, accessibility, and SEO
+- KPIs: LCP ≤ 1.5s (mobile), Lighthouse ≥ 90, -30% time-to-publish, +25% direct traffic in 6 months
+
+See `docs/README.md` for the product brief and feature map.
+
+## Architecture and tech stack
+
+- Frontend: Next.js 15+, React, TypeScript, App Router, Server Actions
+- UI: Tailwind CSS, Radix UI, Framer Motion
+- Data: Firestore (Cloud Firestore), Storage; optional Cloud Functions
+- i18n: next-intl
+- SEO: Structured data, Open Graph, meta tags
+- Hosting: Vercel (primary), Firebase Hosting (optional)
+
+## Prerequisites
+
+- Node.js 20.x LTS
+- PNPM 9+
+- Git and a GitHub (or compatible) repo
+- Firebase CLI 13+ (`npm i -g firebase-tools`), authenticated: `firebase login`
+- Vercel account (for deployments)
+
+Install PNPM (if needed):
+
+```
+npm i -g pnpm@9
+```
+
+## Project directory setup
+
+Recommended layout for clarity and modularity. Create these directories as the app code is added.
+
+```
+.src
+├─ app/
+│  ├─ (public)/
+│  │  ├─ layout.tsx
+│  │  ├─ page.tsx
+│  │  └─ [locale]/
+│  ├─ (admin)/
+│  │  ├─ dashboard/
+│  │  ├─ jobs/
+│  │  ├─ events/
+│  │  ├─ blog/
+│  │  └─ settings/
+│  └─ api/
+├─ features/
+│  ├─ farmhouse/
+│  ├─ enterprise/
+│  ├─ intelligence/
+│  └─ resorts/
+├─ components/              # shared UI components
+├─ lib/
+│  ├─ firebase/
+│  │  ├─ client.ts
+│  │  ├─ admin.ts          # if server actions/route handlers need admin SDK
+│  │  └─ types.ts
+│  ├─ i18n/
+│  │  ├─ config.ts
+│  │  └─ messages/
+│  ├─ seo/
+│  ├─ utils/
+│  └─ validations/
+├─ styles/
+│  └─ globals.css
+├─ public/
+│  └─ images/
+├─ scripts/
+├─ tests/
+│  ├─ e2e/
+│  └─ unit/
+├─ docs/
+├─ .github/
+│  └─ workflows/
+└─ README.md
+```
+
+## Environments and configuration
+
+- Environments: development, staging, production
+- Branch mapping: feature/\* → PR → `main`; releases via tags
+- Secrets: managed per environment using Vercel Environment Variables (or Firebase CLI). Never commit secrets.
+
+### Environment setup
+
+1. Create `.env.local` (development) with Firebase client keys and i18n settings. Example:
+
+```
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+NEXT_PUBLIC_DEFAULT_LOCALE=en
+NEXT_PUBLIC_SUPPORTED_LOCALES=en,fr
+
+NEXT_PUBLIC_FIREBASE_API_KEY=...
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=...
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=...
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=...
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=...
+NEXT_PUBLIC_FIREBASE_APP_ID=...
+NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=...
+
+# Admin SDK: choose one
+FIREBASE_ADMIN_PROJECT_ID=broadway-corporation
+# A) JSON file path (recommended locally)
+FIREBASE_ADMIN_CREDENTIALS_PATH=./secrets/firebase-admin.json
+# B) Inline credentials (leave empty if using A)
+FIREBASE_ADMIN_CLIENT_EMAIL=
+FIREBASE_ADMIN_PRIVATE_KEY=
+```
+
+2. For production, set the same client vars in your platform (Vercel). For the Admin SDK use ONE of:
+
+- Mount the service account file and set `FIREBASE_ADMIN_CREDENTIALS_PATH` to its absolute path; or
+- Provide `FIREBASE_ADMIN_CLIENT_EMAIL` and `FIREBASE_ADMIN_PRIVATE_KEY` as secrets (keep line breaks in the private key).
+
+3. Ensure the `secrets/` directory is ignored by git.
+
+## Quick start
+
+1. Ensure prerequisites installed (Node 20, PNPM, Firebase CLI)
+2. Clone repo and install deps: `pnpm install`
+3. Copy `.env.example` to `.env.local` and fill values (see below)
+4. (Optional) Install Playwright browsers for e2e: `pnpm dlx playwright install --with-deps`
+5. Start Firebase emulators (new terminal): `pnpm emulators`
+6. Run app: `pnpm dev`
+7. Typecheck and lint: `pnpm typecheck` and `pnpm lint`
+8. Run tests: unit `pnpm test`, e2e `pnpm test:e2e`
+9. Build production: `pnpm build && pnpm start`
+
+## Scripts
+
+- `pnpm dev`: start local dev server
+- `pnpm build`: production build
+- `pnpm start`: run built server
+- `pnpm typecheck`: TypeScript check
+- `pnpm lint`: ESLint/Prettier
+- `pnpm test`: unit tests (Vitest/Jest)
+- `pnpm test:e2e`: Playwright E2E tests
+
+Recommended additional scripts (add to `package.json`):
+
+- `pnpm emulators`: start Firebase emulators for Firestore/Auth/Storage
+- `pnpm seed`: seed emulator data (divisions, example users)
+- `pnpm lint:fix`: fix lint issues
+- `pnpm format`: run Prettier write
+- `pnpm prepare`: setup husky git hooks
+
+Example `package.json` snippet:
+
+```
+{
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "emulators": "firebase emulators:start --only firestore,auth,storage --project demo-broadway"
+  }
+}
+```
+
+## Local development (Firebase emulators)
+
+Use emulators to develop safely without hitting production:
+
+1. Create `firebase.json` at the repo root (minimal):
+
+```
+{
+  "emulators": {
+    "firestore": { "port": 8080 },
+    "auth": { "port": 9099 },
+    "storage": { "port": 9199 }
+  }
+}
+```
+
+2. Start emulators: `pnpm emulators`
+
+3. Point SDKs to emulators in development (guarded by `NODE_ENV !== 'production'`).
+
+## Seeding local data
+
+With emulators running, seed minimal data:
+
+```
+pnpm seed
+```
+
+## Environment variables (.env example)
+
+Create `.env.local`. Keys prefixed with `NEXT_PUBLIC_` are safe for the client.
+
+```
+NEXT_PUBLIC_SITE_URL=https://localhost:3000
+
+# Internationalization
+NEXT_PUBLIC_DEFAULT_LOCALE=en
+NEXT_PUBLIC_SUPPORTED_LOCALES=en,fr
+
+# Firebase (client)
+NEXT_PUBLIC_FIREBASE_API_KEY=
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=
+NEXT_PUBLIC_FIREBASE_APP_ID=
+NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=
+
+# Firebase (server – used only in server actions/route handlers if needed)
+FIREBASE_ADMIN_PROJECT_ID=
+FIREBASE_ADMIN_CLIENT_EMAIL=
+FIREBASE_ADMIN_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n"
+
+# Analytics/Monitoring (optional)
+NEXT_PUBLIC_SENTRY_DSN=
+SENTRY_AUTH_TOKEN=
+VERCEL_ANALYTICS_ID=
+```
+
+## Security and compliance
+
+- Secrets: managed via Vercel/Firebase; never committed
+- Headers: strict CSP, HSTS, X-Content-Type-Options, X-Frame-Options, Referrer-Policy
+- RBAC: roles via Firebase custom claims (`admin`, `editor`, `viewer`)
+- Data: least-privilege Firestore/Storage rules; PII minimization
+- Backups: scheduled Firestore exports to GCS
+
+Content Security Policy (adjust to deployment):
+
+```
+default-src 'self';
+script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com;
+style-src 'self' 'unsafe-inline';
+img-src 'self' data: https:;
+font-src 'self' https: data:;
+connect-src 'self' https://firestore.googleapis.com https://firebasestorage.googleapis.com;
+frame-ancestors 'none';
+```
+
+Next.js headers configuration (example):
+
+```
+// next.config.js (or next.config.mjs)
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'X-Frame-Options', value: 'DENY' },
+          { key: 'Referrer-Policy', value: 'no-referrer' }
+        ]
+      }
+    ];
+  }
+};
+module.exports = nextConfig;
+```
+
+## CI/CD and deployments
+
+- Primary: Vercel
+  - Connect repo, set env vars per environment
+  - Production builds from `main` on tag or protected push
+- Alternative: Firebase Hosting (SSR recommended on Vercel for Next.js 15)
+- Previews: branch deploys with environment protection; use Preview env vars
+
+## Quality gates (lint, types, tests)
+
+- Linting: ESLint + Prettier (`pnpm lint`)
+- Types: `tsc --noEmit` (`pnpm typecheck`)
+- Unit: Vitest/Jest (`pnpm test`)
+- E2E: Playwright (`pnpm test:e2e`)
+- Pre-commit: lint-staged + husky
+
+Minimum coverage targets (recommended):
+
+- Unit/integration lines ≥ 80%
+- Critical modules ≥ 90%
+
+Playwright setup:
+
+- Install browsers once: `pnpm dlx playwright install --with-deps`
+- Headless in CI; record videos on failure
+
+Static analysis:
+
+- Run `pnpm lint` and `pnpm typecheck` in CI on PRs
+
+## Pre-commit hooks
+
+Enable fast feedback locally:
+
+1. Install dev deps:
+
+```
+pnpm add -D husky lint-staged
+```
+
+2. Initialize husky and add a pre-commit hook:
+
+```
+pnpm dlx husky init
+echo "pnpm lint && pnpm typecheck" > .husky/pre-commit
+```
+
+3. Configure lint-staged in `package.json` (optional):
+
+```
+{
+  "lint-staged": {
+    "**/*.{ts,tsx,js,jsx}": ["eslint --fix"],
+    "**/*.{md,css,json}": ["prettier --write"]
+  }
+}
+```
+
+## Observability and performance
+
+- Analytics: Vercel Analytics
+- Error tracking: Sentry (optional)
+- Budgets: LCP ≤ 1.5s mobile, TBT ≤ 150ms, CLS ≤ 0.1
+- Images: Next/Image with responsive sources
+
+## Internationalization
+
+- Library: next-intl
+- Directory: `lib/i18n` with `messages/{locale}.json`
+- Wrap `app/(public)/[locale]/layout.tsx` with `NextIntlClientProvider`
+- Never hardcode end-user strings
+
+Message files example:
+
+```
+lib/i18n/messages/en.json
+lib/i18n/messages/fr.json
+```
+
+Usage example:
+
+```
+import { useTranslations } from 'next-intl';
+const t = useTranslations('home.hero');
+```
+
+Routing:
+
+- Default locale via `NEXT_PUBLIC_DEFAULT_LOCALE`
+- Supported locales via `NEXT_PUBLIC_SUPPORTED_LOCALES`
+
+## RBAC setup (Firebase custom claims)
+
+Assign roles using Firebase Admin SDK (run in a secured server context):
+
+```
+import { getAuth } from 'firebase-admin/auth';
+
+async function setRole(userId, role) {
+  await getAuth().setCustomUserClaims(userId, { role });
+}
+
+// Roles: 'admin' | 'editor' | 'viewer'
+```
+
+Client-side, read claims from the ID token and gate Admin routes accordingly.
+
+## Data model overview
+
+Indicative collections:
+
+- divisions
+- products (Enterprise)
+- services (Intelligence)
+- events
+- blogPosts
+- jobs, applications
+- galleries, media
+- menus (Resorts)
+- courses (LMS)
+- contactSubmissions, newsletterSubscriptions
+
+Event document example:
+
+```
+{
+  id: string,
+  division: 'farmhouse' | 'enterprise' | 'intelligence' | 'resorts',
+  title: string,
+  description: string,
+  startAt: Timestamp,
+  endAt: Timestamp,
+  location: string,
+  featuredImageUrl: string,
+  published: boolean,
+  createdByUserId: string
+}
+```
+
+## Governance (branching and releases)
+
+- Branching: trunk-based
+  - Feature branches → PR → `main`
+  - Conventional Commits for semantic versioning
+- Reviews: 1–2 reviewers, required checks green
+- Releases: tags on `main`; changelog generated from commits
+
+## References
+
+- Product brief and visual feature map: `docs/README.md`
+- UI/UX specifications: `docs/UI-DESIGN.md` and `docs/UI-DESIGN.txt`

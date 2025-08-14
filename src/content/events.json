@@ -1,0 +1,30 @@
+[
+  {
+    "id": "agro-fair-2025",
+    "title": "Agro Fair",
+    "startAt": "2025-08-20T09:00:00.000Z",
+    "location": "Main Grounds",
+    "href": "/events/agro-fair-2025"
+  },
+  {
+    "id": "lms-open-day",
+    "title": "LMS Open Day",
+    "startAt": "2025-09-05T10:00:00.000Z",
+    "location": "Intelligence Campus",
+    "href": "/events/lms-open-day"
+  },
+  {
+    "id": "enterprise-summit-2025",
+    "title": "Enterprise Summit",
+    "startAt": "2025-09-18T09:30:00.000Z",
+    "location": "Enterprise Lab Hall",
+    "href": "/events/enterprise-summit-2025"
+  },
+  {
+    "id": "resort-family-day-2025",
+    "title": "Resort Family Day",
+    "startAt": "2025-10-02T11:00:00.000Z",
+    "location": "Resorts Park",
+    "href": "/events/resort-family-day-2025"
+  }
+]

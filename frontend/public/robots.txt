@@ -1,6 +1,0 @@
-# Allow all web crawlers access to all content
-User-agent: *
-Disallow:
-
-# Sitemap (we will update this URL later)
-# Sitemap: https://broadway-corp.com/sitemap.xml
