@@ -7,8 +7,10 @@ const defaultLocale = 'en' as const;
 export default createMiddleware({
   locales: Array.from(locales),
   defaultLocale,
+  localePrefix: 'as-needed'
 });
 
 export const config = {
-  matcher: ['/((?!api|_next|.*\\..*).*)'],
+  // Only run on the root and on locale-prefixed routes
+  matcher: ['/', '/(en|fr)/:path*']
 };
