@@ -6,7 +6,7 @@ import { getStorage } from 'firebase-admin/storage';
 
 function resolveCredential() {
   const jsonPath = process.env.FIREBASE_ADMIN_CREDENTIALS_PATH;
-  
+
   if (jsonPath && fs.existsSync(jsonPath)) {
     const raw = fs.readFileSync(jsonPath, 'utf8');
     const svc = JSON.parse(raw) as {
