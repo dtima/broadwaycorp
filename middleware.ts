@@ -1,14 +1,14 @@
 import createMiddleware from 'next-intl/middleware';
-import { defaultLocale, supportedLocales } from './src/lib/i18n/config';
+
+// Inline minimal config to avoid Edge middleware bundling issues in production
+const locales = ['en', 'fr'] as const;
+const defaultLocale = 'en' as const;
 
 export default createMiddleware({
-  locales: supportedLocales,
+  locales: Array.from(locales),
   defaultLocale,
 });
 
 export const config = {
-  matcher: [
-    // Skip Next.js internals and all static files
-    '/((?!api|_next|.*\\..*).*)',
-  ],
+  matcher: ['/((?!api|_next|.*\\..*).*)'],
 };
