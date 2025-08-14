@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npm test
+# Faster, cross-platform checks in pre-commit; full suite runs in CI
+pnpm typecheck
