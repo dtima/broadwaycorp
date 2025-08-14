@@ -1,6 +1,6 @@
+
 secrets/
 node_modules
-secrets/
 .next/
 .env.local
 .env.production
