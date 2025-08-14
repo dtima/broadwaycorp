@@ -28,7 +28,7 @@ async function createUserIfMissing(adminAuth: any, uid: string, email: string) {
 async function main() {
   // Import Firebase admin AFTER environment variables are loaded
   const { adminAuth } = await import('../src/lib/firebase/admin');
-  
+
   const users: Array<{ uid: string; email: string }> = [
     { uid: 'VPdfojqIzgcN2GQRccaI7WnwWAy1', email: 'support@broadway-corp.com' },
     { uid: 'wGPWmJXr1nUUVV0ldWSZ0LF43tz1', email: 'teboh.n.gustave@broadway-corp.com' },
