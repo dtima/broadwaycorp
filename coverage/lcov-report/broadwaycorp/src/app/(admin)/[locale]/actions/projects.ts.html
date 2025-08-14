@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/37</span>
+                <span class='fraction'>0/50</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/37</span>
+                <span class='fraction'>0/50</span>
             </div>
         
             
@@ -100,7 +100,33 @@
 <a name='L35'></a><a href='#L35'>35</a>
 <a name='L36'></a><a href='#L36'>36</a>
 <a name='L37'></a><a href='#L37'>37</a>
-<a name='L38'></a><a href='#L38'>38</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -140,6 +166,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >'use server';</span></span></span>
 <span class="cstat-no" title="statement not covered" >import { adminDb } from '@/lib/firebase/admin';</span>
 <span class="cstat-no" title="statement not covered" >import { requireCanManageContent } from '@/lib/auth/rbac';</span>
+<span class="cstat-no" title="statement not covered" >import { headers } from 'next/headers';</span>
+<span class="cstat-no" title="statement not covered" >import { isAllowedOrigin } from '@/lib/utils';</span>
+<span class="cstat-no" title="statement not covered" >import { projectCreateSchema, projectUpdateSchema } from '@/lib/validations/projects';</span>
 <span class="cstat-no" title="statement not covered" >import { revalidatePath } from 'next/cache';</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export async function createProject(</span>
@@ -147,10 +176,14 @@
 <span class="cstat-no" title="statement not covered" >  data: { name: string; status?: 'planned' | 'active' | 'paused' | 'done' }</span>
 <span class="cstat-no" title="statement not covered" >) {</span>
 <span class="cstat-no" title="statement not covered" >  await requireCanManageContent();</span>
+<span class="cstat-no" title="statement not covered" >  const origin = (await headers()).get('origin');</span>
+<span class="cstat-no" title="statement not covered" >  if (!isAllowedOrigin(origin)) throw new Error('Invalid origin');</span>
+<span class="cstat-no" title="statement not covered" >  const parsed = projectCreateSchema.safeParse(data);</span>
+<span class="cstat-no" title="statement not covered" >  if (!parsed.success) throw new Error('Invalid input');</span>
 <span class="cstat-no" title="statement not covered" >  const now = new Date().toISOString();</span>
 <span class="cstat-no" title="statement not covered" >  const doc = await adminDb</span>
 <span class="cstat-no" title="statement not covered" >    .collection('projects')</span>
-<span class="cstat-no" title="statement not covered" >    .add({ name: data.name, status: data.status || 'planned', updatedAt: now });</span>
+<span class="cstat-no" title="statement not covered" >    .add({ name: parsed.data.name, status: parsed.data.status || 'planned', updatedAt: now });</span>
 <span class="cstat-no" title="statement not covered" >  revalidatePath(`/${locale}/admin/projects`);</span>
 <span class="cstat-no" title="statement not covered" >  return { id: doc.id };</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -161,16 +194,22 @@
 <span class="cstat-no" title="statement not covered" >  patch: Partial&lt;{ name: string; status: 'planned' | 'active' | 'paused' | 'done' }&gt;</span>
 <span class="cstat-no" title="statement not covered" >) {</span>
 <span class="cstat-no" title="statement not covered" >  await requireCanManageContent();</span>
+<span class="cstat-no" title="statement not covered" >  const origin = (await headers()).get('origin');</span>
+<span class="cstat-no" title="statement not covered" >  if (!isAllowedOrigin(origin)) throw new Error('Invalid origin');</span>
+<span class="cstat-no" title="statement not covered" >  const parsed = projectUpdateSchema.safeParse(patch);</span>
+<span class="cstat-no" title="statement not covered" >  if (!parsed.success) throw new Error('Invalid input');</span>
 <span class="cstat-no" title="statement not covered" >  const now = new Date().toISOString();</span>
 <span class="cstat-no" title="statement not covered" >  await adminDb</span>
 <span class="cstat-no" title="statement not covered" >    .collection('projects')</span>
 <span class="cstat-no" title="statement not covered" >    .doc(id)</span>
-<span class="cstat-no" title="statement not covered" >    .set({ ...patch, updatedAt: now }, { merge: true });</span>
+<span class="cstat-no" title="statement not covered" >    .set({ ...parsed.data, updatedAt: now }, { merge: true });</span>
 <span class="cstat-no" title="statement not covered" >  revalidatePath(`/${locale}/admin/projects`);</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >export async function deleteProject(locale: string, id: string) {</span>
 <span class="cstat-no" title="statement not covered" >  await requireCanManageContent();</span>
+<span class="cstat-no" title="statement not covered" >  const origin = (await headers()).get('origin');</span>
+<span class="cstat-no" title="statement not covered" >  if (!isAllowedOrigin(origin)) throw new Error('Invalid origin');</span>
 <span class="cstat-no" title="statement not covered" >  await adminDb.collection('projects').doc(id).delete();</span>
 <span class="cstat-no" title="statement not covered" >  revalidatePath(`/${locale}/admin/projects`);</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -181,7 +220,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-08-14T13:02:27.380Z
+                at 2025-08-14T22:57:05.015Z
             </div>
         <script src="../../../../../../prettify.js"></script>
         <script>

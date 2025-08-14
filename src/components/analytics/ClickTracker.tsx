@@ -11,7 +11,6 @@ export default function ClickTracker() {
       // Replace with your analytics provider call
       // e.g., window.gtag('event', name, {meta})
       if (process.env.NODE_ENV !== 'production') {
-        // eslint-disable-next-line no-console
         console.log('[analytics] click', name, meta);
       }
     }

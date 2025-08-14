@@ -21,6 +21,18 @@ const nextConfig = {
             key: 'Permissions-Policy',
             value: 'geolocation=(), microphone=(), camera=(), payment=()',
           },
+          {
+            key: 'Content-Security-Policy',
+            value: [
+              "default-src 'self'",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com",
+              "style-src 'self' 'unsafe-inline'",
+              "img-src 'self' data: https:",
+              "font-src 'self' https: data:",
+              "connect-src 'self' https://firestore.googleapis.com https://firebasestorage.googleapis.com",
+              "frame-ancestors 'none'",
+            ].join('; '),
+          },
         ],
       },
     ];
