@@ -3,9 +3,13 @@
     pnpm tsx scripts/set-admin-claims.ts
   Ensures specified UIDs have admin role.
 */
-import { adminAuth } from '../src/lib/firebase/admin';
+import { config } from 'dotenv';
+import { resolve } from 'path';
 
-async function createUserIfMissing(uid: string, email: string) {
+// Load environment variables from .env.local FIRST
+config({ path: resolve(process.cwd(), '.env.local') });
+
+async function createUserIfMissing(adminAuth: any, uid: string, email: string) {
   try {
     await adminAuth.createUser({ uid, email, emailVerified: true, disabled: false });
     console.log(`Created user ${email} (${uid}) in Auth emulator`);
@@ -22,6 +26,9 @@ async function createUserIfMissing(uid: string, email: string) {
 }
 
 async function main() {
+  // Import Firebase admin AFTER environment variables are loaded
+  const { adminAuth } = await import('../src/lib/firebase/admin');
+  
   const users: Array<{ uid: string; email: string }> = [
     { uid: 'VPdfojqIzgcN2GQRccaI7WnwWAy1', email: 'support@broadway-corp.com' },
     { uid: 'wGPWmJXr1nUUVV0ldWSZ0LF43tz1', email: 'teboh.n.gustave@broadway-corp.com' },
@@ -30,7 +37,7 @@ async function main() {
   for (const { uid, email } of users) {
     // When pointed at the Auth emulator, create the user if missing
     if (process.env.FIREBASE_AUTH_EMULATOR_HOST) {
-      await createUserIfMissing(uid, email);
+      await createUserIfMissing(adminAuth, uid, email);
     }
 
     await adminAuth.setCustomUserClaims(uid, { role: 'admin' });
