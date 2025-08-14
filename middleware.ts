@@ -5,29 +5,39 @@ const LOCALES = ['en', 'fr'] as const;
 const DEFAULT_LOCALE = 'en' as const;
 
 export function middleware(req: NextRequest) {
-  const { pathname } = req.nextUrl;
+  try {
+    const { pathname } = req.nextUrl;
 
-  // Skip Next.js internals and static assets
-  if (
-    pathname.startsWith('/_next') ||
-    pathname.startsWith('/api') ||
-    /\.[^/]+$/.test(pathname)
-  ) {
+    // Skip Next.js internals and static assets
+    if (
+      pathname === '/favicon.ico' ||
+      pathname.startsWith('/_next') ||
+      pathname.startsWith('/api') ||
+      /\.[^/]+$/.test(pathname)
+    ) {
+      return NextResponse.next();
+    }
+
+    // Already locale-prefixed
+    const firstSegment = pathname.split('/')[1];
+    if (LOCALES.includes(firstSegment as any)) {
+      return NextResponse.next();
+    }
+
+    // Only redirect the root path to default locale; let other paths pass
+    if (pathname === '/') {
+      const url = req.nextUrl.clone();
+      url.pathname = `/${DEFAULT_LOCALE}`;
+      return NextResponse.redirect(url);
+    }
+
+    return NextResponse.next();
+  } catch {
+    // Never break requests due to middleware
     return NextResponse.next();
   }
-
-  // Already locale-prefixed
-  const firstSegment = pathname.split('/')[1];
-  if (LOCALES.includes(firstSegment as any)) {
-    return NextResponse.next();
-  }
-
-  // Redirect root and any non-localized path to the default locale
-  const url = req.nextUrl.clone();
-  url.pathname = `/${DEFAULT_LOCALE}${pathname === '/' ? '' : pathname}`;
-  return NextResponse.redirect(url);
 }
 
 export const config = {
-  matcher: ['/((?!_next|api|.*\\..*).*)']
+  matcher: ['/', '/(en|fr)/:path*']
 };
