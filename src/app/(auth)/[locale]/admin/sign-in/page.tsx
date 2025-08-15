@@ -1,15 +1,20 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { firebaseAuth } from '@/lib/firebase/client';
 import {
-  signInWithEmailAndPassword,
   setPersistence,
   browserLocalPersistence,
   browserSessionPersistence,
 } from 'firebase/auth';
 import { createSession } from '../../actions/sign-in';
+import { 
+  createEnhancedAuth, 
+  checkNetworkConnectivity, 
+  networkMonitor,
+  FirebaseConnectionError 
+} from '@/lib/firebase/connection-handler';
 
 export default function AdminSignInPage() {
   const [email, setEmail] = useState('');
@@ -23,6 +28,7 @@ export default function AdminSignInPage() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [remember, setRemember] = useState(false);
+  const [isOnline, setIsOnline] = useState(true);
 
   // Pre-fill last email from localStorage (best-effort)
   useState(() => {
@@ -32,9 +38,25 @@ export default function AdminSignInPage() {
     } catch {}
   });
 
-  function mapAuthError(code?: string) {
+  // Monitor network connectivity
+  useEffect(() => {
+    setIsOnline(checkNetworkConnectivity());
+    
+    const unsubscribe = networkMonitor.onStatusChange((online) => {
+      setIsOnline(online);
+      if (online && error?.includes('Network error')) {
+        setError(null); // Clear network errors when back online
+      }
+    });
+
+    return unsubscribe;
+  }, [error]);
+
+  function mapAuthError(code?: string, message?: string) {
     switch (code) {
       case 'auth/network-request-failed':
+      case 'auth/timeout':
+      case 'auth/internal-error':
         return 'Network error. Check your connection, VPN/proxy, or ad-blocker and try again.';
       case 'auth/invalid-credential':
       case 'auth/wrong-password':
@@ -42,8 +64,19 @@ export default function AdminSignInPage() {
         return 'Invalid email or password.';
       case 'auth/too-many-requests':
         return 'Too many attempts. Please wait and try again.';
+      case 'auth/web-storage-unsupported':
+        return 'Browser storage is disabled. Please enable cookies and local storage.';
+      case 'auth/popup-blocked':
+        return 'Popup was blocked. Please allow popups for this site.';
       default:
-        return 'Unable to sign in. Please try again.';
+        // Check for common network-related messages
+        if (message?.toLowerCase().includes('fetch') || 
+            message?.toLowerCase().includes('network') ||
+            message?.toLowerCase().includes('connection') ||
+            message?.toLowerCase().includes('cors')) {
+          return 'Network connectivity issue. Please check your internet connection and try again.';
+        }
+        return 'Unable to sign in. Please try again or contact support if the issue persists.';
     }
   }
 
@@ -51,21 +84,76 @@ export default function AdminSignInPage() {
     e.preventDefault();
     setError(null);
     setSubmitting(true);
+    
     try {
-      if (!navigator.onLine)
-        throw Object.assign(new Error('offline'), { code: 'auth/network-request-failed' });
+      // Check network connectivity first
+      if (!checkNetworkConnectivity()) {
+        throw new FirebaseConnectionError(
+          'Network error. Check your connection, VPN/proxy, or ad-blocker and try again.',
+          undefined,
+          'auth/network-request-failed'
+        );
+      }
+
       const auth = firebaseAuth();
-      await setPersistence(auth, remember ? browserLocalPersistence : browserSessionPersistence);
-      const cred = await signInWithEmailAndPassword(auth, email, password);
-      const idToken = await cred.user.getIdToken();
-      await createSession(idToken, locale);
+      
+      // Add debugging information
+      console.log('Firebase Auth initialized:', {
+        config: auth.config,
+        currentUser: auth.currentUser,
+        // @ts-expect-error accessing internal emulator config for debugging
+        emulatorConfig: auth._delegate?._emulatorConfig,
+        environment: process.env.NODE_ENV,
+        hostname: typeof window !== 'undefined' ? window.location.hostname : 'server'
+      });
+
+      const enhancedAuth = createEnhancedAuth(auth, {
+        maxRetries: 2, // Reduced retries to fail faster
+        retryDelay: 1500,
+        timeoutMs: 10000, // Reduced timeout
+      });
+
+      // Set persistence before signing in
       try {
-        if (remember) localStorage.setItem('admin:lastEmail', email);
-        else localStorage.removeItem('admin:lastEmail');
-      } catch {}
+        await setPersistence(auth, remember ? browserLocalPersistence : browserSessionPersistence);
+      } catch (persistenceError) {
+        console.warn('Failed to set persistence, continuing with session persistence:', persistenceError);
+        // Continue with default persistence
+      }
+      
+      // Use enhanced auth with retry logic
+      const cred = await enhancedAuth.signInWithEmailAndPassword(email, password);
+      const idToken = await cred.user.getIdToken();
+      
+      // Create server session
+      await createSession(idToken, locale);
+      
+      // Handle localStorage for email persistence
+      try {
+        if (remember) {
+          localStorage.setItem('admin:lastEmail', email);
+        } else {
+          localStorage.removeItem('admin:lastEmail');
+        }
+      } catch (storageError) {
+        // localStorage errors are non-critical, continue with login
+        console.warn('Failed to update localStorage:', storageError);
+      }
+      
+      // Navigate to admin dashboard
       router.push(`/${locale}/admin`);
     } catch (err: any) {
-      setError(mapAuthError(err?.code) || err?.message);
+      console.error('Sign-in error:', err);
+      
+      if (err instanceof FirebaseConnectionError) {
+        setError(err.message);
+      } else {
+        // Use improved error mapping with both code and message
+        const errorMessage = mapAuthError(err?.code, err?.message) || 
+                            err?.message || 
+                            'An unexpected error occurred during sign-in';
+        setError(errorMessage);
+      }
     } finally {
       setSubmitting(false);
     }
@@ -83,6 +171,25 @@ export default function AdminSignInPage() {
               Employees and admins can sign in to access the Admin Dashboard.
             </p>
           </div>
+          {/* Network Status Indicator */}
+          {!isOnline && (
+            <div className="mb-4 rounded-md bg-red-50 p-4 border border-red-200">
+              <div className="flex">
+                <div className="flex-shrink-0">
+                  <svg className="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div className="ml-3">
+                  <h3 className="text-sm font-medium text-red-800">No Internet Connection</h3>
+                  <p className="mt-1 text-sm text-red-700">
+                    Please check your network connection and try again.
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
+
           <form onSubmit={onSubmit} className="mt-8 space-y-5" noValidate>
             <div>
               <label htmlFor="email" className="block text-sm font-medium">

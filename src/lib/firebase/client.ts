@@ -33,17 +33,26 @@ export function getFirebaseApp() {
 
 export const firebaseAuth = () => {
   const auth = getAuth(getFirebaseApp());
+  
+  // Only connect to emulator in development with explicit flag
   if (
     process.env.NEXT_PUBLIC_USE_FIREBASE_EMULATORS === 'true' &&
-    process.env.NODE_ENV !== 'production'
+    process.env.NODE_ENV === 'development' &&
+    typeof window !== 'undefined' &&
+    window.location.hostname === 'localhost'
   ) {
     try {
       // @ts-expect-error internal guard
-      if (!auth._canInitEmulator) connectAuthEmulator(auth, 'http://127.0.0.1:9099');
-    } catch {
-      // ignore
+      if (!auth._canInitEmulator) {
+        connectAuthEmulator(auth, 'http://127.0.0.1:9099');
+        console.log('Connected to Firebase Auth emulator');
+      }
+    } catch (error) {
+      console.warn('Failed to connect to Firebase Auth emulator:', error);
+      // Continue with production Firebase
     }
   }
+  
   return auth;
 };
 export const firestore = () => {
