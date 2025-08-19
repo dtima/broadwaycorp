@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
 
 const CommandPalette = dynamic(() => import('../command/CommandPalette'), { ssr: false });
@@ -20,8 +20,14 @@ export default function Header({ locale }: { locale: string }) {
   const [scrolled, setScrolled] = useState(false);
   const firstMobileLinkRef = useRef<HTMLAnchorElement | null>(null);
   const menuButtonRef = useRef<HTMLButtonElement | null>(null);
-  const withLocale = (href: string) => `/${locale}${href === '/' ? '' : href}`;
-  const isActive = (href: string) => pathname?.startsWith(withLocale(href));
+  const withLocale = useCallback(
+    (href: string) => `/${locale}${href === '/' ? '' : href}`,
+    [locale]
+  );
+  const isActive = useCallback(
+    (href: string) => pathname?.startsWith(withLocale(href)),
+    [pathname, withLocale]
+  );
   const [cmdOpen, setCmdOpen] = useState(false);
   const navWrapRef = useRef<HTMLDivElement | null>(null);
   const underlineRef = useRef<HTMLSpanElement | null>(null);
@@ -34,13 +40,25 @@ export default function Header({ locale }: { locale: string }) {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // Persist mobile menu state with history
+  const MENU_STATE = '__menuOpen';
+  const closeMenu = useCallback(() => {
+    if (!open) return;
+    // If current history state is ours, go back; else just close
+    if ((history.state && history.state[MENU_STATE]) || location.hash === '#menu') {
+      history.back();
+    } else {
+      setOpen(false);
+    }
+  }, [open]);
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') closeMenu();
     };
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, []);
+  }, [closeMenu]);
 
   useEffect(() => {
     if (open) {
@@ -62,34 +80,23 @@ export default function Header({ locale }: { locale: string }) {
     underline.style.width = `${rect.width}px`;
   }
 
-  function setToActiveLink() {
+  const setToActiveLink = useCallback(() => {
     const active = nav.find((n) => isActive(n.href));
     const el = active ? linkRefs.current[active.href] : null;
     moveUnderlineTo(el as HTMLElement | null);
-  }
+  }, [isActive]);
 
   useEffect(() => {
     setToActiveLink();
     const onResize = () => setToActiveLink();
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
-  }, [pathname]);
+  }, [pathname, setToActiveLink]);
 
-  // Persist mobile menu state with history
-  const MENU_STATE = '__menuOpen';
   function openMenu() {
     if (open) return;
     history.pushState({ [MENU_STATE]: true }, '');
     setOpen(true);
-  }
-  function closeMenu() {
-    if (!open) return;
-    // If current history state is ours, go back; else just close
-    if ((history.state && history.state[MENU_STATE]) || location.hash === '#menu') {
-      history.back();
-    } else {
-      setOpen(false);
-    }
   }
   useEffect(() => {
     const onPop = () => {
@@ -98,7 +105,7 @@ export default function Header({ locale }: { locale: string }) {
     };
     window.addEventListener('popstate', onPop);
     return () => window.removeEventListener('popstate', onPop);
-  }, [open]);
+  }, [open, closeMenu]);
 
   return (
     <header

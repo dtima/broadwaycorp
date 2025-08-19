@@ -5,7 +5,7 @@ Since Broadway manages Farmhouse, Enterprise, Intelligence, and Resorts, conside
 📌 Navigation – Add Subsidiary Access
 Consider adding a new menu item:
 • “Our Divisions” → Dropdown with links to Farmhouse, Enterprise, Intelligence, and Resorts
-Each link could open a branded microsite or scroll to a section on the homepage.******************\_\_\_\_******************
+Each link could open a branded microsite or scroll to a section on the homepage.********\*\*********\_\_\_\_********\*\*********
 🌍 About Broadway Corporation
 Broadway Corporation is a multidisciplinary powerhouse driving innovation, empowerment, and sustainability in Cameroon, across Africa, and beyond. We operate through four specialized subsidiaries—Broadway Farmhouse, Broadway Intelligence, Broadway Enterprise, and Broadway Resorts—each designed to transform its sector through modular systems, inclusive design, and tech-forward solutions.
 
@@ -150,7 +150,7 @@ BROADWAY ROADHOUSE(PART OF BROADWAY FARMHOUSE AND BROADWAY RESORT)
 
 🍽️ Broadway Roadhouse Signature Menu
 Grilled to Perfection. Rooted in Africa. Served with Heart.
-At Broadway Roadhouse, we specialize in a curated selection of grilled delicacies and farm-fresh sides—each one sourced from our own Broadway farms and prepared with care, tradition, and innovation. Inspired by the legendary service of ****\*****, we deliver bold flavors and unforgettable hospitality.
+At Broadway Roadhouse, we specialize in a curated selection of grilled delicacies and farm-fresh sides—each one sourced from our own Broadway farms and prepared with care, tradition, and innovation. Inspired by the legendary service of \***\*\*\*\***, we deliver bold flavors and unforgettable hospitality.
 
 ---
 
@@ -315,6 +315,7 @@ Additional Comments or Questions:
 
 <label>Role / Title:</label><br>
 <select name="Role" style="width:100%; padding:8px; margin-bottom:10px;">
+
 <option>Teacher</option>
 <option>School Owner</option>
 <option>Educator</option>

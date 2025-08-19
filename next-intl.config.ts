@@ -4,8 +4,10 @@ export const locales = supportedLocales;
 export const defaultLocale = df;
 export const localePrefix = 'as-needed';
 
-export default {
+const config = {
   locales,
   defaultLocale,
   localePrefix,
 };
+
+export default config;
