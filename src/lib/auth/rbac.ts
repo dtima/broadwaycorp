@@ -23,7 +23,7 @@ export class UnauthorizedError extends Error {
 }
 
 export class ForbiddenError extends Error {
-  constructor(message = 'Forbidden') {
+  constructor(message = 'Insufficient permissions') {
     super(message);
     this.name = 'ForbiddenError';
   }
@@ -38,14 +38,32 @@ export async function requireUser(userOverride?: Record<string, unknown> | null)
   return user;
 }
 
+export async function requireRole(
+  requiredRole: Role,
+  userOverride?: Record<string, unknown> | null
+) {
+  const user = await requireUser(userOverride);
+  const role = getRoleFromClaims(user);
+
+  // Role hierarchy: admin > editor > viewer
+  const roleHierarchy = { admin: 3, editor: 2, viewer: 1 };
+  const userLevel = roleHierarchy[role as keyof typeof roleHierarchy] || 0;
+  const requiredLevel = roleHierarchy[requiredRole as keyof typeof roleHierarchy] || 0;
+
+  if (userLevel < requiredLevel) throw new ForbiddenError();
+  return user;
+}
+
 export async function requireCanManageEmployees(userOverride?: Record<string, unknown> | null) {
   const user = await requireUser(userOverride);
   const role = getRoleFromClaims(user);
   if (!canManageEmployees(role)) throw new ForbiddenError();
+  return user;
 }
 
 export async function requireCanManageContent(userOverride?: Record<string, unknown> | null) {
   const user = await requireUser(userOverride);
   const role = getRoleFromClaims(user);
   if (!canManageContent(role)) throw new ForbiddenError();
+  return user;
 }

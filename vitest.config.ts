@@ -10,16 +10,24 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
+    setupFiles: ['./src/tests/setup.ts'],
     include: ['src/tests/{unit,integration}/**/*.{test,spec}.ts?(x)'],
     coverage: {
       reporter: ['text', 'lcov'],
       reportsDirectory: './coverage',
       thresholds: {
-        lines: 0,
-        functions: 0,
-        branches: 0,
-        statements: 0,
+        lines: 70,
+        functions: 70,
+        branches: 60,
+        statements: 70,
       },
+      exclude: [
+        'src/tests/**',
+        '**/*.d.ts',
+        '**/*.config.*',
+        '**/coverage/**',
+        '**/node_modules/**',
+      ],
     },
   },
 });
