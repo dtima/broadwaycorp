@@ -1,10 +1,13 @@
 import { notFound } from 'next/navigation';
 import { getRequestConfig } from 'next-intl/server';
-import { supportedLocales, defaultLocale } from '@/lib/i18n/config';
+
+// Hardcode the locales to avoid environment variable issues in edge runtime
+const SUPPORTED_LOCALES = ['en', 'fr'] as const;
+const DEFAULT_LOCALE = 'en' as const;
 
 export default getRequestConfig(async ({ locale }) => {
   // Validate that the incoming `locale` parameter is valid
-  if (!supportedLocales.includes(locale as any)) {
+  if (!SUPPORTED_LOCALES.includes(locale as any)) {
     notFound();
   }
 
