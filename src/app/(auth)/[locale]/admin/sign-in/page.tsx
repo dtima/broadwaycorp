@@ -3,18 +3,16 @@ import { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { firebaseAuth } from '@/lib/firebase/client';
-import {
-  setPersistence,
-  browserLocalPersistence,
-  browserSessionPersistence,
-} from 'firebase/auth';
+import { setPersistence, browserLocalPersistence, browserSessionPersistence } from 'firebase/auth';
 import { createSession } from '../../actions/sign-in';
-import { 
-  createEnhancedAuth, 
-  checkNetworkConnectivity, 
+import {
+  createEnhancedAuth,
+  checkNetworkConnectivity,
   networkMonitor,
-  FirebaseConnectionError 
+  FirebaseConnectionError,
 } from '@/lib/firebase/connection-handler';
+import { retryFirebaseOperation } from '@/lib/firebase/connection-handler';
+import { logDomainValidation } from '@/lib/firebase/domain-validator';
 
 export default function AdminSignInPage() {
   const [email, setEmail] = useState('');
@@ -40,17 +38,24 @@ export default function AdminSignInPage() {
 
   // Monitor network connectivity
   useEffect(() => {
-    setIsOnline(checkNetworkConnectivity());
-    
-    const unsubscribe = networkMonitor.onStatusChange((online) => {
-      setIsOnline(online);
-      if (online && error?.includes('Network error')) {
-        setError(null); // Clear network errors when back online
-      }
-    });
+    // Check network connectivity on mount
+    const isOnline = checkNetworkConnectivity();
+    setIsOnline(isOnline);
 
-    return unsubscribe;
-  }, [error]);
+    // Validate Firebase domain configuration
+    logDomainValidation();
+
+    const handleOnline = () => setIsOnline(true);
+    const handleOffline = () => setIsOnline(false);
+
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
 
   function mapAuthError(code?: string, message?: string) {
     switch (code) {
@@ -70,10 +75,12 @@ export default function AdminSignInPage() {
         return 'Popup was blocked. Please allow popups for this site.';
       default:
         // Check for common network-related messages
-        if (message?.toLowerCase().includes('fetch') || 
-            message?.toLowerCase().includes('network') ||
-            message?.toLowerCase().includes('connection') ||
-            message?.toLowerCase().includes('cors')) {
+        if (
+          message?.toLowerCase().includes('fetch') ||
+          message?.toLowerCase().includes('network') ||
+          message?.toLowerCase().includes('connection') ||
+          message?.toLowerCase().includes('cors')
+        ) {
           return 'Network connectivity issue. Please check your internet connection and try again.';
         }
         return 'Unable to sign in. Please try again or contact support if the issue persists.';
@@ -84,7 +91,7 @@ export default function AdminSignInPage() {
     e.preventDefault();
     setError(null);
     setSubmitting(true);
-    
+
     try {
       // Check network connectivity first
       if (!checkNetworkConnectivity()) {
@@ -96,7 +103,7 @@ export default function AdminSignInPage() {
       }
 
       const auth = firebaseAuth();
-      
+
       // Add debugging information
       console.log('Firebase Auth initialized:', {
         config: auth.config,
@@ -104,7 +111,7 @@ export default function AdminSignInPage() {
         // @ts-expect-error accessing internal emulator config for debugging
         emulatorConfig: auth._delegate?._emulatorConfig,
         environment: process.env.NODE_ENV,
-        hostname: typeof window !== 'undefined' ? window.location.hostname : 'server'
+        hostname: typeof window !== 'undefined' ? window.location.hostname : 'server',
       });
 
       const enhancedAuth = createEnhancedAuth(auth, {
@@ -117,17 +124,20 @@ export default function AdminSignInPage() {
       try {
         await setPersistence(auth, remember ? browserLocalPersistence : browserSessionPersistence);
       } catch (persistenceError) {
-        console.warn('Failed to set persistence, continuing with session persistence:', persistenceError);
+        console.warn(
+          'Failed to set persistence, continuing with session persistence:',
+          persistenceError
+        );
         // Continue with default persistence
       }
-      
+
       // Use enhanced auth with retry logic
       const cred = await enhancedAuth.signInWithEmailAndPassword(email, password);
       const idToken = await cred.user.getIdToken();
-      
+
       // Create server session
       await createSession(idToken, locale);
-      
+
       // Handle localStorage for email persistence
       try {
         if (remember) {
@@ -139,19 +149,20 @@ export default function AdminSignInPage() {
         // localStorage errors are non-critical, continue with login
         console.warn('Failed to update localStorage:', storageError);
       }
-      
+
       // Navigate to admin dashboard
       router.push(`/${locale}/admin`);
     } catch (err: any) {
       console.error('Sign-in error:', err);
-      
+
       if (err instanceof FirebaseConnectionError) {
         setError(err.message);
       } else {
         // Use improved error mapping with both code and message
-        const errorMessage = mapAuthError(err?.code, err?.message) || 
-                            err?.message || 
-                            'An unexpected error occurred during sign-in';
+        const errorMessage =
+          mapAuthError(err?.code, err?.message) ||
+          err?.message ||
+          'An unexpected error occurred during sign-in';
         setError(errorMessage);
       }
     } finally {
@@ -177,7 +188,11 @@ export default function AdminSignInPage() {
               <div className="flex">
                 <div className="flex-shrink-0">
                   <svg className="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                      clipRule="evenodd"
+                    />
                   </svg>
                 </div>
                 <div className="ml-3">

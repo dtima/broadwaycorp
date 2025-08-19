@@ -29,11 +29,11 @@ const mockConsoleError = vi.spyOn(console, 'error').mockImplementation(() => {})
 
 describe('Firebase Client Configuration', () => {
   const originalEnv = process.env;
-  
+
   beforeEach(() => {
     vi.clearAllMocks();
     process.env = { ...originalEnv };
-    
+
     // Reset modules to ensure fresh imports
     vi.resetModules();
   });
@@ -60,7 +60,7 @@ describe('Firebase Client Configuration', () => {
 
       // Import after setting env vars
       const { getFirebaseApp } = await import('@/lib/firebase/client');
-      
+
       const app = getFirebaseApp();
 
       expect(initializeApp).toHaveBeenCalledWith({
@@ -81,7 +81,7 @@ describe('Firebase Client Configuration', () => {
       (getApps as any).mockReturnValue([existingApp]);
 
       const { getFirebaseApp } = await import('@/lib/firebase/client');
-      
+
       const app = getFirebaseApp();
 
       expect(initializeApp).not.toHaveBeenCalled();
@@ -91,13 +91,13 @@ describe('Firebase Client Configuration', () => {
     it('should log error when Firebase environment variables are missing', async () => {
       // Clear Firebase env vars
       delete process.env.NEXT_PUBLIC_FIREBASE_API_KEY;
-      
+
       const mockApp = { name: 'test-app' };
       (getApps as any).mockReturnValue([]);
       (initializeApp as any).mockReturnValue(mockApp);
 
       const { getFirebaseApp } = await import('@/lib/firebase/client');
-      
+
       getFirebaseApp();
 
       expect(mockConsoleError).toHaveBeenCalledWith(
@@ -110,12 +110,12 @@ describe('Firebase Client Configuration', () => {
     it('should return Firebase Auth instance', async () => {
       const mockApp = { name: 'test-app' };
       const mockAuth = { app: mockApp };
-      
+
       (getApps as any).mockReturnValue([mockApp]);
       (getAuth as any).mockReturnValue(mockAuth);
 
       const { firebaseAuth } = await import('@/lib/firebase/client');
-      
+
       const auth = firebaseAuth();
 
       expect(getAuth).toHaveBeenCalledWith(mockApp);
@@ -128,12 +128,12 @@ describe('Firebase Client Configuration', () => {
 
       const mockApp = { name: 'test-app' };
       const mockAuth = { app: mockApp, _canInitEmulator: true };
-      
+
       (getApps as any).mockReturnValue([mockApp]);
       (getAuth as any).mockReturnValue(mockAuth);
 
       const { firebaseAuth } = await import('@/lib/firebase/client');
-      
+
       firebaseAuth();
 
       expect(connectAuthEmulator).toHaveBeenCalledWith(mockAuth, 'http://127.0.0.1:9099');
@@ -145,12 +145,12 @@ describe('Firebase Client Configuration', () => {
 
       const mockApp = { name: 'test-app' };
       const mockAuth = { app: mockApp };
-      
+
       (getApps as any).mockReturnValue([mockApp]);
       (getAuth as any).mockReturnValue(mockAuth);
 
       const { firebaseAuth } = await import('@/lib/firebase/client');
-      
+
       firebaseAuth();
 
       expect(connectAuthEmulator).not.toHaveBeenCalled();
@@ -162,7 +162,7 @@ describe('Firebase Client Configuration', () => {
 
       const mockApp = { name: 'test-app' };
       const mockAuth = { app: mockApp, _canInitEmulator: false };
-      
+
       (getApps as any).mockReturnValue([mockApp]);
       (getAuth as any).mockReturnValue(mockAuth);
       (connectAuthEmulator as any).mockImplementation(() => {
@@ -170,7 +170,7 @@ describe('Firebase Client Configuration', () => {
       });
 
       const { firebaseAuth } = await import('@/lib/firebase/client');
-      
+
       // Should not throw error
       expect(() => firebaseAuth()).not.toThrow();
     });
@@ -180,12 +180,12 @@ describe('Firebase Client Configuration', () => {
     it('should return Firestore instance', async () => {
       const mockApp = { name: 'test-app' };
       const mockFirestore = { app: mockApp };
-      
+
       (getApps as any).mockReturnValue([mockApp]);
       (getFirestore as any).mockReturnValue(mockFirestore);
 
       const { firestore } = await import('@/lib/firebase/client');
-      
+
       const db = firestore();
 
       expect(getFirestore).toHaveBeenCalledWith(mockApp);
@@ -198,12 +198,12 @@ describe('Firebase Client Configuration', () => {
 
       const mockApp = { name: 'test-app' };
       const mockFirestore = { app: mockApp, _delegate: { _terminated: false } };
-      
+
       (getApps as any).mockReturnValue([mockApp]);
       (getFirestore as any).mockReturnValue(mockFirestore);
 
       const { firestore } = await import('@/lib/firebase/client');
-      
+
       firestore();
 
       expect(connectFirestoreEmulator).toHaveBeenCalledWith(mockFirestore, '127.0.0.1', 8080);
@@ -214,12 +214,12 @@ describe('Firebase Client Configuration', () => {
     it('should return Firebase Storage instance', async () => {
       const mockApp = { name: 'test-app' };
       const mockStorage = { app: mockApp };
-      
+
       (getApps as any).mockReturnValue([mockApp]);
       (getStorage as any).mockReturnValue(mockStorage);
 
       const { storage } = await import('@/lib/firebase/client');
-      
+
       const storageInstance = storage();
 
       expect(getStorage).toHaveBeenCalledWith(mockApp);
@@ -238,7 +238,7 @@ describe('Firebase Client Configuration', () => {
       (initializeApp as any).mockReturnValue(mockApp);
 
       const { getFirebaseApp } = await import('@/lib/firebase/client');
-      
+
       // Should not throw even if Firebase services are unreachable
       expect(() => getFirebaseApp()).not.toThrow();
     });
@@ -254,7 +254,7 @@ describe('Firebase Client Configuration', () => {
       (initializeApp as any).mockReturnValue(mockApp);
 
       const { getFirebaseApp } = await import('@/lib/firebase/client');
-      
+
       getFirebaseApp();
 
       expect(mockConsoleError).toHaveBeenCalledWith(
@@ -275,7 +275,7 @@ describe('Firebase Client Configuration', () => {
       (initializeApp as any).mockReturnValue(mockApp);
 
       const { getFirebaseApp } = await import('@/lib/firebase/client');
-      
+
       const app = getFirebaseApp();
 
       expect(initializeApp).toHaveBeenCalledWith({
@@ -300,7 +300,7 @@ describe('Firebase Client Configuration', () => {
       (initializeApp as any).mockReturnValue(mockApp);
 
       const { getFirebaseApp } = await import('@/lib/firebase/client');
-      
+
       getFirebaseApp();
 
       expect(mockConsoleError).toHaveBeenCalledWith(

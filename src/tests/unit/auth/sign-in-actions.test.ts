@@ -43,28 +43,23 @@ describe('Sign-in Server Actions', () => {
       const idToken = 'mock-id-token';
       const locale = 'en';
       const sessionCookie = 'mock-session-cookie';
-      
+
       mockAuth.createSessionCookie.mockResolvedValue(sessionCookie);
-      
+
       const result = await createSession(idToken, locale);
-      
-      expect(mockAuth.createSessionCookie).toHaveBeenCalledWith(
-        idToken,
-        { expiresIn: 60 * 60 * 24 * 5 * 1000 }
-      );
-      
-      expect(mockCookieStore.set).toHaveBeenCalledWith(
-        SESSION_COOKIE_NAME,
-        sessionCookie,
-        {
-          httpOnly: true,
-          secure: true,
-          sameSite: 'lax',
-          path: '/',
-          maxAge: 60 * 60 * 24 * 5,
-        }
-      );
-      
+
+      expect(mockAuth.createSessionCookie).toHaveBeenCalledWith(idToken, {
+        expiresIn: 60 * 60 * 24 * 5 * 1000,
+      });
+
+      expect(mockCookieStore.set).toHaveBeenCalledWith(SESSION_COOKIE_NAME, sessionCookie, {
+        httpOnly: true,
+        secure: true,
+        sameSite: 'lax',
+        path: '/',
+        maxAge: 60 * 60 * 24 * 5,
+      });
+
       expect(result).toEqual({
         ok: true,
         redirect: '/en/admin',
@@ -75,11 +70,11 @@ describe('Sign-in Server Actions', () => {
       const idToken = 'mock-id-token';
       const locale = 'fr';
       const sessionCookie = 'mock-session-cookie';
-      
+
       mockAuth.createSessionCookie.mockResolvedValue(sessionCookie);
-      
+
       const result = await createSession(idToken, locale);
-      
+
       expect(result).toEqual({
         ok: true,
         redirect: '/fr/admin',
@@ -89,11 +84,11 @@ describe('Sign-in Server Actions', () => {
     it('should handle Firebase Admin errors gracefully', async () => {
       const idToken = 'invalid-token';
       const locale = 'en';
-      
+
       mockAuth.createSessionCookie.mockRejectedValue(new Error('Invalid ID token'));
-      
+
       await expect(createSession(idToken, locale)).rejects.toThrow('Invalid ID token');
-      
+
       expect(mockCookieStore.set).not.toHaveBeenCalled();
     });
 
@@ -102,16 +97,15 @@ describe('Sign-in Server Actions', () => {
       const locale = 'en';
       const sessionCookie = 'mock-session-cookie';
       const expectedExpiresIn = 60 * 60 * 24 * 5 * 1000; // 5 days in milliseconds
-      
+
       mockAuth.createSessionCookie.mockResolvedValue(sessionCookie);
-      
+
       await createSession(idToken, locale);
-      
-      expect(mockAuth.createSessionCookie).toHaveBeenCalledWith(
-        idToken,
-        { expiresIn: expectedExpiresIn }
-      );
-      
+
+      expect(mockAuth.createSessionCookie).toHaveBeenCalledWith(idToken, {
+        expiresIn: expectedExpiresIn,
+      });
+
       expect(mockCookieStore.set).toHaveBeenCalledWith(
         SESSION_COOKIE_NAME,
         sessionCookie,
@@ -125,11 +119,11 @@ describe('Sign-in Server Actions', () => {
   describe('destroySession', () => {
     it('should delete session cookie and redirect to sign-in page', async () => {
       const locale = 'en';
-      
+
       const result = await destroySession(locale);
-      
+
       expect(mockCookieStore.delete).toHaveBeenCalledWith(SESSION_COOKIE_NAME);
-      
+
       expect(result).toEqual({
         ok: true,
         redirect: '/en/admin/sign-in',
@@ -138,9 +132,9 @@ describe('Sign-in Server Actions', () => {
 
     it('should handle French locale correctly', async () => {
       const locale = 'fr';
-      
+
       const result = await destroySession(locale);
-      
+
       expect(result).toEqual({
         ok: true,
         redirect: '/fr/admin/sign-in',
@@ -149,14 +143,14 @@ describe('Sign-in Server Actions', () => {
 
     it('should always succeed even if cookie deletion fails', async () => {
       const locale = 'en';
-      
+
       mockCookieStore.delete.mockImplementation(() => {
         throw new Error('Cookie deletion failed');
       });
-      
+
       // Should not throw - the function should handle errors gracefully
       const result = await destroySession(locale);
-      
+
       expect(result).toEqual({
         ok: true,
         redirect: '/en/admin/sign-in',
@@ -169,11 +163,11 @@ describe('Sign-in Server Actions', () => {
       const idToken = 'mock-id-token';
       const locale = 'en';
       const sessionCookie = 'mock-session-cookie';
-      
+
       mockAuth.createSessionCookie.mockResolvedValue(sessionCookie);
-      
+
       await createSession(idToken, locale);
-      
+
       expect(mockCookieStore.set).toHaveBeenCalledWith(
         SESSION_COOKIE_NAME,
         sessionCookie,
@@ -190,11 +184,11 @@ describe('Sign-in Server Actions', () => {
       const idToken = 'mock-id-token';
       const locale = 'en';
       const sessionCookie = 'mock-session-cookie';
-      
+
       mockAuth.createSessionCookie.mockResolvedValue(sessionCookie);
-      
+
       await createSession(idToken, locale);
-      
+
       expect(mockCookieStore.set).toHaveBeenCalledWith(
         SESSION_COOKIE_NAME,
         sessionCookie,
@@ -207,27 +201,27 @@ describe('Sign-in Server Actions', () => {
     it('should handle empty ID token', async () => {
       const idToken = '';
       const locale = 'en';
-      
+
       mockAuth.createSessionCookie.mockRejectedValue(new Error('Empty ID token'));
-      
+
       await expect(createSession(idToken, locale)).rejects.toThrow('Empty ID token');
     });
 
     it('should handle malformed ID token', async () => {
       const idToken = 'malformed.token.here';
       const locale = 'en';
-      
+
       mockAuth.createSessionCookie.mockRejectedValue(new Error('Malformed ID token'));
-      
+
       await expect(createSession(idToken, locale)).rejects.toThrow('Malformed ID token');
     });
 
     it('should handle expired ID token', async () => {
       const idToken = 'expired-token';
       const locale = 'en';
-      
+
       mockAuth.createSessionCookie.mockRejectedValue(new Error('ID token expired'));
-      
+
       await expect(createSession(idToken, locale)).rejects.toThrow('ID token expired');
     });
 
@@ -235,11 +229,11 @@ describe('Sign-in Server Actions', () => {
       const idToken = 'mock-id-token';
       const locale = ''; // Empty locale
       const sessionCookie = 'mock-session-cookie';
-      
+
       mockAuth.createSessionCookie.mockResolvedValue(sessionCookie);
-      
+
       const result = await createSession(idToken, locale);
-      
+
       expect(result).toEqual({
         ok: true,
         redirect: '/admin', // Should still work with empty locale
@@ -252,25 +246,24 @@ describe('Sign-in Server Actions', () => {
       const idToken = 'valid-id-token';
       const locale = 'en';
       const expectedExpiresIn = 60 * 60 * 24 * 5 * 1000;
-      
+
       mockAuth.createSessionCookie.mockResolvedValue('session-cookie');
-      
+
       await createSession(idToken, locale);
-      
+
       expect(getAuth).toHaveBeenCalled();
-      expect(mockAuth.createSessionCookie).toHaveBeenCalledWith(
-        idToken,
-        { expiresIn: expectedExpiresIn }
-      );
+      expect(mockAuth.createSessionCookie).toHaveBeenCalledWith(idToken, {
+        expiresIn: expectedExpiresIn,
+      });
     });
 
     it('should propagate Firebase Admin errors', async () => {
       const idToken = 'mock-id-token';
       const locale = 'en';
       const firebaseError = new Error('Firebase service unavailable');
-      
+
       mockAuth.createSessionCookie.mockRejectedValue(firebaseError);
-      
+
       await expect(createSession(idToken, locale)).rejects.toThrow('Firebase service unavailable');
     });
   });

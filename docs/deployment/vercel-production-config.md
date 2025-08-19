@@ -5,6 +5,7 @@
 Navigate to your Vercel project dashboard → Settings → Environment Variables and add the following:
 
 ### 🌐 Site Configuration
+
 ```
 NEXT_PUBLIC_SITE_URL=https://broadway-corp.com
 NEXT_PUBLIC_DEFAULT_LOCALE=en
@@ -12,6 +13,7 @@ NEXT_PUBLIC_SUPPORTED_LOCALES=en,fr
 ```
 
 ### 🔥 Firebase Client Configuration (Public)
+
 ```
 NEXT_PUBLIC_FIREBASE_API_KEY=AIzaSyB7uNlFOwD6vcEC-XLZEum98taOMj3135o
 NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=broadway-corporation.firebaseapp.com
@@ -23,6 +25,7 @@ NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=G-23QJFTL90F
 ```
 
 ### 🔐 Firebase Admin SDK Configuration (Private)
+
 ```
 FIREBASE_ADMIN_PROJECT_ID=broadway-corporation
 FIREBASE_ADMIN_CLIENT_EMAIL=firebase-adminsdk-fbsvc@broadway-corporation.iam.gserviceaccount.com
@@ -59,12 +62,15 @@ SuMQ7tNQDl3nq6YeHEczsQdGDQ==
 ## 📋 Step-by-Step Vercel Configuration
 
 ### 1. Access Vercel Dashboard
+
 - Go to [vercel.com](https://vercel.com)
 - Navigate to your `broadwaycorp` project
 - Click **Settings** → **Environment Variables**
 
 ### 2. Add Environment Variables
+
 For each variable above:
+
 1. Click **Add New**
 2. Enter the **Name** (e.g., `NEXT_PUBLIC_SITE_URL`)
 3. Enter the **Value** (e.g., `https://broadway-corp.com`)
@@ -74,6 +80,7 @@ For each variable above:
 ### 3. Important Notes
 
 #### 🔥 Firebase Auth Domain Configuration
+
 After setting up the environment variables, you MUST update Firebase Console:
 
 1. Go to [Firebase Console](https://console.firebase.google.com)
@@ -83,12 +90,15 @@ After setting up the environment variables, you MUST update Firebase Console:
 5. Add: `www.broadway-corp.com`
 
 #### 🔐 Private Key Formatting
+
 When entering `FIREBASE_ADMIN_PRIVATE_KEY` in Vercel:
+
 - Copy the ENTIRE private key including `-----BEGIN PRIVATE KEY-----` and `-----END PRIVATE KEY-----`
 - Vercel will automatically handle the newline characters
 - Do NOT modify the formatting
 
 #### 🌐 Site URL Configuration
+
 - Update `NEXT_PUBLIC_SITE_URL` to your production domain
 - This affects redirects and CORS validation
 
@@ -103,19 +113,23 @@ When entering `FIREBASE_ADMIN_PRIVATE_KEY` in Vercel:
 ## 🔍 Troubleshooting Production Issues
 
 ### Common 500 Error Causes:
+
 1. **Missing Environment Variables** - Check all variables are set
 2. **Firebase Auth Domain** - Ensure domain is authorized
 3. **Private Key Format** - Verify complete private key with headers
 4. **CORS Issues** - Check Firebase project settings
 
 ### Debug Steps:
+
 1. Check Vercel Function logs: Project → Functions → View logs
 2. Verify Firebase Console settings
 3. Test authentication flow in production
 4. Monitor network requests in browser dev tools
 
 ## 📞 Support
+
 If issues persist after following this guide:
+
 1. Check Vercel deployment logs
 2. Verify Firebase project configuration
 3. Test with curl/Postman for API endpoints

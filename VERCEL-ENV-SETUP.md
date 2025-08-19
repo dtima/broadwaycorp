@@ -5,6 +5,7 @@
 Go to: **Vercel Dashboard → Your Project → Settings → Environment Variables**
 
 ### 🌐 Site Configuration
+
 ```
 Name: NEXT_PUBLIC_SITE_URL
 Value: https://broadway-corp.com
@@ -24,6 +25,7 @@ Environment: Production
 ```
 
 ### 🔥 Firebase Client (Public Variables)
+
 ```
 Name: NEXT_PUBLIC_FIREBASE_API_KEY
 Value: AIzaSyB7uNlFOwD6vcEC-XLZEum98taOMj3135o
@@ -67,6 +69,7 @@ Environment: Production
 ```
 
 ### 🔐 Firebase Admin SDK (Private Variables)
+
 ```
 Name: FIREBASE_ADMIN_PROJECT_ID
 Value: broadway-corporation
@@ -134,6 +137,7 @@ Environment: Production
 ## 🚨 Troubleshooting
 
 If you get 500 errors:
+
 1. Check Vercel → Project → Functions → View logs
 2. Verify all environment variables are set correctly
 3. Confirm Firebase authorized domains include your domain

@@ -1,6 +1,6 @@
 /**
  * Firebase Connection Handler
- * 
+ *
  * Provides robust connection handling, retry logic, and network error recovery
  * for Firebase authentication and Firestore operations.
  */
@@ -17,8 +17,8 @@ export interface ConnectionConfig {
 
 export const DEFAULT_CONNECTION_CONFIG: ConnectionConfig = {
   maxRetries: 3,
-  retryDelay: 1000,
-  timeoutMs: 10000,
+  retryDelay: 2000,
+  timeoutMs: 15000,
 };
 
 export class FirebaseConnectionError extends Error {
@@ -40,7 +40,7 @@ export function checkNetworkConnectivity(): boolean {
     // Server-side, assume connected
     return true;
   }
-  
+
   return navigator.onLine;
 }
 
@@ -79,32 +79,39 @@ export function isNetworkError(error: any): boolean {
     'auth/network-request-failed',
     'auth/timeout',
     'auth/internal-error',
-    'auth/web-storage-unsupported',
-    'firestore/unavailable',
-    'storage/retry-limit-exceeded',
+    'auth/cors',
+    'auth/unauthorized-domain',
+    'unavailable',
+    'deadline-exceeded',
+    'cancelled',
+    'permission-denied',
   ];
 
   const networkMessages = [
-    'network',
-    'timeout',
-    'connection',
-    'fetch',
-    'cors',
-    'failed to fetch',
-    'load failed',
     'network error',
-    'connection refused',
-    'connection timed out',
+    'connection failed',
+    'timeout',
+    'fetch failed',
+    'network request failed',
+    'failed to fetch',
+    'connection timeout',
+    'request timeout',
+    'cors',
+    'unauthorized domain',
+    'origin is not authorized',
+    'domain is not authorized',
   ];
 
   return (
     networkCodes.includes(error.code) ||
-    networkMessages.some(msg => 
-      error.message?.toLowerCase().includes(msg) ||
-      error.toString?.()?.toLowerCase().includes(msg)
+    networkMessages.some(
+      (msg) =>
+        error.message?.toLowerCase().includes(msg) ||
+        error.toString?.()?.toLowerCase().includes(msg)
     ) ||
     error.name === 'NetworkError' ||
-    error.name === 'TypeError' && error.message?.includes('fetch')
+    (error.name === 'TypeError' && error.message?.includes('fetch')) ||
+    (error.name === 'FirebaseError' && networkCodes.includes(error.code))
   );
 }
 
@@ -112,7 +119,7 @@ export function isNetworkError(error: any): boolean {
  * Sleep for a specified duration
  */
 function sleep(ms: number): Promise<void> {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 /**
@@ -123,11 +130,13 @@ export async function retryFirebaseOperation<T>(
   config: Partial<ConnectionConfig> = {}
 ): Promise<T> {
   const { maxRetries, retryDelay, timeoutMs } = { ...DEFAULT_CONNECTION_CONFIG, ...config };
-  
+
   let lastError: Error | null = null;
-  
+
   for (let attempt = 0; attempt <= maxRetries; attempt++) {
     try {
+      console.log(`Firebase operation attempt ${attempt + 1}/${maxRetries + 1}`);
+
       // Check network connectivity before attempting
       if (!checkNetworkConnectivity()) {
         throw new FirebaseConnectionError(
@@ -140,33 +149,50 @@ export async function retryFirebaseOperation<T>(
       // Create a timeout promise
       const timeoutPromise = new Promise<never>((_, reject) => {
         setTimeout(() => {
-          reject(new FirebaseConnectionError(
-            `Operation timed out after ${timeoutMs}ms`,
-            undefined,
-            'auth/timeout'
-          ));
+          reject(
+            new FirebaseConnectionError(
+              `Operation timed out after ${timeoutMs}ms`,
+              undefined,
+              'auth/timeout'
+            )
+          );
         }, timeoutMs);
       });
 
       // Race the operation against the timeout
-      const result = await Promise.race([
-        operation(),
-        timeoutPromise
-      ]);
+      const result = await Promise.race([operation(), timeoutPromise]);
 
       return result;
     } catch (error: any) {
       lastError = error;
-      
+
+      console.warn(`Firebase operation attempt ${attempt + 1} failed:`, {
+        error: error.message,
+        code: error.code,
+        name: error.name,
+        isNetworkError: isNetworkError(error),
+      });
+
       // If it's not a network error, don't retry
       if (!isNetworkError(error)) {
+        console.error('Non-network error, not retrying:', error);
         throw error;
       }
 
       // If this was the last attempt, throw the error
       if (attempt === maxRetries) {
+        console.error('Firebase operation failed after all attempts:', {
+          attempts: maxRetries + 1,
+          lastError: error.message,
+          errorCode: error.code,
+          errorName: error.name,
+          currentOrigin: typeof window !== 'undefined' ? window.location.origin : 'server',
+          siteUrl: process.env.NEXT_PUBLIC_SITE_URL,
+          authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+        });
+
         throw new FirebaseConnectionError(
-          `Firebase operation failed after ${maxRetries + 1} attempts`,
+          `Firebase operation failed after ${maxRetries + 1} attempts. Last error: ${error.message}`,
           error,
           error.code
         );
@@ -204,7 +230,7 @@ export class EnhancedFirebaseAuth {
 
   async signInWithEmailAndPassword(email: string, password: string) {
     const { signInWithEmailAndPassword } = await import('firebase/auth');
-    
+
     return retryFirebaseOperation(
       () => signInWithEmailAndPassword(this.auth, email, password),
       this.config
@@ -213,20 +239,14 @@ export class EnhancedFirebaseAuth {
 
   async signOut() {
     const { signOut } = await import('firebase/auth');
-    
-    return retryFirebaseOperation(
-      () => signOut(this.auth),
-      this.config
-    );
+
+    return retryFirebaseOperation(() => signOut(this.auth), this.config);
   }
 
   async sendPasswordResetEmail(email: string) {
     const { sendPasswordResetEmail } = await import('firebase/auth');
-    
-    return retryFirebaseOperation(
-      () => sendPasswordResetEmail(this.auth, email),
-      this.config
-    );
+
+    return retryFirebaseOperation(() => sendPasswordResetEmail(this.auth, email), this.config);
   }
 }
 
@@ -241,47 +261,32 @@ export class EnhancedFirestore {
 
   async getDoc(docRef: any) {
     const { getDoc } = await import('firebase/firestore');
-    
-    return retryFirebaseOperation(
-      () => getDoc(docRef),
-      this.config
-    );
+
+    return retryFirebaseOperation(() => getDoc(docRef), this.config);
   }
 
   async setDoc(docRef: any, data: any, options?: any) {
     const { setDoc } = await import('firebase/firestore');
-    
-    return retryFirebaseOperation(
-      () => setDoc(docRef, data, options),
-      this.config
-    );
+
+    return retryFirebaseOperation(() => setDoc(docRef, data, options), this.config);
   }
 
   async updateDoc(docRef: any, data: any) {
     const { updateDoc } = await import('firebase/firestore');
-    
-    return retryFirebaseOperation(
-      () => updateDoc(docRef, data),
-      this.config
-    );
+
+    return retryFirebaseOperation(() => updateDoc(docRef, data), this.config);
   }
 
   async deleteDoc(docRef: any) {
     const { deleteDoc } = await import('firebase/firestore');
-    
-    return retryFirebaseOperation(
-      () => deleteDoc(docRef),
-      this.config
-    );
+
+    return retryFirebaseOperation(() => deleteDoc(docRef), this.config);
   }
 
   async getDocs(query: any) {
     const { getDocs } = await import('firebase/firestore');
-    
-    return retryFirebaseOperation(
-      () => getDocs(query),
-      this.config
-    );
+
+    return retryFirebaseOperation(() => getDocs(query), this.config);
   }
 }
 
@@ -322,7 +327,7 @@ export class NetworkStatusMonitor {
   };
 
   private notifyListeners(online: boolean) {
-    this.listeners.forEach(listener => {
+    this.listeners.forEach((listener) => {
       try {
         listener(online);
       } catch (error) {
@@ -333,7 +338,7 @@ export class NetworkStatusMonitor {
 
   onStatusChange(listener: (online: boolean) => void) {
     this.listeners.push(listener);
-    
+
     // Return unsubscribe function
     return () => {
       const index = this.listeners.indexOf(listener);

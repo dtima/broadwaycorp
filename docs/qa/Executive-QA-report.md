@@ -186,7 +186,7 @@ Ran tool
   - Auth + Firestore emulator opt-in via single NEXT_PUBLIC flag in dev.
 
 - • Security headers
-   - CSP applied and verified; no violations in console for core pages.
+  - CSP applied and verified; no violations in console for core pages.
 
 - • Security
   - No service account files in repo.
@@ -231,6 +231,7 @@ If you want, I can finalize CSP + CSRF/origin checks and expand E2E coverage for
 - [x] CI path for default admin claims is in place (GitHub Actions workflow).
 
 ### Next
+
 - Expand E2E for admin flows, role-based nav, and i18n rendering (en/fr).
 - Add structured logging (server) and basic rate limiting on sensitive actions.
 - Remove committed secrets from history; confirm CI secrets. Add README notes for local creds path env.
