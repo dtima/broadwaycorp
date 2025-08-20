@@ -26,8 +26,8 @@
         },
         "broadway": {
           "title": "Broadway Corporation",
-          "subtitle": "Parent company managing Farmhouse, Enterprise, Intelligence and Resorts.",
-          "cta": "Discover Broadway"
+          "subtitle": "Systems That Power Africa's Future — Agriculture, Science, Technology & Hospitality.",
+          "cta": "Explore Our Ecosystem"
         }
       }
     },
@@ -37,7 +37,7 @@
     "presentation": {
       "about": "About us",
       "headline": "We build the systems that power farms, labs, IT and hospitality",
-      "subhead": "From field to lab to guest experience, we help organizations launch faster, operate safer and grow sustainably across Africa, the Middle East and the UK.",
+      "subhead": "Broadway Corporation is a multidisciplinary powerhouse driving innovation, empowerment, and sustainability in Cameroon, across Africa, and beyond. We operate through four specialized subsidiaries—Broadway Farmhouse, Broadway Intelligence, Broadway Enterprise, and Broadway Resorts—each designed to transform its sector through modular systems, inclusive design, and tech-forward solutions.",
       "pill1": "Sustainable agriculture",
       "pill2": "Laboratory solutions",
       "pill3": "IT & security services",
@@ -51,6 +51,24 @@
       "missionTitle": "Our mission",
       "missionBody": "To design and deliver sustainable, secure and guest‑ready solutions that improve lives and help businesses grow — from farms and labs to data centers and resorts.",
       "valuesTitle": "Our values",
+      "values": {
+        "integrity": {
+          "title": "Integrity",
+          "body": "We keep our promises, protect customer data and hold ourselves to the highest standards."
+        },
+        "empathy": {
+          "title": "Empathy",
+          "body": "We design for everyone. Accessibility and inclusivity are first‑class requirements."
+        },
+        "excellence": {
+          "title": "Excellence",
+          "body": "We pursue quality relentlessly — performance, reliability and polish matter."
+        },
+        "growth": {
+          "title": "Growth",
+          "body": "We learn, iterate and share knowledge to lift our teams and communities."
+        }
+      },
       "operationsTitle": "Operations",
       "operationsNote": "We collaborate across regions to deliver with speed and quality.",
       "ctaTalkToSales": "Talk to sales",

@@ -1,30 +1,32 @@
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 export default function Presentation({ locale }: { locale: string }) {
+  const t = useTranslations('home.presentation');
   const values = [
     {
-      title: 'Integrity',
-      body: 'We keep our promises, protect customer data and hold ourselves to the highest standards.',
+      title: t('values.integrity.title'),
+      body: t('values.integrity.body'),
     },
     {
-      title: 'Empathy',
-      body: 'We design for everyone. Accessibility and inclusivity are first‑class requirements.',
+      title: t('values.empathy.title'),
+      body: t('values.empathy.body'),
     },
     {
-      title: 'Excellence',
-      body: 'We pursue quality relentlessly — performance, reliability and polish matter.',
+      title: t('values.excellence.title'),
+      body: t('values.excellence.body'),
     },
     {
-      title: 'Growth',
-      body: 'We learn, iterate and share knowledge to lift our teams and communities.',
+      title: t('values.growth.title'),
+      body: t('values.growth.body'),
     },
   ];
 
   const impact = [
-    { k: '100+', v: 'Projects delivered' },
-    { k: '6', v: 'Countries of operation' },
-    { k: '< 2h', v: 'First-response (managed services)' },
-    { k: '99.95%', v: 'Uptime targets (IT)' },
+    { k: '100+', v: t('impact.projects') },
+    { k: '6', v: t('impact.countries') },
+    { k: '< 2h', v: t('impact.response') },
+    { k: '99.95%', v: t('impact.uptime') },
   ];
 
   const countries = [
@@ -42,21 +44,18 @@ export default function Presentation({ locale }: { locale: string }) {
       {/* Headline & primary message */}
       <div className="grid items-start gap-8 md:grid-cols-2 lg:gap-12">
         <div>
-          <p className="text-sm font-medium uppercase tracking-wide text-blue-700">About us</p>
+          <p className="text-sm font-medium uppercase tracking-wide text-blue-700">{t('about')}</p>
           <h2 className="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl">
-            We build the systems that power farms, labs, IT and hospitality
+            {t('headline')}
           </h2>
-          <p className="mt-3 text-neutral-600">
-            From field to lab to guest experience, we help organizations launch faster, operate
-            safer and grow sustainably across Africa, the Middle East and the UK.
-          </p>
+          <p className="mt-3 text-neutral-600">{t('subhead')}</p>
 
           {/* Pill grid */}
           <ul className="mt-6 grid grid-cols-2 gap-3 text-sm">
-            <li className="rounded-lg border bg-white p-3 shadow-sm">Sustainable agriculture</li>
-            <li className="rounded-lg border bg-white p-3 shadow-sm">Laboratory solutions</li>
-            <li className="rounded-lg border bg-white p-3 shadow-sm">IT & security services</li>
-            <li className="rounded-lg border bg-white p-3 shadow-sm">Hospitality & experiences</li>
+            <li className="rounded-lg border bg-white p-3 shadow-sm">{t('pill1')}</li>
+            <li className="rounded-lg border bg-white p-3 shadow-sm">{t('pill2')}</li>
+            <li className="rounded-lg border bg-white p-3 shadow-sm">{t('pill3')}</li>
+            <li className="rounded-lg border bg-white p-3 shadow-sm">{t('pill4')}</li>
           </ul>
         </div>
 
@@ -80,15 +79,12 @@ export default function Presentation({ locale }: { locale: string }) {
       {/* Mission */}
       <div className="mt-12 grid gap-8 md:grid-cols-2">
         <div className="rounded-2xl border bg-white p-6 shadow-sm">
-          <h3 className="text-lg font-semibold">Our mission</h3>
-          <p className="mt-2 text-neutral-600">
-            To design and deliver sustainable, secure and guest‑ready solutions that improve lives
-            and help businesses grow — from farms and labs to data centers and resorts.
-          </p>
+          <h3 className="text-lg font-semibold">{t('missionTitle')}</h3>
+          <p className="mt-2 text-neutral-600">{t('missionBody')}</p>
         </div>
 
         <div className="rounded-2xl border bg-white p-6 shadow-sm">
-          <h3 className="text-lg font-semibold">Our values</h3>
+          <h3 className="text-lg font-semibold">{t('valuesTitle')}</h3>
           <ul className="mt-3 grid gap-3 sm:grid-cols-2">
             {values.map((v) => (
               <li key={v.title} className="rounded-lg border p-4">
@@ -102,10 +98,8 @@ export default function Presentation({ locale }: { locale: string }) {
 
       {/* Operations */}
       <div className="mt-12 rounded-2xl border bg-white p-6 shadow-sm">
-        <h3 className="text-lg font-semibold">Operations</h3>
-        <p className="mt-2 text-neutral-600">
-          We collaborate across regions to deliver with speed and quality.
-        </p>
+        <h3 className="text-lg font-semibold">{t('operationsTitle')}</h3>
+        <p className="mt-2 text-neutral-600">{t('operationsNote')}</p>
         <div className="mt-3 flex flex-wrap gap-2">
           {countries.map((c) => (
             <span
@@ -122,19 +116,19 @@ export default function Presentation({ locale }: { locale: string }) {
             href={`/${locale}/contact`}
             className="rounded-md bg-blue-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
-            Talk to sales
+            {t('ctaTalkToSales')}
           </Link>
           <Link
             href={`/${locale}/blog`}
             className="rounded-md border px-5 py-2.5 text-sm font-medium hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
-            View case studies
+            {t('ctaCaseStudies')}
           </Link>
           <Link
             href={`/${locale}/divisions`}
             className="rounded-md border px-5 py-2.5 text-sm font-medium hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
-            Explore divisions
+            {t('ctaExploreDivisions')}
           </Link>
         </div>
       </div>

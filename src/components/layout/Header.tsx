@@ -6,8 +6,24 @@ import dynamic from 'next/dynamic';
 
 const CommandPalette = dynamic(() => import('../command/CommandPalette'), { ssr: false });
 
-const nav = [
+interface NavItem {
+  href: string;
+  label: string;
+  dropdown?: { href: string; label: string }[];
+}
+
+const nav: NavItem[] = [
   { href: '/', label: 'Home' },
+  {
+    href: '/divisions',
+    label: 'Our Divisions',
+    dropdown: [
+      { href: '/farmhouse', label: 'Farmhouse' },
+      { href: '/enterprise', label: 'Enterprise' },
+      { href: '/intelligence', label: 'Intelligence' },
+      { href: '/resorts', label: 'Resorts' },
+    ],
+  },
   { href: '/team', label: 'Our Team' },
   { href: '/events', label: 'Events' },
   { href: '/career', label: 'Career' },
@@ -18,6 +34,7 @@ export default function Header({ locale }: { locale: string }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const firstMobileLinkRef = useRef<HTMLAnchorElement | null>(null);
   const menuButtonRef = useRef<HTMLButtonElement | null>(null);
   const withLocale = useCallback(
@@ -137,19 +154,59 @@ export default function Header({ locale }: { locale: string }) {
           </span>
           <ul className="flex items-center gap-5">
             {nav.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={withLocale(item.href)}
-                  aria-current={isActive(item.href) ? 'page' : undefined}
-                  ref={(el) => {
-                    linkRefs.current[item.href] = el;
-                  }}
-                  onMouseEnter={(e) => moveUnderlineTo(e.currentTarget)}
-                  onFocus={(e) => moveUnderlineTo(e.currentTarget)}
-                  className={`text-sm transition hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 ${isActive(item.href) ? 'text-blue-600 underline decoration-blue-600/40 underline-offset-4' : 'text-neutral-700 dark:text-[var(--muted)]'}`}
-                >
-                  {item.label}
-                </Link>
+              <li key={item.href} className="relative">
+                {item.dropdown ? (
+                  <div
+                    className="relative"
+                    onMouseEnter={() => setActiveDropdown(item.href)}
+                    onMouseLeave={() => setActiveDropdown(null)}
+                  >
+                    <button
+                      className={`text-sm transition hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 ${isActive(item.href) ? 'text-blue-600 underline decoration-blue-600/40 underline-offset-4' : 'text-neutral-700 dark:text-[var(--muted)]'}`}
+                    >
+                      {item.label}
+                      <svg
+                        className="ml-1 inline-block h-4 w-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </button>
+                    {activeDropdown === item.href && (
+                      <div className="absolute left-0 top-full z-50 mt-1 min-w-48 rounded-md border bg-white py-2 shadow-lg dark:bg-[var(--background)] dark:border-neutral-700">
+                        {item.dropdown.map((dropdownItem) => (
+                          <Link
+                            key={dropdownItem.href}
+                            href={withLocale(dropdownItem.href)}
+                            className="block px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-50 hover:text-blue-600 dark:text-[var(--muted)] dark:hover:bg-neutral-800"
+                          >
+                            {dropdownItem.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    href={withLocale(item.href)}
+                    aria-current={isActive(item.href) ? 'page' : undefined}
+                    ref={(el) => {
+                      linkRefs.current[item.href] = el;
+                    }}
+                    onMouseEnter={(e) => moveUnderlineTo(e.currentTarget)}
+                    onFocus={(e) => moveUnderlineTo(e.currentTarget)}
+                    className={`text-sm transition hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 ${isActive(item.href) ? 'text-blue-600 underline decoration-blue-600/40 underline-offset-4' : 'text-neutral-700 dark:text-[var(--muted)]'}`}
+                  >
+                    {item.label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>

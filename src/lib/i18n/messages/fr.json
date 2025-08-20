@@ -26,8 +26,8 @@
         },
         "broadway": {
           "title": "Broadway Corporation",
-          "subtitle": "Société mère gérant Farmhouse, Enterprise, Intelligence et Resorts.",
-          "cta": "Découvrir Broadway"
+          "subtitle": "Systèmes qui alimentent l'avenir de l'Afrique — Agriculture, Science, Technologie et Hospitalité.",
+          "cta": "Explorer notre écosystème"
         }
       }
     },
@@ -37,7 +37,7 @@
     "presentation": {
       "about": "À propos",
       "headline": "Nous construisons les systèmes qui propulsent l’agriculture, les laboratoires, l’IT et l’hôtellerie",
-      "subhead": "Du champ au laboratoire jusqu’à l’expérience client, nous aidons les organisations à lancer plus vite, opérer en sécurité et croître durablement en Afrique, au Moyen‑Orient et au Royaume‑Uni.",
+      "subhead": "Broadway Corporation est une puissance multidisciplinaire qui stimule l'innovation, l'autonomisation et la durabilité au Cameroun, à travers l'Afrique et au-delà. Nous opérons à travers quatre filiales spécialisées — Broadway Farmhouse, Broadway Intelligence, Broadway Enterprise et Broadway Resorts — chacune conçue pour transformer son secteur à travers des systèmes modulaires, un design inclusif et des solutions axées sur la technologie.",
       "pill1": "Agriculture durable",
       "pill2": "Solutions de laboratoire",
       "pill3": "Services IT & sécurité",
@@ -51,6 +51,24 @@
       "missionTitle": "Notre mission",
       "missionBody": "Concevoir et livrer des solutions durables, sûres et prêtes pour l’accueil qui améliorent la vie et aident les entreprises à grandir — des fermes et laboratoires aux centres de données et resorts.",
       "valuesTitle": "Nos valeurs",
+      "values": {
+        "integrity": {
+          "title": "Intégrité",
+          "body": "Nous tenons nos promesses, protégeons les données clients et nous imposons les plus hauts standards."
+        },
+        "empathy": {
+          "title": "Empathie",
+          "body": "Nous concevons pour tous. L'accessibilité et l'inclusivité sont des exigences de première classe."
+        },
+        "excellence": {
+          "title": "Excellence",
+          "body": "Nous poursuivons la qualité sans relâche — performance, fiabilité et finition comptent."
+        },
+        "growth": {
+          "title": "Croissance",
+          "body": "Nous apprenons, itérons et partageons les connaissances pour élever nos équipes et nos communautés."
+        }
+      },
       "operationsTitle": "Opérations",
       "operationsNote": "Nous collaborons entre régions pour livrer avec vitesse et qualité.",
       "ctaTalkToSales": "Parler aux ventes",
