@@ -5,7 +5,7 @@ const nextConfig = {
   experimental: {
     optimizeCss: true,
   },
-  // Remove redirects since we're handling them in vercel.json
+  // Security headers configuration
   async headers() {
     return [
       {

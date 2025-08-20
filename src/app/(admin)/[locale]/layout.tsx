@@ -14,7 +14,7 @@ type Props = {
 
 export default async function AdminLayout({ children, params }: Props) {
   const { locale } = await params;
-  if (!supportedLocales.includes(locale as any)) notFound();
+  if (!supportedLocales.includes(locale as 'en' | 'fr')) notFound();
   unstable_setRequestLocale(locale);
   const messages = (await import(`@/lib/i18n/messages/${locale}.json`)).default;
   const user = await getCurrentUser();

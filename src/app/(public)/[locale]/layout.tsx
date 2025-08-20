@@ -15,7 +15,7 @@ type Props = {
 
 export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params;
-  if (!supportedLocales.includes(locale as any)) {
+  if (!supportedLocales.includes(locale as 'en' | 'fr')) {
     notFound();
   }
   unstable_setRequestLocale(locale);

@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation';
 
 export default function RootPage() {
-  // This will be handled by vercel.json routing
+  // Redirect to default locale using next-intl's routing
   redirect('/en');
 }
