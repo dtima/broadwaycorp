@@ -5,15 +5,7 @@ const nextConfig = {
   experimental: {
     optimizeCss: true,
   },
-  async redirects() {
-    return [
-      {
-        source: '/',
-        destination: '/en',
-        permanent: true,
-      },
-    ];
-  },
+  // Remove redirects since we're handling them in vercel.json
   async headers() {
     return [
       {

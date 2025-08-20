@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/en",
+      "status": 301
+    },
+    {
+      "src": "/(en|fr)(/.*)?",
+      "dest": "/$1$2"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/en/$1"
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
+}

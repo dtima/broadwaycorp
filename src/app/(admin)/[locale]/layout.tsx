@@ -2,7 +2,8 @@ import { ReactNode } from 'react';
 import { NextIntlClientProvider } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { notFound, redirect } from 'next/navigation';
-import { supportedLocales } from '@/lib/i18n/config';
+// Hardcoded locales to avoid environment variable issues
+const supportedLocales = ['en', 'fr'] as const;
 import { getCurrentUser } from '@/lib/auth/session';
 import { canManageContent, canManageEmployees, getRoleFromClaims } from '@/lib/auth/rbac';
 
@@ -13,7 +14,7 @@ type Props = {
 
 export default async function AdminLayout({ children, params }: Props) {
   const { locale } = await params;
-  if (!supportedLocales.includes(locale)) notFound();
+  if (!supportedLocales.includes(locale as any)) notFound();
   unstable_setRequestLocale(locale);
   const messages = (await import(`@/lib/i18n/messages/${locale}.json`)).default;
   const user = await getCurrentUser();

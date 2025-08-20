@@ -2,7 +2,8 @@ import { ReactNode } from 'react';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
-import { supportedLocales } from '@/lib/i18n/config';
+// Hardcoded locales to avoid environment variable issues
+const supportedLocales = ['en', 'fr'] as const;
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import ClickTracker from '@/components/analytics/ClickTracker';
@@ -14,7 +15,7 @@ type Props = {
 
 export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params;
-  if (!supportedLocales.includes(locale)) {
+  if (!supportedLocales.includes(locale as any)) {
     notFound();
   }
   unstable_setRequestLocale(locale);
