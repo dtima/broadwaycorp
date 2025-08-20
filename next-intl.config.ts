@@ -1,7 +1,6 @@
-import { supportedLocales, defaultLocale as df } from './src/lib/i18n/config';
-
-export const locales = supportedLocales;
-export const defaultLocale = df;
+// Hardcoded locales to avoid environment variable issues in Edge runtime
+export const locales = ['en', 'fr'] as const;
+export const defaultLocale = 'en' as const;
 export const localePrefix = 'as-needed';
 
 const config = {
