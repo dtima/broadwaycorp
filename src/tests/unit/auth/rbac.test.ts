@@ -170,6 +170,7 @@ describe('RBAC System', () => {
 
       for (const test of roleTests) {
         const mockUser = createMockUser(test.role);
+        mockGetCurrentUser.mockResolvedValue(mockUser);
 
         if (test.canManageEmployees) {
           await expect(requireCanManageEmployees()).resolves.toEqual(mockUser);

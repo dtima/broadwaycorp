@@ -236,7 +236,7 @@ describe('Sign-in Server Actions', () => {
 
       expect(result).toEqual({
         ok: true,
-        redirect: '/admin', // Should still work with empty locale
+        redirect: '/en/admin', // Should default to 'en' locale when empty
       });
     });
   });

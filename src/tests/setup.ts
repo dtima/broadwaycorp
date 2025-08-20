@@ -4,11 +4,14 @@ process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN = 'test-project.firebaseapp.com';
 process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID = 'test-project';
 process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET = 'test-project.appspot.com';
 process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID = '123456789';
-process.env.NEXT_PUBLIC_FIREBASE_APP_ID = 'test-app-id';
 process.env.NEXT_PUBLIC_USE_FIREBASE_EMULATORS = 'true';
+process.env.NEXT_PUBLIC_FIREBASE_APP_ID = 'test-app-id';
 
 import '@testing-library/jest-dom';
 import { vi } from 'vitest';
+
+// Ensure React is available globally for JSX
+global.React = require('react');
 
 // Mock Next.js router
 vi.mock('next/navigation', () => ({
@@ -29,6 +32,7 @@ vi.mock('firebase/auth', () => ({
   setPersistence: vi.fn(),
   browserLocalPersistence: 'local',
   browserSessionPersistence: 'session',
+  connectAuthEmulator: vi.fn(),
 }));
 
 // Mock localStorage

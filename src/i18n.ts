@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { getRequestConfig } from 'next-intl/server';
 
 // Hardcode the locales to avoid environment variable issues in edge runtime
+// This prevents the MIDDLEWARE_INVOCATION_FAILED error
 const SUPPORTED_LOCALES = ['en', 'fr'] as const;
 const DEFAULT_LOCALE = 'en' as const;
 
@@ -12,7 +13,6 @@ export default getRequestConfig(async ({ locale }) => {
   }
 
   return {
-    locale: locale, // Return the locale as expected
     messages: (await import(`@/lib/i18n/messages/${locale}.json`)).default,
     timeZone: 'UTC',
   };
