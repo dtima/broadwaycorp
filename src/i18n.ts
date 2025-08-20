@@ -7,12 +7,12 @@ const DEFAULT_LOCALE = 'en' as const;
 
 export default getRequestConfig(async ({ locale }) => {
   // Validate that the incoming `locale` parameter is valid
-  if (!SUPPORTED_LOCALES.includes(locale as any)) {
+  if (!locale || !SUPPORTED_LOCALES.includes(locale as any)) {
     notFound();
   }
 
   return {
-    locale: locale, // Required for next-intl compatibility
+    locale: locale,
     messages: (await import(`@/lib/i18n/messages/${locale}.json`)).default,
     timeZone: 'UTC',
   };

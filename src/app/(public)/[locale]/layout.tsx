@@ -1,7 +1,6 @@
 import { ReactNode } from 'react';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
-import { unstable_setRequestLocale } from 'next-intl/server';
 // Hardcoded locales to avoid environment variable issues
 const supportedLocales = ['en', 'fr'] as const;
 import Header from '@/components/layout/Header';
@@ -18,7 +17,6 @@ export default async function LocaleLayout({ children, params }: Props) {
   if (!supportedLocales.includes(locale as 'en' | 'fr')) {
     notFound();
   }
-  unstable_setRequestLocale(locale);
 
   const messages = (await import(`@/lib/i18n/messages/${locale}.json`)).default;
 

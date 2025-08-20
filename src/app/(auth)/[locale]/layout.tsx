@@ -1,7 +1,6 @@
 import { ReactNode } from 'react';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
-import { unstable_setRequestLocale } from 'next-intl/server';
 import { supportedLocales } from '@/lib/i18n/config';
 
 type Props = {
@@ -14,7 +13,6 @@ export default async function AuthLayout({ children, params }: Props) {
   if (!supportedLocales.includes(locale)) {
     notFound();
   }
-  unstable_setRequestLocale(locale);
 
   const messages = (await import(`@/lib/i18n/messages/${locale}.json`)).default;
 
