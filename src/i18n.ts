@@ -12,7 +12,7 @@ export default getRequestConfig(async ({ locale }) => {
   }
 
   return {
-    locale: locale, // Return locale to fix the warning
+    locale: locale, // Required for next-intl compatibility
     messages: (await import(`@/lib/i18n/messages/${locale}.json`)).default,
     timeZone: 'UTC',
   };
