@@ -12,6 +12,7 @@ export default getRequestConfig(async ({ locale }) => {
   }
 
   return {
+    locale: locale, // Return locale to fix the warning
     messages: (await import(`@/lib/i18n/messages/${locale}.json`)).default,
     timeZone: 'UTC',
   };
