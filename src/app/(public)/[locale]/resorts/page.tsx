@@ -44,7 +44,7 @@ export default function ResortsPage() {
             transition={{ duration: 0.8 }}
           >
             <img
-              src="/images/divisions/Resort.jpg"
+              src="/images/resort/Resort.jpg"
               alt="Broadway Resort Landscape - Eco-Tourism Destination"
               className="w-full h-96 md:h-[500px] object-cover"
             />
@@ -257,7 +257,7 @@ export default function ResortsPage() {
           transition={{ duration: 0.8, delay: 0.8 }}
         >
           <img
-            src="/images/divisions/resort-room.jpeg"
+            src="/images/resort/resort-room.jpeg"
             alt="Luxury Resort Room - Modern Comfort in Nature"
             className="w-full h-96 md:h-[500px] object-cover"
           />
