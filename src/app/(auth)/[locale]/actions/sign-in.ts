@@ -18,7 +18,7 @@ export async function createSession(idToken: string, locale: string) {
     path: '/',
     maxAge: expiresIn / 1000,
   });
-  
+
   // Ensure proper locale handling to prevent double slashes
   const cleanLocale = locale?.trim() || 'en';
   return { ok: true, redirect: `/${cleanLocale}/admin` };
@@ -26,14 +26,14 @@ export async function createSession(idToken: string, locale: string) {
 
 export async function destroySession(locale: string) {
   const cookieStore = await cookies();
-  
+
   try {
     cookieStore.delete(SESSION_COOKIE_NAME);
   } catch (error) {
     // Log error but don't fail the operation
     console.error('Failed to delete session cookie:', error);
   }
-  
+
   // Ensure proper locale handling to prevent double slashes
   const cleanLocale = locale?.trim() || 'en';
   return { ok: true, redirect: `/${cleanLocale}/admin/sign-in` };
