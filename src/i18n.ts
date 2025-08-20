@@ -13,6 +13,7 @@ export default getRequestConfig(async ({ locale }) => {
   }
 
   return {
+    locale: locale, // Return the locale as required by next-intl
     messages: (await import(`@/lib/i18n/messages/${locale}.json`)).default,
     timeZone: 'UTC',
   };
