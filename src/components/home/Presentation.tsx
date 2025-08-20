@@ -76,23 +76,89 @@ export default function Presentation({ locale }: { locale: string }) {
         </div>
       </div>
 
-      {/* Mission */}
-      <div className="mt-12 grid gap-8 md:grid-cols-2">
-        <div className="rounded-2xl border bg-white p-6 shadow-sm">
-          <h3 className="text-lg font-semibold">{t('missionTitle')}</h3>
-          <p className="mt-2 text-neutral-600">{t('missionBody')}</p>
-        </div>
+      {/* Vision Statement */}
+      <div className="mt-12">
+        <div className="rounded-2xl border bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 p-8 shadow-lg">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
+            <p className="text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
+              {`To transform Africa's potential into global benchmarks of excellence—through modular innovation, multicultural branding, and community-driven systems that uplift lives, landscapes, and legacies.`}
+            </p>
+          </div>
 
-        <div className="rounded-2xl border bg-white p-6 shadow-sm">
-          <h3 className="text-lg font-semibold">{t('valuesTitle')}</h3>
-          <ul className="mt-3 grid gap-3 sm:grid-cols-2">
-            {values.map((v) => (
-              <li key={v.title} className="rounded-lg border p-4">
-                <div className="font-medium">{v.title}</div>
-                <p className="mt-1 text-sm text-neutral-600">{v.body}</p>
-              </li>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-8">
+            <div className="text-center p-4 rounded-xl bg-white/70 backdrop-blur-sm shadow-sm">
+              <div className="text-3xl mb-3">🌱</div>
+              <h4 className="font-semibold text-gray-900 mb-2">Regenerative Agriculture</h4>
+              <p className="text-sm text-gray-600">Hub of biotech exploration</p>
+            </div>
+            <div className="text-center p-4 rounded-xl bg-white/70 backdrop-blur-sm shadow-sm">
+              <div className="text-3xl mb-3">🏞️</div>
+              <h4 className="font-semibold text-gray-900 mb-2">Eco-Conscious Tourism</h4>
+              <p className="text-sm text-gray-600">Culinary storytelling destination</p>
+            </div>
+            <div className="text-center p-4 rounded-xl bg-white/70 backdrop-blur-sm shadow-sm">
+              <div className="text-3xl mb-3">🤝</div>
+              <h4 className="font-semibold text-gray-900 mb-2">Inclusive Governance</h4>
+              <p className="text-sm text-gray-600">Operational transparency model</p>
+            </div>
+            <div className="text-center p-4 rounded-xl bg-white/70 backdrop-blur-sm shadow-sm">
+              <div className="text-3xl mb-3">🚀</div>
+              <h4 className="font-semibold text-gray-900 mb-2">Youth Innovation</h4>
+              <p className="text-sm text-gray-600">Global collaboration launchpad</p>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+              We build ecosystems where technology meets tradition, where hospitality meets
+              sustainability, and where education meets empowerment. From our smart farms and
+              immersive resorts to our laboratories and leadership boardrooms, every Broadway
+              initiative is a blueprint for resilient futures.
+            </p>
+            <p className="text-lg font-semibold text-blue-600 mt-4">
+              With every branded toolkit, every aerial story, and every community we serve, Broadway
+              moves Africa forward—modularly, boldly, and beautifully.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Values */}
+      <div className="mt-12">
+        <div className="rounded-2xl border bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 p-8 shadow-lg">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Core Values</h3>
+            <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+              The principles that guide every decision, every innovation, and every relationship we
+              build across Africa and beyond.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {values.map((v, index) => (
+              <div
+                key={v.title}
+                className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 text-center"
+              >
+                <div
+                  className={`w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl ${
+                    index === 0
+                      ? 'bg-blue-100 text-blue-600'
+                      : index === 1
+                        ? 'bg-emerald-100 text-emerald-600'
+                        : index === 2
+                          ? 'bg-purple-100 text-purple-600'
+                          : 'bg-orange-100 text-orange-600'
+                  }`}
+                >
+                  {index === 0 ? '🔒' : index === 1 ? '❤️' : index === 2 ? '⭐' : '🌱'}
+                </div>
+                <h4 className="font-semibold text-gray-900 mb-3 text-lg">{v.title}</h4>
+                <p className="text-gray-600 leading-relaxed">{v.body}</p>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </div>
 
