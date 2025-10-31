@@ -7,6 +7,15 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Broadway Corporation',
   description: 'Systems That Power Africa\'s Future - Agriculture, Science, Technology and Hospitality',
+  icons: {
+    icon: '/favicon.ico',
+  },
+  openGraph: {
+    title: 'Broadway Corporation',
+    description: 'Systems That Power Africa\'s Future - Agriculture, Science, Technology and Hospitality',
+    type: 'website',
+    locale: 'en_US',
+  },
 };
 
 export default function RootLayout({
