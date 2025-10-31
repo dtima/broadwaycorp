@@ -1,123 +1,63 @@
 {
+  "common": {
+    "readMore": "Lire la suite",
+    "learnMore": "En savoir plus",
+    "contactUs": "Nous contacter",
+    "subscribe": "S'abonner",
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite",
+    "success": "Succès!"
+  },
+  "nav": {
+    "home": "Accueil",
+    "farmhouse": "Ferme",
+    "enterprise": "Entreprise",
+    "intelligence": "Intelligence",
+    "resorts": "Resorts",
+    "blog": "Blog",
+    "events": "Événements",
+    "jobs": "Emplois",
+    "contact": "Contact",
+    "admin": "Admin"
+  },
   "home": {
     "hero": {
       "title": "Broadway Corporation",
-      "subtitle": "Ferme, Entreprise, Intelligence, Resorts",
+      "subtitle": "Systèmes qui alimentent l'avenir de l'Afrique",
       "slides": {
         "farmhouse": {
           "title": "Agriculture durable",
-          "subtitle": "Fermes Scorpion, BSF et Poissons — visites, éducation et innovation.",
+          "subtitle": "Fermes Scorpion, BSF et Poissons — visites, éducation et innovation",
           "cta": "Découvrir Farmhouse"
         },
         "enterprise": {
           "title": "Solutions de laboratoire",
-          "subtitle": "Catalogue, conceptions sur mesure et programmes STEM.",
+          "subtitle": "Catalogue, conceptions sur mesure et programmes STEM",
           "cta": "Découvrir Enterprise"
         },
         "intelligence": {
           "title": "Services d'intelligence",
-          "subtitle": "Services IT, centre de données, conseil en sécurité et plateforme LMS.",
+          "subtitle": "Services IT, centre de données, conseil en sécurité et plateforme LMS",
           "cta": "Découvrir Intelligence"
         },
         "resorts": {
           "title": "Expériences Resorts",
-          "subtitle": "Agro‑tourisme, sanctuaire, roadhouse, hôtellerie et vacances.",
+          "subtitle": "Agro-tourisme, sanctuaire, roadhouse, hôtellerie et vacances",
           "cta": "Découvrir Resorts"
-        },
-        "broadway": {
-          "title": "Broadway Corporation",
-          "subtitle": "Systèmes qui alimentent l'avenir de l'Afrique — Agriculture, Science, Technologie et Hospitalité.",
-          "cta": "Explorer notre écosystème"
         }
       }
     },
     "latest": {
-      "upcomingTitle": "Événements à venir"
-    },
-    "presentation": {
-      "about": "À propos",
-      "headline": "Nous construisons les systèmes qui propulsent l’agriculture, les laboratoires, l’IT et l’hôtellerie",
-      "subhead": "Broadway Corporation est une puissance multidisciplinaire qui stimule l'innovation, l'autonomisation et la durabilité au Cameroun, à travers l'Afrique et au-delà. Nous opérons à travers quatre filiales spécialisées — Broadway Farmhouse, Broadway Intelligence, Broadway Enterprise et Broadway Resorts — chacune conçue pour transformer son secteur à travers des systèmes modulaires, un design inclusif et des solutions axées sur la technologie.",
-      "pill1": "Agriculture durable",
-      "pill2": "Solutions de laboratoire",
-      "pill3": "Services IT & sécurité",
-      "pill4": "Hospitalité & expériences",
-      "impact": {
-        "projects": "Projets livrés",
-        "countries": "Pays d’opération",
-        "response": "Premier délai de réponse (services managés)",
-        "uptime": "Objectifs de disponibilité (IT)"
-      },
-      "missionTitle": "Notre mission",
-      "missionBody": "Concevoir et livrer des solutions durables, sûres et prêtes pour l’accueil qui améliorent la vie et aident les entreprises à grandir — des fermes et laboratoires aux centres de données et resorts.",
-      "valuesTitle": "Nos valeurs",
-      "values": {
-        "integrity": {
-          "title": "Intégrité",
-          "body": "Nous tenons nos promesses, protégeons les données clients et nous imposons les plus hauts standards."
-        },
-        "empathy": {
-          "title": "Empathie",
-          "body": "Nous concevons pour tous. L'accessibilité et l'inclusivité sont des exigences de première classe."
-        },
-        "excellence": {
-          "title": "Excellence",
-          "body": "Nous poursuivons la qualité sans relâche — performance, fiabilité et finition comptent."
-        },
-        "growth": {
-          "title": "Croissance",
-          "body": "Nous apprenons, itérons et partageons les connaissances pour élever nos équipes et nos communautés."
-        }
-      },
-      "operationsTitle": "Opérations",
-      "operationsNote": "Nous collaborons entre régions pour livrer avec vitesse et qualité.",
-      "ctaTalkToSales": "Parler aux ventes",
-      "ctaCaseStudies": "Voir études de cas",
-      "ctaExploreDivisions": "Explorer les divisions"
+      "upcomingTitle": "Événements à venir",
+      "recentPosts": "Articles récents"
     }
   },
-  "divisions": {
-    "sectionTitle": "Divisions",
-    "viewAll": "Tout voir",
-    "cards": {
-      "farmhouse": {
-        "title": "Ferme",
-        "desc": "Agriculture durable, éducation et visites des fermes Scorpion, BSF et Poissons."
-      },
-      "enterprise": {
-        "title": "Entreprise",
-        "desc": "Catalogue d'équipements de laboratoire, conceptions sur mesure et programmes STEM."
-      },
-      "intelligence": {
-        "title": "Intelligence",
-        "desc": "Services IT, centre de données, conseil en sécurité, apprentissage à distance et LMS."
-      },
-      "resorts": {
-        "title": "Resorts",
-        "desc": "Agro-tourisme, sanctuaire animalier, roadhouse, hôtellerie, jeux en plein air et vacances."
-      }
-    }
-  },
-  "events": {
-    "eyebrow": "Événements",
-    "title": "L’actualité chez Broadway",
-    "intro": "Rejoignez‑nous pour des lancements, journées portes ouvertes et programmes communautaires.",
-    "upcoming": "À venir",
-    "noUpcoming": "Aucun événement à venir pour le moment. Revenez bientôt.",
-    "past": "Passés",
-    "noPast": "Aucun événement passé."
-  },
-  "contact": {
-    "eyebrow": "Contact",
-    "title": "Nous serions ravis d’échanger",
-    "intro": "Questions, retours ou partenariats — parlons‑en.",
-    "formTitle": "Envoyez‑nous un message",
-    "name": "Nom",
-    "email": "Email",
-    "message": "Message",
-    "send": "Envoyer",
-    "thanks": "Merci — nous vous répondrons rapidement.",
-    "direct": "Contacts directs",
-    "address": "Adresse"
+  "footer": {
+    "about": "À propos de Broadway Corporation",
+    "divisions": "Nos Divisions",
+    "legal": "Légal",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation",
+    "contact": "Informations de contact"
   }
 }

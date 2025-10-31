@@ -1,7 +1,9 @@
 'use client';
-import { useEffect } from 'react';
 
-export default function GlobalError({
+import { useEffect } from 'react';
+import { Button } from '@/components/ui/Button';
+
+export default function Error({
   error,
   reset,
 }: {
@@ -9,24 +11,21 @@ export default function GlobalError({
   reset: () => void;
 }) {
   useEffect(() => {
-    console.error('Global error', error?.message);
+    // Log error to monitoring service (Sentry)
+    console.error('Application error:', error);
   }, [error]);
+
   return (
-    <html>
-      <body>
-        <div className="mx-auto max-w-screen-md p-6 text-center">
-          <h1 className="mb-2 text-2xl font-semibold">Unexpected error</h1>
-          <p className="mb-4 text-sm text-neutral-600">
-            Please try again. The incident has been logged.
-          </p>
-          <button
-            onClick={() => reset()}
-            className="rounded border px-3 py-1 text-sm hover:bg-neutral-50"
-          >
-            Reload
-          </button>
-        </div>
-      </body>
-    </html>
+    <div className="flex min-h-screen items-center justify-center px-4">
+      <div className="text-center">
+        <h2 className="mb-4 text-3xl font-bold text-neutral-900">
+          Something went wrong!
+        </h2>
+        <p className="mb-8 text-neutral-600">
+          We apologize for the inconvenience. Please try again.
+        </p>
+        <Button onClick={reset}>Try again</Button>
+      </div>
+    </div>
   );
 }

@@ -1,45 +1,60 @@
-import createNextIntlPlugin from 'next-intl/plugin';
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // i18n with next-intl
   experimental: {
     optimizeCss: true,
   },
-  // Security headers configuration
+
+  // Image domains for Supabase Storage
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**.supabase.co',
+        pathname: '/storage/v1/object/public/**',
+      },
+    ],
+  },
+
+  // Security headers
   async headers() {
     return [
       {
-        source: '/(.*)',
+        source: '/:path*',
         headers: [
-          { key: 'X-Content-Type-Options', value: 'nosniff' },
-          { key: 'X-Frame-Options', value: 'DENY' },
-          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+          {
+            key: 'X-DNS-Prefetch-Control',
+            value: 'on',
+          },
           {
             key: 'Strict-Transport-Security',
             value: 'max-age=63072000; includeSubDomains; preload',
           },
           {
-            key: 'Permissions-Policy',
-            value: 'geolocation=(), microphone=(), camera=(), payment=()',
+            key: 'X-Frame-Options',
+            value: 'DENY',
           },
           {
-            key: 'Content-Security-Policy',
-            value: [
-              "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com",
-              "style-src 'self' 'unsafe-inline'",
-              "img-src 'self' data: https:",
-              "font-src 'self' https: data:",
-              "connect-src 'self' https://firestore.googleapis.com https://firebasestorage.googleapis.com",
-              "frame-ancestors 'none'",
-            ].join('; '),
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'origin-when-cross-origin',
           },
         ],
       },
     ];
   },
+
+  // Redirects
+  async redirects() {
+    return [
+      // Collapse locale-prefixed URLs to the single-page root
+      { source: '/:locale(en|fr)', destination: '/', permanent: false },
+      { source: '/:locale(en|fr)/:path*', destination: '/', permanent: false },
+    ];
+  },
 };
 
-const withNextIntl = createNextIntlPlugin('./src/i18n.ts');
-
-export default withNextIntl(nextConfig);
+export default nextConfig;

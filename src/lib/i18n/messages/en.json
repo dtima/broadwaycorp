@@ -1,123 +1,63 @@
 {
+  "common": {
+    "readMore": "Read More",
+    "learnMore": "Learn More",
+    "contactUs": "Contact Us",
+    "subscribe": "Subscribe",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success!"
+  },
+  "nav": {
+    "home": "Home",
+    "farmhouse": "Farmhouse",
+    "enterprise": "Enterprise",
+    "intelligence": "Intelligence",
+    "resorts": "Resorts",
+    "blog": "Blog",
+    "events": "Events",
+    "jobs": "Jobs",
+    "contact": "Contact",
+    "admin": "Admin"
+  },
   "home": {
     "hero": {
       "title": "Broadway Corporation",
-      "subtitle": "Farmhouse, Enterprise, Intelligence, Resorts",
+      "subtitle": "Systems That Power Africa's Future",
       "slides": {
         "farmhouse": {
           "title": "Sustainable Agriculture",
-          "subtitle": "Scorpion, BSF and Fish farms — tours, education and innovation.",
+          "subtitle": "Scorpion, BSF and Fish farms — tours, education and innovation",
           "cta": "Explore Farmhouse"
         },
         "enterprise": {
           "title": "Laboratory Solutions",
-          "subtitle": "Catalog, custom lab designs and STEM programs.",
+          "subtitle": "Catalog, custom lab designs and STEM programs",
           "cta": "Explore Enterprise"
         },
         "intelligence": {
           "title": "Intelligence Services",
-          "subtitle": "IT services, data center, security consulting and LMS.",
+          "subtitle": "IT services, data center, security consulting and LMS",
           "cta": "Explore Intelligence"
         },
         "resorts": {
           "title": "Resort Experiences",
-          "subtitle": "Agro‑tourism, sanctuary, roadhouse, hospitality and holidays.",
+          "subtitle": "Agro-tourism, sanctuary, roadhouse, hospitality and holidays",
           "cta": "Explore Resorts"
-        },
-        "broadway": {
-          "title": "Broadway Corporation",
-          "subtitle": "Systems That Power Africa's Future — Agriculture, Science, Technology & Hospitality.",
-          "cta": "Explore Our Ecosystem"
         }
       }
     },
     "latest": {
-      "upcomingTitle": "Upcoming Events"
-    },
-    "presentation": {
-      "about": "About us",
-      "headline": "We build the systems that power farms, labs, IT and hospitality",
-      "subhead": "Broadway Corporation is a multidisciplinary powerhouse driving innovation, empowerment, and sustainability in Cameroon, across Africa, and beyond. We operate through four specialized subsidiaries—Broadway Farmhouse, Broadway Intelligence, Broadway Enterprise, and Broadway Resorts—each designed to transform its sector through modular systems, inclusive design, and tech-forward solutions.",
-      "pill1": "Sustainable agriculture",
-      "pill2": "Laboratory solutions",
-      "pill3": "IT & security services",
-      "pill4": "Hospitality & experiences",
-      "impact": {
-        "projects": "Projects delivered",
-        "countries": "Countries of operation",
-        "response": "First-response (managed services)",
-        "uptime": "Uptime targets (IT)"
-      },
-      "missionTitle": "Our mission",
-      "missionBody": "To design and deliver sustainable, secure and guest‑ready solutions that improve lives and help businesses grow — from farms and labs to data centers and resorts.",
-      "valuesTitle": "Our values",
-      "values": {
-        "integrity": {
-          "title": "Integrity",
-          "body": "We keep our promises, protect customer data and hold ourselves to the highest standards."
-        },
-        "empathy": {
-          "title": "Empathy",
-          "body": "We design for everyone. Accessibility and inclusivity are first‑class requirements."
-        },
-        "excellence": {
-          "title": "Excellence",
-          "body": "We pursue quality relentlessly — performance, reliability and polish matter."
-        },
-        "growth": {
-          "title": "Growth",
-          "body": "We learn, iterate and share knowledge to lift our teams and communities."
-        }
-      },
-      "operationsTitle": "Operations",
-      "operationsNote": "We collaborate across regions to deliver with speed and quality.",
-      "ctaTalkToSales": "Talk to sales",
-      "ctaCaseStudies": "View case studies",
-      "ctaExploreDivisions": "Explore divisions"
+      "upcomingTitle": "Upcoming Events",
+      "recentPosts": "Recent Blog Posts"
     }
   },
-  "divisions": {
-    "sectionTitle": "Divisions",
-    "viewAll": "View all",
-    "cards": {
-      "farmhouse": {
-        "title": "Farmhouse",
-        "desc": "Sustainable agriculture, education and farm tours across Scorpion, BSF and Fish farms."
-      },
-      "enterprise": {
-        "title": "Enterprise",
-        "desc": "Laboratory equipment catalog, custom lab designs, and STEM programs."
-      },
-      "intelligence": {
-        "title": "Intelligence",
-        "desc": "IT services, data center, security consulting, distance learning and LMS."
-      },
-      "resorts": {
-        "title": "Resorts",
-        "desc": "Agro-tourism, animal sanctuary, roadhouse menu, hospitality, outdoor games and holidays."
-      }
-    }
-  },
-  "events": {
-    "eyebrow": "Events",
-    "title": "What’s happening at Broadway",
-    "intro": "Join us for product launches, open days and community programs across our divisions.",
-    "upcoming": "Upcoming",
-    "noUpcoming": "No upcoming events right now. Check back soon.",
-    "past": "Past events",
-    "noPast": "No past events yet."
-  },
-  "contact": {
-    "eyebrow": "Contact",
-    "title": "We’d love to hear from you",
-    "intro": "Questions, feedback or partnership ideas — let’s talk.",
-    "formTitle": "Send us a message",
-    "name": "Name",
-    "email": "Email",
-    "message": "Message",
-    "send": "Send",
-    "thanks": "Thanks — we’ll get back to you shortly.",
-    "direct": "Direct contacts",
-    "address": "Address"
+  "footer": {
+    "about": "About Broadway Corporation",
+    "divisions": "Our Divisions",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "contact": "Contact Information"
   }
 }

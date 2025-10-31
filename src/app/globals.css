@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary colors */
+    --color-primary-50: 221 83% 98%;
+    --color-primary-100: 221 83% 95%;
+    --color-primary-500: 221 83% 53%;
+    --color-primary-600: 221 83% 45%;
+    --color-primary-900: 221 83% 20%;
+
+    /* Accent colors */
+    --color-accent-50: 174 84% 95%;
+    --color-accent-500: 174 84% 40%;
+    --color-accent-600: 174 84% 30%;
+
+    /* Neutral colors */
+    --color-neutral-50: 0 0% 98%;
+    --color-neutral-100: 0 0% 95%;
+    --color-neutral-200: 0 0% 90%;
+    --color-neutral-300: 0 0% 80%;
+    --color-neutral-400: 0 0% 60%;
+    --color-neutral-500: 0 0% 40%;
+    --color-neutral-600: 0 0% 30%;
+    --color-neutral-700: 0 0% 20%;
+    --color-neutral-800: 0 0% 10%;
+    --color-neutral-900: 0 0% 7%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-neutral-200;
+  }
+  body {
+    @apply bg-white text-neutral-900 antialiased;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom animations for futuristic design */
+@keyframes gradient {
+  0%, 100% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-gradient {
+  animation: gradient 8s ease infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Mobile-first touch optimizations */
+@media (max-width: 640px) {
+  /* Larger tap targets for mobile */
+  button, a {
+    min-height: 44px;
+  }
+  
+  /* Better readability on mobile */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Prevent text size adjustment on orientation change */
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for desktop */
+@media (min-width: 1024px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--color-neutral-100));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--color-primary-500));
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--color-primary-600));
+  }
+}
